@@ -80,7 +80,7 @@ public class DamenSpiel {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Anwendung beenden, wenn Fenster geschlossen wird
         frame.setSize(width, height);  // Größe des Fensters setzen
 
-        gridPanel = new JPanel(new GridLayout(groesseGrid, groesseGrid)); // Rasterlayout für das Sudoku-Grid
+        gridPanel = new JPanel(new GridLayout(groesseGrid, groesseGrid)); // Rasterlayout für das Schachbrett
         frame.add(gridPanel, BorderLayout.CENTER); // Hinzufügen des Grids in die Mitte des Fensters
 
         cells = new JLabel[groesseGrid][groesseGrid]; // Zellen-Array initialisieren
