@@ -1,11 +1,12 @@
-package src.Q1.Game.GoHomeSpiel;// Felix, Darek, Titus
+// Felix, Darek, Titus
 // Spiel "Go Home" programmieren
 // Klasse "Spiel" programmieren
+
+package src.Q1.Game.GoHomeSpiel;
 
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-
 
 public class Spiel {
     private Figur f1;

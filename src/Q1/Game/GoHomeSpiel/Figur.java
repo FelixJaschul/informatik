@@ -1,6 +1,8 @@
-package src.Q1.Game.GoHomeSpiel;// Felix, Darek, Titus
+// Felix, Darek, Titus
 // Spiel "Go Home" programmieren
 // Klasse Figur programmieren
+
+package src.Q1.Game.GoHomeSpiel;
 
 public class Figur {
     // Attribute für Figur festlegen
