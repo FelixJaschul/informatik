@@ -2,7 +2,7 @@
 // 23.01.2025
 // Lösung zum 8-Damen-Problem
 
-package src.Q2.Rekursion.8-Damen-Prolem;
+package src.Q2.Rekursion.DamenProblem;
 
 import javax.swing.*;
 import java.awt.*;

@@ -8,7 +8,7 @@ public class Haus {
     public Haus(String adresse, String name, int groesse) {
         this.adresse = adresse;
         // Raum Objekt erstellen
-        this.raum = new Raum(String name, int groesse);
+        this.raum = new Raum(name, groesse);
     }
 
     // Methode der Ausgabe der Haus- und Raumdetials

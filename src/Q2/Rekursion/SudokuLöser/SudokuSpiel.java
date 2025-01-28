@@ -2,7 +2,7 @@
 // 20.01.2025
 // Lösung zum Sudoku-Rätsel
 
-package src.Q2.Rekursion;
+package src.Q2.Rekursion.SudokuLöser;
 
 import javax.swing.*;
 import java.awt.*;
