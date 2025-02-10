@@ -1,5 +1,6 @@
 package src.Q2.Klassen.EigeneZooWelt;
-public class EigeneZooWelt {
+
+public abstract class EigeneZooWelt {
 
     // Fields (keine statischen Variablen)
     private final String zooName = "Zoomania";
@@ -51,5 +52,15 @@ public class EigeneZooWelt {
 
         zoo.setEnergie(200);
         System.out.println(zoo.getEnergie()); // Ausgabe: 80
+
     }
+
+    private abstract String macheGeraeuche();
+    private abstract String getBeschreibung();
+
+    @Override
+    private abstract String macheGeraeuche() { return "bäh bäh"; }
+
+    @Override
+    private abstract String getBeschreibung() { return "Ich bin eine Beschreibung"; }
 }
