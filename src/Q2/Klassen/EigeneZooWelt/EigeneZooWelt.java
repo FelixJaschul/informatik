@@ -2,11 +2,24 @@ package src.Q2.Klassen.EigeneZooWelt;
 
 public abstract class EigeneZooWelt {
 
-    // Fields (keine statischen Variablen)
+    // Fields 
+
     private final String zooName = "Zoomania";
     private int energie, gesundheit, zufriedenheit;
 
+    // Main-Methode
+    
+    public static void main(String[] args) {
+
+        EigeneZooWelt zoo = new EigeneZooWelt(20, 20, 20);
+
+        zoo.setEnergie(200);
+        System.out.println(zoo.getEnergie()); // Ausgabe: 80
+
+    }
+    
     // Konstruktor
+
     public EigeneZooWelt(int energie, int gesundheit, int zufriedenheit) {
 
         setEnergie(energie);
@@ -27,33 +40,11 @@ public abstract class EigeneZooWelt {
 
     // Setter mit Validierung
 
-    public void setEnergie(int energie) { 
+    public void setEnergie(int energie) { this.energie = (energie < 0 || energie > 100) ? 80 : energie; }
 
-        this.energie = (energie < 0 || energie > 100) ? 80 : energie;
+    public void setGesundheit(int gesundheit) { this.gesundheit = (gesundheit < 0 || gesundheit > 100) ? 80 : gesundheit; }
 
-    }
-
-    public void setGesundheit(int gesundheit) { 
-
-        this.gesundheit = (gesundheit < 0 || gesundheit > 100) ? 80 : gesundheit;
-    
-    }
-
-    public void setZufriedenheit(int zufriedenheit) { 
-
-        this.zufriedenheit = (zufriedenheit < 0 || zufriedenheit > 100) ? 80 : zufriedenheit;
-    
-    }
-
-    // Main-Methode
-    public static void main(String[] args) {
-
-        EigeneZooWelt zoo = new EigeneZooWelt(20, 20, 20);
-
-        zoo.setEnergie(200);
-        System.out.println(zoo.getEnergie()); // Ausgabe: 80
-
-    }
+    public void setZufriedenheit(int zufriedenheit) { this.zufriedenheit = (zufriedenheit < 0 || zufriedenheit > 100) ? 80 : zufriedenheit; }
 
     private abstract String macheGeraeuche();
     private abstract String getBeschreibung();
