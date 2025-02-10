@@ -1,23 +1,20 @@
 package src.Q2.Klassen.EigeneZooWelt;
+public class EigeneZooWelt {
 
-public abstract class EigeneZooWelt {
-
-    // Fields
-
+    // Fields (keine statischen Variablen)
     private final String zooName = "Zoomania";
-    private static int energie, gesundheit, zufriedenheit = 80;
+    private int energie, gesundheit, zufriedenheit;
 
     // Konstruktor
-
     public EigeneZooWelt(int energie, int gesundheit, int zufriedenheit) {
 
-        EigeneZooWelt.energie = energie;
-        EigeneZooWelt.gesundheit = gesundheit;
-        EigeneZooWelt.zufriedenheit = zufriedenheit;
+        setEnergie(energie);
+        setGesundheit(gesundheit);
+        setZufriedenheit(zufriedenheit);
 
     } 
     
-    // Getter und Setter
+    // Getter
 
     public String getZooName() { return zooName; }
 
@@ -25,40 +22,34 @@ public abstract class EigeneZooWelt {
 
     public int getGesundheit() { return gesundheit; }
 
-    public int getZufriedenheit() { 
-        return zufriedenheit; 
-    }
+    public int getZufriedenheit() { return zufriedenheit; }
+
+    // Setter mit Validierung
 
     public void setEnergie(int energie) { 
-        if (energie < 0 || energie > 100) {
-            EigeneZooWelt.energie = 80;
-        } else {
-            EigeneZooWelt.energie = energie;
-        }
+
+        this.energie = (energie < 0 || energie > 100) ? 80 : energie;
+
     }
 
     public void setGesundheit(int gesundheit) { 
-        if (gesundheit < 0 || gesundheit > 100) { 
-            EigeneZooWelt.gesundheit = 80;
-        } else { 
-            EigeneZooWelt.gesundheit = gesundheit;
-        }
+
+        this.gesundheit = (gesundheit < 0 || gesundheit > 100) ? 80 : gesundheit;
+    
     }
 
     public void setZufriedenheit(int zufriedenheit) { 
-        if (zufriedenheit < 0 || zufriedenheit > 100) {
-            EigeneZooWelt.zufriedenheit = 80;
-        } else {
-            EigeneZooWelt.zufriedenheit = zufriedenheit;
-        }
-    }
+
+        this.zufriedenheit = (zufriedenheit < 0 || zufriedenheit > 100) ? 80 : zufriedenheit;
     
+    }
+
+    // Main-Methode
     public static void main(String[] args) {
-            
+
         EigeneZooWelt zoo = new EigeneZooWelt(20, 20, 20);
 
         zoo.setEnergie(200);
-        System.out.println(zoo.getEnergie());
-    }   
-
+        System.out.println(zoo.getEnergie()); // Ausgabe: 80
+    }
 }
