@@ -22,12 +22,4 @@ public class Elefant extends Tier implements fuetterbar, zustand {
         return "Der Elefant pack kein Blatt mehr.";
     }
 
-    public static void main(String[] args) {
-        Elefant elefant = new Elefant("Benjamin", 20, 20, 20);
-
-        System.out.println(elefant.fuettern());
-        System.out.println(elefant.macheGeraeusche());
-        System.out.println(elefant.getBeschreibung());
-    }
-
 }

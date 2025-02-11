@@ -29,13 +29,4 @@ public class Loewe extends Tier implements fuetterbar, trainierbar, zustand {
         return "Der Löwe ist fertig!";
     }
 
-    public static void main(String[] args) {
-        Loewe loewe = new Loewe("König", 20, 20, 20);
-
-        System.out.println(loewe.trainieren());
-        System.out.println(loewe.fuettern());
-        System.out.println(loewe.macheGeraeusche());
-        System.out.println(loewe.getBeschreibung());
-    }
-
 }

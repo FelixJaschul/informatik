@@ -22,12 +22,4 @@ public class Giraffe extends Tier implements fuetterbar, zustand {
         return "Die Giraffe ist super satt.";
     }
 
-    public static void main(String[] args) {
-        Giraffe giraffe = new Giraffe("Giraffe", 20, 20, 20);
-
-        System.out.println(giraffe.fuettern());
-        System.out.println(giraffe.macheGeraeusche());
-        System.out.println(giraffe.getBeschreibung());
-    }
-
 }

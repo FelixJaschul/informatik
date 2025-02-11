@@ -8,6 +8,6 @@ interface trainierbar { String trainieren(); }
 
 interface zustand {
     default String zustand(Tier tier) {
-        return "Energie: " + tier.getEnergie() + "\n" + "Gesundheit: " + tier.getGesundheit() + "\n" + "Zufriedenheit: " + tier.getZufriedenheit();
+        return  "Name: " + tier.getName() + "\nEnergie: " + tier.getEnergie() + "\nGesundheit: " + tier.getGesundheit() + "\nZufriedenheit: " + tier.getZufriedenheit() + "\n";
     };
 }
