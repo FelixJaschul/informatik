@@ -31,10 +31,6 @@ public class DamenSpiel {
 
     // Startet das Spiel
     public static void starteSpiel() {
-        if (aktuelleLoesungIndex == 91) {
-            System.out.println("92 Lösungen gefunden");
-        }
-
         if (frame != null) {
             frame.dispose(); // Schließt das bestehende Fenster
         }
@@ -50,11 +46,10 @@ public class DamenSpiel {
 
     // Rekursive Methode zur Generierung aller Lösungen
     public static void loeseAlleBoards(int[][] board, int reihe) {
-        if (reihe >= groesseGrid) {
-            // Lösung gefunden, speichere sie in der Liste
+        if (reihe == groesseGrid) { // Wird erst aufgerufen, sobald das Board zu 100 % gelöst wurde
             int[][] kopieBoard = new int[groesseGrid][groesseGrid];
             for (int i = 0; i < groesseGrid; i++) {
-                System.arraycopy(board[i], 0, kopieBoard[i], 0, groesseGrid);
+                System.arraycopy(board[i], 0, kopieBoard[i], 0, groesseGrid); // Erstellt eine Kopie des Boards und speichert diese im Lösungsarray
             }
             loesungen.add(kopieBoard);
             return;
@@ -109,7 +104,7 @@ public class DamenSpiel {
         // Button zum Anzeigen des nächsten Problems
         JButton nextButton = new JButton("Nächste Lösung");
         nextButton.addActionListener(e -> {
-            aktuelleLoesungIndex = (aktuelleLoesungIndex + 1) % loesungen.size(); // Nächste Lösung
+            aktuelleLoesungIndex = (aktuelleLoesungIndex + 1) % loesungen.size(); // Nächste Lösung und Index + 1
             starteSpiel(); // Neues Board anzeigen
         }); nextButton.setBackground(Color.WHITE);
 

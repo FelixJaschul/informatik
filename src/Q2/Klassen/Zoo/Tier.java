@@ -1,3 +1,5 @@
+package src.Q2.Klassen.Zoo;
+
 public abstract class Tier {
 
     // Felder
@@ -38,10 +40,4 @@ public abstract class Tier {
     public abstract String macheGeraeusche();
     public abstract String getBeschreibung();
 
-    interface fuetterbar { String fuettern(); }
-    interface streichelbar { String streicheln(); }
-    interface trainierbar { String trainieren(); }
-    interface huebschGenugZumZeigen { String zeigen(); }
-
-    public static void main(String[] args) {}
 }
