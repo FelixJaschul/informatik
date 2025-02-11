@@ -26,6 +26,7 @@ public class Giraffe extends Tier implements fuetterbar, zustand {
         Giraffe giraffe = new Giraffe("Giraffe", 20, 20, 20);
 
         System.out.println(giraffe.fuettern());
+        System.out.println(giraffe.macheGeraeusche());
         System.out.println(giraffe.getBeschreibung());
     }
 

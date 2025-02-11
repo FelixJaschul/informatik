@@ -26,6 +26,7 @@ public class Pinguin extends Tier implements streichelbar, zustand {
         Pinguin pinguin = new Pinguin("Skipper", 20, 20, 20);
 
         System.out.println(pinguin.streicheln());
+        System.out.println(pinguin.macheGeraeusche());
         System.out.println(pinguin.getBeschreibung());
     }
 

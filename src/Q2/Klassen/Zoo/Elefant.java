@@ -26,6 +26,7 @@ public class Elefant extends Tier implements fuetterbar, zustand {
         Elefant elefant = new Elefant("Benjamin", 20, 20, 20);
 
         System.out.println(elefant.fuettern());
+        System.out.println(elefant.macheGeraeusche());
         System.out.println(elefant.getBeschreibung());
     }
 
