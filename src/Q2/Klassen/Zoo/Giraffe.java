@@ -7,9 +7,7 @@ public class Giraffe extends Tier implements fuetterbar, zustand {
     }
 
     @Override
-    public String macheGeraeusche() {
-        return "Die Giraffe macht Geräusche!";
-    }
+    public String macheGeraeusche() { return "Die Giraffe macht Geräusche!"; }
 
     @Override
     public String getBeschreibung() {

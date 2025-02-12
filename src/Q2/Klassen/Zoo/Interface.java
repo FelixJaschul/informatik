@@ -1,10 +1,16 @@
 package src.Q2.Klassen.Zoo;
 
-interface fuetterbar { String fuettern(); }
+interface fuetterbar {
+    String fuettern();
+}
 
-interface streichelbar { String streicheln(); }
+interface streichelbar {
+    String streicheln();
+}
 
-interface trainierbar { String trainieren(); }
+interface trainierbar {
+    String trainieren();
+}
 
 interface zustand {
     default String zustand(Tier tier) {

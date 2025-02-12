@@ -7,9 +7,7 @@ public class Elefant extends Tier implements fuetterbar, zustand {
     }
 
     @Override
-    public String macheGeraeusche() {
-        return "Der Elefant brüllt!";
-    }
+    public String macheGeraeusche() { return "Der Elefant brüllt!"; }
 
     @Override
     public String getBeschreibung() {

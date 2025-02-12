@@ -33,23 +33,20 @@ public class Zoomania {
     }
 
     private static void fuetterAlle() {
-        // TODO Lehrer ist Lost
         for (Tier tier : tiere) {
-            if (tier instanceof Elefant) ((Elefant) tier).fuettern();
-            if (tier instanceof Giraffe) ((Giraffe) tier).fuettern();
-            if (tier instanceof Loewe) ((Loewe) tier).fuettern();
+            if (tier instanceof fuetterbar) ((fuetterbar) tier).fuettern();
         }
     }
+
     private static void streichelAlle() {
-        // TODO Lehrer ist Lost
         for (Tier tier : tiere) {
-            if (tier instanceof Pinguin) ((Pinguin) tier).streicheln();
+            if (tier instanceof streichelbar) ((streichelbar) tier).streicheln();
         }
     }
+
     private static void trainiereAlle() {
-        // TODO Lehrer ist Lost
         for (Tier tier : tiere) {
-            if (tier instanceof Loewe) ((Loewe) tier).trainieren();
+            if (tier instanceof trainierbar) ((trainierbar) tier).trainieren();
         }
     }
 }
