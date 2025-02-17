@@ -62,20 +62,20 @@ public class Zoomania {
     }
 
     public static void statistikDurchschnitt() {
-        int tempEnergie = 0, tempGesundheit = 0, tempZufriedenheit = 0, zaeler = 0;
+        int tempEnergie = 0, tempGesundheit = 0, tempZufriedenheit = 0;
+        int anzahlTiere = tiere.size();
 
         for (Tier tier : tiere) {
             if (tier instanceof zustand) {
                 tempEnergie += tier.getEnergie(); // fügt alle Werte der Tiere zu einem Wert zusammen
                 tempGesundheit += tier.getGesundheit();
                 tempZufriedenheit += tier.getZufriedenheit();
-                zaeler++; // lässt einen Zähler mitlaufen um durch die Anzahl der Tiere im Zoo zu teilen
             }
         }
 
-        tempEnergie = tempEnergie / zaeler; // rechnet den Durchschitt aus, indem der schlussendliche Wert aller Tiere durch die Anzahl der Tiere geteilt wird
-        tempGesundheit = tempGesundheit / zaeler;
-        tempZufriedenheit = tempZufriedenheit / zaeler;
+        tempEnergie = tempEnergie / anzahlTiere; // rechnet den Durchschitt aus, indem der schlussendliche Wert aller Tiere durch die Anzahl der Tiere geteilt wird
+        tempGesundheit = tempGesundheit / anzahlTiere;
+        tempZufriedenheit = tempZufriedenheit / anzahlTiere;
 
         System.out.println("Druchschitt aller Werte: " + "\nEnergie: " + tempEnergie + "\nGesundheit: " + tempGesundheit + "\nZufriedenheit: " + tempZufriedenheit);
     }
@@ -87,7 +87,7 @@ public class Zoomania {
             Tier tier = iterator.next(); // geht die Tier-Zoo-Liste durch
             if (tier.getName().equals(nameTier)) {
                 iterator.remove(); // löscht das Tier rip
-                System.out.println("\n" + nameTier + " wurde gelöscht\n");
+                System.out.println(nameTier + " wurde gelöscht\n");
                 return; 
             }
         }
