@@ -7,11 +7,11 @@ public abstract class Tier {
     private int energie, gesundheit, zufriedenheit;
 
     // Konstruktor
-    public Tier(String name, int energie, int gesundheit, int zufriedenheit) {
+    public Tier(String name) {
         this.name = name;
-        setEnergie(energie);
-        setGesundheit(gesundheit);
-        setZufriedenheit(zufriedenheit);
+        setEnergie(80);
+        setGesundheit(80);
+        setZufriedenheit(80);
     }
 
     // Getter

@@ -1,32 +1,40 @@
 package src.Q2.Klassen.Zoo;
 
-public class Loewe extends Tier implements fuetterbar, trainierbar, zustand {
+public class Loewe extends Tier implements fuetterbar, trainierbar, schwimmfaehig, zustand {
 
-    public Loewe(String name, int energie, int gesundheit, int zufriedenheit) {
-        super(name, energie, gesundheit, zufriedenheit);
+    public Loewe(String name) {
+        super(name);
     }
 
     @Override
     public String macheGeraeusche() {
-        return "DerBrüll!";
+        return "Der Löwe brüllt!";
     }
 
     @Override
     public String getBeschreibung() {
-        return "Ich bin ein ein Löwe! \n" + zustand(this);
+        return "Ich bin ein Löwe! \n" + zustand(this);
     }
 
     @Override
-    public String fuettern() {
-        super.setEnergie(super.getEnergie() + 10);
+    public String fuettern(String futter) {
+        super.setEnergie(getEnergie() + 10);
         return "Der Löwe hat fertig gegessen!";
     }
 
     @Override
     public String trainieren() {
-        super.setEnergie(super.getEnergie() + 10);
-        super.setGesundheit(super.getGesundheit() - 10);
+        setEnergie(getEnergie() - 10);
+        setGesundheit(getGesundheit() - 10);
+        setZufriedenheit(getZufriedenheit() + 10);
         return "Der Löwe ist fertig!";
+    }
+
+    @Override
+    public String schwimmen() {
+        setEnergie(getEnergie() - 10);
+        setGesundheit(getGesundheit() + 10);
+        return "Der Löwe ist ein guter schwimmer! ";
     }
 
 }

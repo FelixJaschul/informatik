@@ -12,27 +12,29 @@ public class Zoomania {
     public static void main(String[] args) {
 
         // Fügt die Tiere in den Zoo ein
-        hinzufuegenTier(new Elefant("Burt", 20, 20, 20));
-        hinzufuegenTier(new Giraffe("Melman", 20, 20, 20));
-        hinzufuegenTier(new Loewe("Alex", 20, 20, 20));
-        hinzufuegenTier(new Pinguin("Rico", 20, 20, 20));
-        hinzufuegenTier(new Pinguin("Skipper", 20, 20, 20));
-        hinzufuegenTier(new Pinguin("Private", 20, 20, 20));
-        hinzufuegenTier(new Pinguin("Kowalski", 20, 20, 20));
+        hinzufuegenTier(new Elefant("Burt"));
+        hinzufuegenTier(new Giraffe("Melman"));
+        hinzufuegenTier(new Loewe("Alex"));
+        hinzufuegenTier(new Pinguin("Rico"));
+        hinzufuegenTier(new Pinguin("Skipper"));
+        hinzufuegenTier(new Pinguin("Private"));
+        hinzufuegenTier(new Pinguin("Kowalski"));
 
-        statistik();
+        zeigeStatistik();
 
         fuetterAlle();
         streichelAlle();
         trainiereAlle();
+        schwimmenGehenAlle();
+        fliegenGehenAlle();
         
         entferneTier("Burt"); // entfernt Burt den Elefanten
 
-        statistik();
+        zeigeStatistik();
         statistikDurchschnitt();
     }
 
-    private static void statistik() {
+    private static void zeigeStatistik() {
         for (Tier tier : tiere) {
             System.out.println(tier.getBeschreibung()); // zeigt die Beschreibung aller Tiere
         }
@@ -58,6 +60,18 @@ public class Zoomania {
     private static void trainiereAlle() {
         for (Tier tier : tiere) {
             if (tier instanceof trainierbar) ((trainierbar) tier).trainieren(); // schaut welche Tiere trainierbar sind und führt die Methode für das tier dann aus
+        }
+    }
+
+    private static void schwimmenGehenAlle() {
+        for (Tier tier : tiere) {
+            if (tier instanceof schwimmfaehig) ((schwimmfaehig) tier).schwimmen();  // schaut welche Tiere schwimmen können und führt die Methode für das tier dann aus
+        }
+    }
+
+    private static void fliegenGehenAlle() {
+        for (Tier tier : tiere) {
+            if (tier instanceof flugfaehig) ((flugfaehig) tier).fliegen();  // schaut welche Tiere fliegen können und führt die Methode für das tier dann aus
         }
     }
 

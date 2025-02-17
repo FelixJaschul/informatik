@@ -2,7 +2,7 @@ package src.Q2.Klassen.Zoo;
 
 // Lager für alle Interfaces
 interface fuetterbar {
-    String fuettern();
+    String fuettern(String futter);
 }
 
 interface streichelbar {
@@ -11,6 +11,14 @@ interface streichelbar {
 
 interface trainierbar {
     String trainieren();
+}
+
+interface schwimmfaehig {
+    String schwimmen();
+}
+
+interface flugfaehig {
+    String fliegen();
 }
 
 interface zustand {
