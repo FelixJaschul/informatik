@@ -53,7 +53,7 @@ public class Array {
 
 	public void remove(int index) {
 		
-		for (int i = index; i < aktIndex -1; i++;) {
+		for (int i = index; i < aktIndex -1; i++) {
 
 			data[i] = data[i + 1];
 		}
