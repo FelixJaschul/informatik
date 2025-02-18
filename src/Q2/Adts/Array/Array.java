@@ -3,12 +3,13 @@ package src.Q2.Adts.Array;
 public class Array {
 
 	private int[] data;
-	private int aktIndex;
+	private int aktIndex, capacity;
 
 	public Array(int capacity) {
 
 		data = new int[capacity];
 		aktIndex = 0;
+		this.capacity = capacity;
 	}
 
 	public static void main(String[] args) {
@@ -22,15 +23,15 @@ public class Array {
 
 	public void add(int value) {
 
-		// if (data.length = capacity) return;
+		if (aktIndex == capacity) return;
 
 		data[aktIndex] = value;
 		aktIndex++;
 	}
 
-	public void instert(int value, int index) {
+	public void insert(int value, int index) {
 
-		// if (data.length = capacity) return;
+		if (aktIndex == capacity) return;
 
 		for (int i = aktIndex; i >= index; i-- ) {
 
