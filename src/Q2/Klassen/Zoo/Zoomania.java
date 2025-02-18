@@ -41,13 +41,13 @@ public class Zoomania {
     }
 
     private static void hinzufuegenTier(Tier tier) {
-        if (tiere.size() == 10) return; // schaut ob bereits 10 Tiere in der Tiere-Zoo-Liste sind
+        if (tiere.size() == 10) return; // schaut, ob bereits 10 Tiere in der Tiere-Zoo-Liste sind
         tiere.add(tier);
     }
 
     private static void fuetterAlle(String futter) {
         for (Tier tier : tiere) {
-            if (tier instanceof fuetterbar) ((fuetterbar) tier).fuettern(String futter); // schaut welche Tiere fuetterbar sind und führt die Methode für das tier dann aus
+            if (tier instanceof fuetterbar) ((fuetterbar) tier).fuettern(futter); // schaut welche Tiere fuetterbar sind und führt die Methode für das tier dann aus
         }
     }
 
@@ -97,7 +97,7 @@ public class Zoomania {
     public static void entferneTier(String nameTier) {
         var iterator = tiere.iterator();
 
-        while (iterator.hasNext()) { // wird solang ausgeführt bis es keine Tiere mehr im Zoo gibt
+        while (iterator.hasNext()) { // wird so lang ausgeführt bis es keine Tiere mehr im Zoo gibt
             Tier tier = iterator.next(); // geht die Tier-Zoo-Liste durch
             if (tier.getName().equals(nameTier)) {
                 iterator.remove(); // löscht das Tier rip

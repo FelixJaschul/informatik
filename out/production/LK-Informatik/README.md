@@ -1,2 +1,4 @@
-// This is my reposotory for all of my school projects
-// Have fun !!
+# Informatik
+Mein Leistungskurs Reposotory
+
+## Viel Spaß !!
