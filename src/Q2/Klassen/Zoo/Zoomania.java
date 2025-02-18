@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Zoomania {
 
-    // Tiere-Zoo-Liste
+    // Tiere-Zoo-ArrayListe
     private static final List<Tier> tiere = new ArrayList<Tier>();
 
     // Main-Methode
