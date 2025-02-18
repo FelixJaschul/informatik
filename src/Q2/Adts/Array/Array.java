@@ -4,16 +4,18 @@ public class Array {
 	private int aktIndex;
 
 	public Array(int capacity) {
-		
+
 		data = new int[capacity];
 		aktIndex = 0;
-
 	}
 
 	public static void main(String[]) {
 
-				
-
+			Array array = new Array(5);
+			array.add(1);
+			array.add(8);
+			array.add(7);
+			array.print();
 	}
 
 	public void add(int value) {
@@ -22,7 +24,6 @@ public class Array {
 
 		data[aktIndex] = value;
 		aktIndex++;
-
 	}
 
 	public void instert(int value, int index) {
@@ -32,24 +33,20 @@ public class Array {
 		for (int i = aktIndex; i >= index; i-- ) {
 
 			data[i] = data[i - 1];	
-
 		}
 
 		data[index] = value;
 		aktIndex++;
-
 	}
 
 	public int get(int index) {
 
 		return data[index];
-
 	}
 
 	public void set(int value, int index) {
 
 		data[index] = value;
-
 	}
 
 	public void remove(int index) {
@@ -57,11 +54,9 @@ public class Array {
 		for (int i = index; i < aktIndex -1; i++;) {
 
 			data[i] = data[i + 1];
-
 		}
 
 		aktIndex--;
-
 	}
 
 	public void print() {
@@ -69,12 +64,9 @@ public class Array {
 		for (int i = 0; i <= aktIndex; i++) {
 
 			System.out.print(data[i]);
-
 			if (i < aktIndex - 1) System.out.print(" / ");
-
 		}
 
 		System.out.println();
-
 	}
 }
