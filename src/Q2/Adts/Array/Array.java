@@ -1,3 +1,5 @@
+package src.Q2.Adts.Array;
+
 public class Array {
 
 	private int[] data;
@@ -9,7 +11,7 @@ public class Array {
 		aktIndex = 0;
 	}
 
-	public static void main(String[]) {
+	public static void main(String[] args) {
 
 			Array array = new Array(5);
 			array.add(1);
