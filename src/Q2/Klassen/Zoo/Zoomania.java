@@ -19,6 +19,8 @@ public class Zoomania {
         hinzufuegenTier(new Pinguin("Skipper"));
         hinzufuegenTier(new Pinguin("Private"));
         hinzufuegenTier(new Pinguin("Kowalski"));
+        hinzufuegenTier(new Gorilla("Bing"));
+        hinzufuegenTier(new Gorilla("Bada"));
 
         zeigeStatistik();
 
