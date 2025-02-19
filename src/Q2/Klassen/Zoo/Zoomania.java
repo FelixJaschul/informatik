@@ -87,7 +87,7 @@ public class Zoomania {
             }
         }
 
-        tempEnergie = tempEnergie / anzahlTiere; // rechnet den Durchschitt aus, indem der schlussendliche Wert aller Tiere durch die Anzahl der Tiere geteilt wird
+        tempEnergie = tempEnergie / anzahlTiere; // rechnet den Durchschnitt aus, indem der schlussendliche Wert aller Tiere durch die Anzahl der Tiere geteilt wird
         tempGesundheit = tempGesundheit / anzahlTiere;
         tempZufriedenheit = tempZufriedenheit / anzahlTiere;
 
