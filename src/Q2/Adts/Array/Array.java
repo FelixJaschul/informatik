@@ -110,6 +110,7 @@ public class Array {
 		
 			if (data[i] == value) System.out.println("Der Index von: " + value + " ist: " + i);
 		}
+
 		System.out.prinln("Der Wert: " + value + " Exestiert nicht im Array.");
 	}
 
@@ -118,13 +119,7 @@ public class Array {
 		if (aktIndex == capacity) {
 			
 			capacity += capcity;
-			int dataNew = new int[capacity];
-
-			for (int i = 0; i < aktIndex; i++) {
-
-				data[i] = dataNew[i];
-				System.out.println("Stelle: " + i + " wurde übertragen.");
-			}
+			this.update();
 		}
 
 		System.out.println("Der Array wurde ums doppelte verlängert. Von: " + aktiIndex + " --> " + capacity);
@@ -133,18 +128,25 @@ public class Array {
 	public void shrink() {
 
 		if (aktIndex == capacity / 4) {
-			
+		
 			capacity = capacity / 2;
-			int[] dataNew = new int[capacity];
-
-			for (int i = 0; i < aktIndex; i++) {
-			
-				data[i] = dataNew[i];
-				System.out.println("Stelle: " + i + " wurde übertragen.");
-			}
+			this.update();
 		}
 
 		System.out.println("Der Array wurde um die Hälfte verkürzt. Von: " + aktIndex + " --> " + capacity);
+	}
+
+	public void update() {
+	
+		int[] dataNew = new int[capacity];
+
+		for (int i = 0; i < aktIndex; i++) {
+
+			data[i] = dataNew[i];
+			System.out.print("Stelle: " + i + " wurde übergeben.");
+		}
+
+		System.out.println();
 	}
 
 	public void reverse() {
