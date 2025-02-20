@@ -3,7 +3,7 @@ package src.Q2.Adts.Array;
 public class Array {
 
 	private int[] data;
-	public int aktIndex, capacity;
+	private int aktIndex, capacity;
 
 	public Array(int capacity) {
 
@@ -14,7 +14,7 @@ public class Array {
 
 	public static void main(String[] args) {
 
-			Array array = new Array(8);
+			Array array = new Array(5);
 			array.add(1);
 			array.add(8);
 			array.add(7);
@@ -86,7 +86,7 @@ public class Array {
 	
 		for (int i = 0; i < aktIndex; i++) {
 		
-			if (data[i] == value) return true;	
+			if (data[i] = value) return true;	
 		}
 
 		return false;
@@ -115,13 +115,35 @@ public class Array {
 
 	public void resize() {
 
-		if (aktIndex == capacity) capacity += capacity;
-		System.out.println("Der Array wurde ums doppelte verlängert. Von: " + aktIndex + " --> " + capacity);
+		if (aktIndex == capacity) {
+			
+			capacity += capcity;
+			int dataNew = new int[capacity];
+
+			for (int i = 0; i < aktIndex; i++) {
+
+				data[i] = dataNew[i];
+				System.out.println("Stelle: " + i + " wurde übertragen.");
+			}
+		}
+
+		System.out.println("Der Array wurde ums doppelte verlängert. Von: " + aktiIndex + " --> " + capacity);
 	}
 	
 	public void shrink() {
 
-		if (aktIndex == capacity / 4) capacity = capacity / 2;
+		if (aktIndex == capacity / 4) {
+			
+			capacity = capacity / 2;
+			int[] dataNew = new int[capacity];
+
+			for (int i = 0; i < aktIndex; i++) {
+			
+				data[i] = dataNew[i];
+				System.out.println("Stelle: " + i + " wurde übertragen.");
+			}
+		}
+
 		System.out.println("Der Array wurde um die Hälfte verkürzt. Von: " + aktIndex + " --> " + capacity);
 	}
 
