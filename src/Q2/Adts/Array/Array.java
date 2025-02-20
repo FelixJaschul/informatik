@@ -14,23 +14,25 @@ public class Array {
 
 	public static void main(String[] args) {
 
-			Array array = new Array(5);
-			array.add(1);
-			array.add(8);
-			array.add(7);
+		Array array = new Array(1);
+
+		array.add(1);array.add(8);array.add(7);array.add(1);array.add(8);array.add(7);array.add(1);array.add(8);array.add(7);array.add(1);array.add(8);array.add(7);array.add(1);array.add(8);array.add(7);
+
+		// array.remove(1, false);
+
+		array.print();
+
 	}
 
 	public void add(int value) {
 
-		if (aktIndex == capacity) return;
-
 		data[aktIndex] = value;
 		aktIndex++;
+
+		this.resize();
 	}
 
 	public void insert(int value, int index) {
-
-		if (aktIndex == capacity) return;
 
 		for (int i = aktIndex; i >= index; i-- ) {
 
@@ -39,6 +41,8 @@ public class Array {
 
 		data[index] = value;
 		aktIndex++;
+
+		this.resize();
 	}
 
 	public int get(int index) {
@@ -51,19 +55,40 @@ public class Array {
 		data[index] = value;
 	}
 
-	public void remove(int index) {
-		
-		for (int i = index; i < aktIndex -1; i++) {
+	public void remove(int value, boolean isYourValueAnIndex) {
 
-			data[i] = data[i + 1];
+		if (!isYourValueAnIndex) {
+
+			int writeIndex = 0;
+
+			for (int readIndex = 0; readIndex < aktIndex; readIndex++) {
+
+				if (data[readIndex] != value) {
+
+					data[writeIndex] = data[readIndex];
+					writeIndex++;
+				}
+			}
+
+			aktIndex = writeIndex;
 		}
 
-		aktIndex--;
+		if (isYourValueAnIndex) {
+
+			for (int i = value; i < aktIndex - 1; i++) {
+
+				data[i] = data[i + 1];
+			}
+
+			aktIndex--;
+		}
+
+		this.shrink();
 	}
 
 	public void print() {
 
-		for (int i = 0; i <= aktIndex; i++) {
+		for (int i = 0; i < aktIndex; i++) {
 
 			System.out.print(data[i]);
 			if (i < aktIndex - 1) System.out.print(" / ");
@@ -86,7 +111,7 @@ public class Array {
 	
 		for (int i = 0; i < aktIndex; i++) {
 		
-			if (data[i] = value) return true;	
+			if (data[i] == value) return true;
 		}
 
 		return false;
@@ -96,6 +121,8 @@ public class Array {
 
 		aktIndex = 0;
 		data[aktIndex] = 0;
+
+		this.shrink();
 	}
 
 	public boolean isEmpty() {
@@ -111,18 +138,18 @@ public class Array {
 			if (data[i] == value) System.out.println("Der Index von: " + value + " ist: " + i);
 		}
 
-		System.out.prinln("Der Wert: " + value + " Exestiert nicht im Array.");
+		System.out.println("Der Wert: " + value + " Exestiert nicht im Array.");
 	}
 
 	public void resize() {
 
 		if (aktIndex == capacity) {
 			
-			capacity += capcity;
+			capacity += capacity;
 			this.update();
-		}
 
-		System.out.println("Der Array wurde ums doppelte verlängert. Von: " + aktiIndex + " --> " + capacity);
+			System.out.println("Der Array wurde ums doppelte verlängert. Von: " + capacity / 2 + " --> " + capacity);
+		}
 	}
 	
 	public void shrink() {
@@ -131,9 +158,8 @@ public class Array {
 		
 			capacity = capacity / 2;
 			this.update();
+			System.out.println("Der Array wurde um die Hälfte verkürzt. Von: " + capacity * 2 + " --> " + capacity);
 		}
-
-		System.out.println("Der Array wurde um die Hälfte verkürzt. Von: " + aktIndex + " --> " + capacity);
 	}
 
 	public void update() {
@@ -142,11 +168,11 @@ public class Array {
 
 		for (int i = 0; i < aktIndex; i++) {
 
-			data[i] = dataNew[i];
-			System.out.print("Stelle: " + i + " wurde übergeben.");
+			dataNew[i] = data[i];
+			// System.out.println("Stelle: " + i + " wurde übergeben.");
 		}
 
-		System.out.println();
+		data = dataNew;
 	}
 
 	public void reverse() {
