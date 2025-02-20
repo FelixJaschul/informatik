@@ -72,4 +72,51 @@ public class Array {
 
 		System.out.println();
 	}
+
+	public int size() {
+	
+		return aktIndex;
+	}
+
+	public int capacity() {
+
+		return capacity;
+	}
+
+	public boolean contains(int value) {
+	
+		for (int i = 0; i < aktIndex; i++) {
+		
+			if (data[i] = value) return true;	
+		}
+
+		return false;
+	}
+
+	public void clear() {
+
+		aktIndex = 0;
+		data[aktIndex] = 0;
+	}
+
+	public boolean isEmpty() {
+
+		if (aktIndex == 0 || data[aktIndex] == 0) return true;
+		return false;
+	}
+
+	public void indexOf(int value) {
+
+		for (int i = 0; i < aktIndex; i++) {
+		
+			if (data[i] == value) System.out.println("Der Index von: " + value + " ist: " + i); 
+		}
+	}
+
+	public void resize() {
+
+		if (aktIndex == capacity) capacity += capcity;
+		System.out.println("Der Array wurde ums doppelte verlängert. Von: " + aktiIndex + " --> " + capacity);
+	}
+
 }
