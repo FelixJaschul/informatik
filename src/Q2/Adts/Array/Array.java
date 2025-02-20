@@ -3,7 +3,7 @@ package src.Q2.Adts.Array;
 public class Array {
 
 	private int[] data;
-	private int aktIndex, capacity;
+	public int aktIndex, capacity;
 
 	public Array(int capacity) {
 
@@ -14,11 +14,10 @@ public class Array {
 
 	public static void main(String[] args) {
 
-			Array array = new Array(5);
+			Array array = new Array(8);
 			array.add(1);
 			array.add(8);
 			array.add(7);
-			array.print();
 	}
 
 	public void add(int value) {
@@ -87,7 +86,7 @@ public class Array {
 	
 		for (int i = 0; i < aktIndex; i++) {
 		
-			if (data[i] = value) return true;	
+			if (data[i] == value) return true;	
 		}
 
 		return false;
@@ -115,8 +114,8 @@ public class Array {
 
 	public void resize() {
 
-		if (aktIndex == capacity) capacity += capcity;
-		System.out.println("Der Array wurde ums doppelte verlängert. Von: " + aktiIndex + " --> " + capacity);
+		if (aktIndex == capacity) capacity += capacity;
+		System.out.println("Der Array wurde ums doppelte verlängert. Von: " + aktIndex + " --> " + capacity);
 	}
 
 }
