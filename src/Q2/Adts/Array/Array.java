@@ -108,8 +108,9 @@ public class Array {
 
 		for (int i = 0; i < aktIndex; i++) {
 		
-			if (data[i] == value) System.out.println("Der Index von: " + value + " ist: " + i); 
+			if (data[i] == value) System.out.println("Der Index von: " + value + " ist: " + i);
 		}
+		System.out.prinln("Der Wert: " + value + " Exestiert nicht im Array.");
 	}
 
 	public void resize() {
@@ -117,5 +118,14 @@ public class Array {
 		if (aktIndex == capacity) capacity += capacity;
 		System.out.println("Der Array wurde ums doppelte verlängert. Von: " + aktIndex + " --> " + capacity);
 	}
+	
+	public void shrink() {
 
+		if (aktIndex == capacity / 4) capacity = capacity / 2;
+		System.out.println("Der Array wurde um die Hälfte verkürzt. Von: " + aktIndex + " --> " + capacity);
+	}
+
+	public void reverse() {
+ 
+	}
 }
