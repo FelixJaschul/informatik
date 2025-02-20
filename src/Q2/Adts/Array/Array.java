@@ -18,7 +18,7 @@ public class Array {
 
 		array.add(1);array.add(8);array.add(7);array.add(1);array.add(8);array.add(7);array.add(1);array.add(8);array.add(7);array.add(1);array.add(8);array.add(7);array.add(1);array.add(8);array.add(7);
 
-		// array.remove(1, false);
+		array.remove(100, false);
 
 		array.print();
 
@@ -34,6 +34,8 @@ public class Array {
 
 	public void insert(int value, int index) {
 
+		if (index < 0 || index > aktIndex) throw new IndexOutOfBoundsException("Invalider index: " + index);
+
 		for (int i = aktIndex; i >= index; i-- ) {
 
 			data[i] = data[i - 1];	
@@ -47,17 +49,21 @@ public class Array {
 
 	public int get(int index) {
 
+		if (index < 0 || index > aktIndex) throw new IndexOutOfBoundsException("Invalider index: " + index);
+
 		return data[index];
 	}
 
 	public void set(int value, int index) {
 
+		if (index < 0 || index > aktIndex) throw new IndexOutOfBoundsException("Invalider index: " + index);
+
 		data[index] = value;
 	}
 
-	public void remove(int value, boolean isYourValueAnIndex) {
+	public void remove(int value, boolean isValueAnIndex) {
 
-		if (!isYourValueAnIndex) {
+		if (!isValueAnIndex) {
 
 			int writeIndex = 0;
 
@@ -73,7 +79,9 @@ public class Array {
 			aktIndex = writeIndex;
 		}
 
-		if (isYourValueAnIndex) {
+		if (isValueAnIndex) {
+
+			if (value < 0 || value > aktIndex) throw new IndexOutOfBoundsException("Invalider index: " + value);
 
 			for (int i = value; i < aktIndex - 1; i++) {
 
@@ -127,8 +135,7 @@ public class Array {
 
 	public boolean isEmpty() {
 
-		if (aktIndex == 0 || data[aktIndex] == 0) return true;
-		return false;
+		return aktIndex == 0;
 	}
 
 	public void indexOf(int value) {
