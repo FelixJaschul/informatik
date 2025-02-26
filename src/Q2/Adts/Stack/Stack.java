@@ -6,12 +6,12 @@ public class Stack {
     private class Knoten {
         
         int value;
-        Knoten naechster;
+        Knoten next;
 
         public Knoten(int value) {
 
             this.value = value;
-            this.naechster = null;
+            this.next = null;
         } 
     }
 
@@ -24,12 +24,23 @@ public class Stack {
     public static void main(String[] args) {
 
         Stack stack = new Stack();
+        Stack otherStack = stack.copyStack();
 
-        stack.push(7); stack.push(3); stack.push(3); stack.push(1);
+        stack.push(7); 
+        stack.push(3); 
+        stack.push(3); 
+        stack.push(1);
 
-        stack.printStack();
+        stack.print();
 
-        System.out.println(stack.contains(1));
+        stack.swap();
+
+        stack.print();
+
+        stack.duplicateTopAndPush();
+
+        stack.print();
+
     }
 
     public boolean isEmpty() {
@@ -40,7 +51,7 @@ public class Stack {
     public void push(int value) {
 
         Knoten knoten = new Knoten(value);
-        knoten.naechster = top;
+        knoten.next = top;
         top = knoten;
 
         groesse++;
@@ -51,13 +62,15 @@ public class Stack {
         if (isEmpty()) throw new RuntimeException("Der Stack ist leer");
 
         int tempValue = top.value;
-        top = top.naechster;
+        top = top.next;
 
         groesse--;
         return tempValue;
     }
 
     public int peek() {
+
+        if (isEmpty()) throw new RuntimeException("Der Stack ist leer");
 
         return top.value;
     }
@@ -67,12 +80,14 @@ public class Stack {
         return groesse;
     }
 
-    public void printStack() {
-        
-        while (top != null) {
+    public void print() {
 
-            System.out.print(top.value + " ");
-            top = top.naechster;
+        Knoten current = top;
+        
+        while (current != null) {
+
+            System.out.print(current.value + " ");
+            current = current.next;
         }
 
         System.out.println();
@@ -86,37 +101,68 @@ public class Stack {
 
     public boolean contains(int value) {
 
-        while (top != null) {
+        Knoten current = top;
 
-            if (top.value == value) return true;
-            top = top.naechster;
+        while (current != null) {
+
+            if (current.value == value) return true;
+            current = current.next;
         }
 
         return false;
     } 
 
     public int[] toArray() {
+
+        Knoten current = top;
         int[] array = new int[groesse];
         
         for (int i = 0; i < groesse; i++) {
-            array[i] = current.wert;
-            current = current.naechster;
+
+            array[i] = current.value;
+            current = current.next;
         }
+
         return array;
     }
 
-    public MyStackPlus copyStack() {
-        MyStackPlus newStack = new MyStackPlus();
+    public Stack copyStack() {
+
+        Stack newStack = new Stack();
+        int[] tempArray = this.toArray();
+
         for (int i = tempArray.length - 1; i >= 0; i--) {
+
             newStack.push(tempArray[i]);
         }
+
         return newStack;
     }
 
-    public void merge(MyStackPlus other) {
+    public void merge(Stack other) {
+
         int[] otherArray = other.toArray();
+
         for (int i = otherArray.length - 1; i >= 0; i--) {
+
             this.push(otherArray[i]);
         }
+    }
+
+    public void swap() {
+
+        int tempTop = top.value;
+        int tempTopNext = top.next.value;
+
+        this.pop();
+        this.pop();
+
+        this.push(tempTop);
+        this.push(tempTopNext);
+    }
+
+    public void duplicateTopAndPush() {
+
+        this.push(top.value);
     }
 }
