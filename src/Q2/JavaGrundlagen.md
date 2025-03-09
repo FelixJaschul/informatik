@@ -421,7 +421,8 @@ public class Bankkonto {
 
             kontostand += betrag;
             System.out.println(betrag + "€ eingezahlt. Neuer Kontostand: " + kontostand + "€");
-        } else System.out.println("Betrag muss positiv sein!");
+        }
+        else System.out.println("Betrag muss positiv sein!");
     }
     
     public boolean abheben(double betrag) {
@@ -431,7 +432,8 @@ public class Bankkonto {
             kontostand -= betrag;
             System.out.println(betrag + "€ abgehoben. Neuer Kontostand: " + kontostand + "€");
             return true;
-        } else {
+        }
+        else {
 
             System.out.println("Abhebung nicht möglich!");
             return false;
@@ -500,7 +502,8 @@ class Auto {
 
             geschwindigkeit += kmh;
             System.out.println(marke + " " + modell + " beschleunigt auf " + geschwindigkeit + " km/h.");
-        } else System.out.println("Der Motor muss zuerst gestartet werden!");
+        }
+        else System.out.println("Der Motor muss zuerst gestartet werden!");
         
     }
     
