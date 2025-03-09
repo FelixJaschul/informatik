@@ -439,6 +439,13 @@ public class Bankkonto {
             return false;
         }
     }
+
+    public static void main(String[] args) {
+
+        Bankkonto felix = new Bankkonto(12345, 200.0);
+
+        felix.einzahlen(200.0);
+    }
 }
 ```
 
