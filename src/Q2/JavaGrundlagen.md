@@ -146,16 +146,9 @@ double kommaZahlAusText = Double.parseDouble("3.14");
 // if-else-Struktur
 int alter = 17;
 
-if (alter >= 18) {
-
-    System.out.println("Volljährig");
-} else if (alter >= 16) {
-
-    System.out.println("Eingeschränkt geschäftsfähig");
-} else {
-
-    System.out.println("Minderjährig");
-}
+if (alter >= 18) System.out.println("Volljährig");
+else if (alter >= 16) System.out.println("Eingeschränkt geschäftsfähig");
+else System.out.println("Minderjährig");
 
 // switch-Struktur
 int note = 2;
