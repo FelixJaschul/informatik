@@ -5,7 +5,9 @@
 
 ```java
 public class HelloWorld {
+
     public static void main(String[] args) {
+
         System.out.println("Hello, World!");
     }
 }
@@ -21,7 +23,9 @@ public class HelloWorld {
  * Version: 1.0
  * Beschreibung: Einfacher Taschenrechner mit Grundrechenarten
  */
+
 public class Taschenrechner {
+
     // Klasseninhalt folgt
 }
 ```
@@ -70,11 +74,15 @@ System.out.printf("Formatierte Ausgabe: %d, %.2f\n", 10, 3.14159);
 
 ```java
 public class MeinProgramm {
+
     // Der Einstiegspunkt jedes Java-Programms
     public static void main(String[] args) {
+
         // args enthält die Kommandozeilenargumente
         System.out.println("Anzahl der Argumente: " + args.length);
+
         for (int i = 0; i < args.length; i++) {
+
             System.out.println("Argument " + i + ": " + args[i]);
         }
     }
@@ -139,16 +147,20 @@ double kommaZahlAusText = Double.parseDouble("3.14");
 int alter = 17;
 
 if (alter >= 18) {
+
     System.out.println("Volljährig");
 } else if (alter >= 16) {
+
     System.out.println("Eingeschränkt geschäftsfähig");
 } else {
+
     System.out.println("Minderjährig");
 }
 
 // switch-Struktur
 int note = 2;
 switch (note) {
+
     case 1:
         System.out.println("Sehr gut");
         break;
@@ -177,19 +189,24 @@ switch (note) {
 ```java
 // for-Schleife (feste Anzahl von Durchläufen)
 for (int i = 0; i < 5; i++) {
+
     System.out.println("Durchlauf " + i);
 }
 
 // while-Schleife (Bedingung wird vor jedem Durchlauf geprüft)
 int j = 0;
+
 while (j < 5) {
+
     System.out.println("While-Durchlauf " + j);
     j++;
 }
 
 // do-while-Schleife (wird mindestens einmal ausgeführt)
 int k = 0;
+
 do {
+
     System.out.println("Do-While-Durchlauf " + k);
     k++;
 } while (k < 5);
@@ -202,13 +219,16 @@ do {
 ```java
 // Imperativ (prozedural): Schritt-für-Schritt-Anweisungen
 public class ImperativeBeispiel {
+
     public static void main(String[] args) {
+
         // Daten und Aktionen sind getrennt
         int[] zahlen = {5, 3, 8, 1, 2};
         int summe = 0;
         
         // Explizite Schritte zur Summenberechnung
         for (int i = 0; i < zahlen.length; i++) {
+
             summe += zahlen[i];
         }
         
@@ -218,7 +238,9 @@ public class ImperativeBeispiel {
 
 // Objektorientiert: Daten und Verhalten sind in Objekten gekapselt
 public class OOPBeispiel {
+
     public static void main(String[] args) {
+
         // Objekt erstellen, das Daten und Verhalten kapselt
         Zahlensammlung sammlung = new Zahlensammlung(new int[]{5, 3, 8, 1, 2});
         
@@ -228,17 +250,22 @@ public class OOPBeispiel {
 }
 
 class Zahlensammlung {
+
     private int[] zahlen;
     
     public Zahlensammlung(int[] zahlen) {
+
         this.zahlen = zahlen;
     }
     
     public int berechneSumme() {
+
         int summe = 0;
         for (int zahl : zahlen) {
+
             summe += zahl;
         }
+
         return summe;
     }
 }
@@ -250,6 +277,7 @@ class Zahlensammlung {
 
 ```java
 public class Schueler {
+
     // Attribute/Eigenschaften eines Schülers
     private String name;
     private int alter;
@@ -265,23 +293,27 @@ public class Schueler {
 
 ```java
 public class Schueler {
+
     private String name;
     private int alter;
     
     // Standardkonstruktor
     public Schueler() {
+
         this.name = "Unbekannt";
         this.alter = 0;
     }
     
     // Parametrisierter Konstruktor
     public Schueler(String name, int alter) {
+
         this.name = name;
         this.alter = alter;
     }
     
     // Überladener Konstruktor
     public Schueler(String name) {
+
         this.name = name;
         this.alter = 16; // Standardalter
     }
@@ -292,37 +324,40 @@ public class Schueler {
 
 ```java
 public class Schueler {
+
     private String name;
     private int alter;
     
     // Konstruktor
     public Schueler(String name, int alter) {
+
         this.name = name;
         this.alter = alter;
     }
     
     // Getter für Name
     public String getName() {
+
         return name;
     }
     
     // Setter für Name
     public void setName(String name) {
+
         this.name = name;
     }
     
     // Getter für Alter
     public int getAlter() {
+
         return alter;
     }
     
     // Setter für Alter mit Validierung
     public void setAlter(int alter) {
-        if (alter >= 6 && alter <= 20) {
-            this.alter = alter;
-        } else {
-            System.out.println("Ungültiges Alter für einen Schüler!");
-        }
+
+        if (alter >= 6 && alter <= 20) this.alter = alter;
+        else System.out.println("Ungültiges Alter für einen Schüler!");
     }
 }
 ```
@@ -331,12 +366,14 @@ public class Schueler {
 
 ```java
 public class Zugriffsbeispiel {
+
     public String oeffentlich;      // Überall zugreifbar
     private String privat;          // Nur in dieser Klasse zugreifbar
     protected String geschuetzt;    // In dieser Klasse, Unterklassen und im selben Paket
     String paketIntern;             // Im selben Paket zugreifbar (default)
     
     public void methodeDemo() {
+
         // Hier können alle Attribute verwendet werden
         oeffentlich = "Wert 1";
         privat = "Wert 2";
@@ -346,7 +383,9 @@ public class Zugriffsbeispiel {
 }
 
 class AndereKlasse {
+
     public void zugriff() {
+
         Zugriffsbeispiel beispiel = new Zugriffsbeispiel();
         
         beispiel.oeffentlich = "OK";     // Erlaubt
@@ -361,15 +400,17 @@ class AndereKlasse {
 
 ```java
 public class Bankkonto {
+
     // Gekapselte Daten (privat)
     private String kontonummer;
     private double kontostand;
     
     public Bankkonto(String kontonummer, double startguthaben) {
+
         this.kontonummer = kontonummer;
-        if (startguthaben >= 0) {
-            this.kontostand = startguthaben;
-        } else {
+        if (startguthaben >= 0) this.kontostand = startguthaben;
+        else {
+
             this.kontostand = 0;
             System.out.println("Startguthaben kann nicht negativ sein.");
         }
@@ -377,24 +418,28 @@ public class Bankkonto {
     
     // Gekapselter Zugriff durch Methoden
     public double getKontostand() {
+
         return kontostand;
     }
     
     public void einzahlen(double betrag) {
+
         if (betrag > 0) {
+
             kontostand += betrag;
             System.out.println(betrag + "€ eingezahlt. Neuer Kontostand: " + kontostand + "€");
-        } else {
-            System.out.println("Betrag muss positiv sein!");
-        }
+        } else System.out.println("Betrag muss positiv sein!");
     }
     
     public boolean abheben(double betrag) {
+
         if (betrag > 0 && kontostand >= betrag) {
+
             kontostand -= betrag;
             System.out.println(betrag + "€ abgehoben. Neuer Kontostand: " + kontostand + "€");
             return true;
         } else {
+
             System.out.println("Abhebung nicht möglich!");
             return false;
         }
@@ -406,7 +451,9 @@ public class Bankkonto {
 
 ```java
 public class AutoBeispiel {
+
     public static void main(String[] args) {
+
         // Objektinstanzen erstellen
         Auto auto1 = new Auto("VW", "Golf", "rot");
         Auto auto2 = new Auto("BMW", "X3", "schwarz");
@@ -425,6 +472,7 @@ public class AutoBeispiel {
 }
 
 class Auto {
+
     private String marke;
     private String modell;
     private String farbe;
@@ -432,6 +480,7 @@ class Auto {
     private boolean motorLaeuft;
     
     public Auto(String marke, String modell, String farbe) {
+
         this.marke = marke;
         this.modell = modell;
         this.farbe = farbe;
@@ -440,34 +489,40 @@ class Auto {
     }
     
     public void starten() {
+
         motorLaeuft = true;
         System.out.println(marke + " " + modell + " wurde gestartet.");
     }
     
     public void stoppen() {
+
         motorLaeuft = false;
         geschwindigkeit = 0;
         System.out.println(marke + " " + modell + " wurde gestoppt.");
     }
     
     public void beschleunigen(int kmh) {
+
         if (motorLaeuft) {
+
             geschwindigkeit += kmh;
             System.out.println(marke + " " + modell + " beschleunigt auf " + geschwindigkeit + " km/h.");
-        } else {
-            System.out.println("Der Motor muss zuerst gestartet werden!");
-        }
+        } else System.out.println("Der Motor muss zuerst gestartet werden!");
+        
     }
     
     public String getMarke() {
+
         return marke;
     }
     
     public String getModell() {
+
         return modell;
     }
     
     public int getGeschwindigkeit() {
+
         return geschwindigkeit;
     }
 }
@@ -478,31 +533,37 @@ class Auto {
 ```java
 // Datei: Person.java
 public class Person {
+
     private String name;
     private int alter;
     
     public Person(String name, int alter) {
+
         this.name = name;
         this.alter = alter;
     }
     
     public String getName() {
+
         return name;
     }
     
     public int getAlter() {
+
         return alter;
     }
 }
 
 // Datei: Adresse.java
 public class Adresse {
+
     private String strasse;
     private String hausnummer;
     private String plz;
     private String ort;
     
     public Adresse(String strasse, String hausnummer, String plz, String ort) {
+
         this.strasse = strasse;
         this.hausnummer = hausnummer;
         this.plz = plz;
@@ -510,21 +571,25 @@ public class Adresse {
     }
     
     public String getVolleAdresse() {
+
         return strasse + " " + hausnummer + ", " + plz + " " + ort;
     }
 }
 
 // Datei: Kontakt.java
 public class Kontakt {
+
     private Person person;
     private Adresse adresse;
     
     public Kontakt(Person person, Adresse adresse) {
+
         this.person = person;
         this.adresse = adresse;
     }
     
     public void zeigeKontaktInfo() {
+
         System.out.println("Name: " + person.getName());
         System.out.println("Alter: " + person.getAlter());
         System.out.println("Adresse: " + adresse.getVolleAdresse());
@@ -533,7 +598,9 @@ public class Kontakt {
 
 // Datei: Main.java (mit main-Methode)
 public class Main {
+
     public static void main(String[] args) {
+
         Person max = new Person("Max Mustermann", 17);
         Adresse maxAdresse = new Adresse("Musterstraße", "42", "12345", "Musterstadt");
         
@@ -596,7 +663,9 @@ public class Main {
 import java.util.Scanner;
 
 public class ScannerBeispiel {
+
     public static void main(String[] args) {
+
         // Scanner-Objekt erstellen, das die Eingabe von der Konsole liest
         Scanner scanner = new Scanner(System.in);
         
@@ -612,7 +681,9 @@ public class ScannerBeispiel {
 import java.util.Scanner;
 
 public class ScannerVerwendung {
+
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         
         // Text einlesen
@@ -645,7 +716,3 @@ public class ScannerVerwendung {
     }
 }
 ```
-
-## 8. Algorithmenvisualisierung
-
-### Struktogramme
