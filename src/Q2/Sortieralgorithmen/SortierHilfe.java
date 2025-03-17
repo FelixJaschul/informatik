@@ -73,7 +73,6 @@ public class SortierHilfe {
             array[i] = size - i - 1;
         }
         return array;
-    }
 
     /**
      * Generiert ein Array nur mit Werten zwischen 0 - 9 bei entsprechend gewünschter Größe.

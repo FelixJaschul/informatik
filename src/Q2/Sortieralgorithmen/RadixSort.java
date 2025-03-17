@@ -52,7 +52,7 @@ class RadixSort implements Sort {
     }
 
     /*
-     * Arrange the items in theArray based on the value of
+     * Arrange the items in array based on the value of
      * a specific bit. This doesn't fully sort the array (it
      * just sorts by a specific bit), but we'll use it for radix
      * sort.
@@ -66,13 +66,13 @@ class RadixSort implements Sort {
      * the items with a 0 in this bit come at the beginning (index 0).
      * the items with a 1 in this bit come after all the items with a 0.
      */
-    private static int[] countingSort(int[] theArray, int bit) {
+    private static int[] countingSort(int[] array, int bit) {
         int[] counts = new int[]{0, 0};
-        for (int item : theArray) counts[bitValue(item, bit)] += 1;
+        for (int item : array) counts[bitValue(item, bit)] += 1;
         int[] indices = new int[]{0, counts[0]};
         // output array to be filled in
-        int[] sortedArray = new int[theArray.length];
-        for (int item : theArray) {
+        int[] sortedArray = new int[array.length];
+        for (int item : array) {
             int itemBitValue = bitValue(item, bit);
             // place the item at the next open index for its bit value
             sortedArray[indices[itemBitValue]] = item;
@@ -86,10 +86,10 @@ class RadixSort implements Sort {
      * Use counting sort to arrange the numbers, from least significant
      * bit to most significant bit.
      */
-    public int[] sort(int[] theArray) {
+    public int[] sort(int[] array) {
         for (int bitIndex = 0; bitIndex < 64; bitIndex++) {
-            theArray = countingSort(theArray, bitIndex);
+            array = countingSort(array, bitIndex);
         }
-        return theArray;
+        return array;
     }
 }
