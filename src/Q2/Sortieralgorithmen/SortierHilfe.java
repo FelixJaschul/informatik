@@ -1,5 +1,8 @@
 package src.Q2.Sortieralgorithmen;
 
+import java.util.Arrays;
+import java.util.Random;
+
 /**
  * Klasse mit hilfreichen Methoden zur Verwendung bei Sortieralgorithmen.
  * Bietet Funktionen zum Generieren von Testdaten, Messen der Performance
@@ -8,8 +11,6 @@ package src.Q2.Sortieralgorithmen;
  * @author Herr Wessel
  * @version 1.0, Stand: 12.03.2025
  */
-import java.util.Arrays;
-import java.util.Random;
 
 public class SortierHilfe {
     // --- Statische Variablen für die Zählung der Operationen ---
@@ -296,15 +297,12 @@ public class SortierHilfe {
      * @param data Das Array, das auf korrekte Sortierung geprüft werden soll
      */
     public static void printStatistics(int[] data) {
-        System.out.println("--- Sortierstatistik ---");
+        System.out.println("\n--- Sortierstatistik ---");
         System.out.println("Dauer der Sortierung: " + durationTimer() + " ms.");
         System.out.println("Anzahl Vergleiche: " + getComparisonCount());
         System.out.println("Anzahl Tauschoperationen: " + getSwapCount());
         System.out.print("Ist das Array richtig sortiert worden: ");
-        if (isSorted(data)) {
-            System.out.println("Ja!");
-        } else {
-            System.out.println("Nein!");
-        }
+        if (isSorted(data)) System.out.println("Ja!");
+        else System.out.println("Nein!");
     }
 }
