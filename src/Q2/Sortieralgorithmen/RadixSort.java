@@ -40,56 +40,42 @@ package src.Q2.Sortieralgorithmen;
  */
 class RadixSort implements Sort {
 
-    /*
-     * Returns the value of the bit at index 'bit' in 'number'
-     */
-    private static int bitValue(int number, int bit) {
-        int mask = 1 << bit;
-        if ((number & mask) != 0) {
-            return 1;
-        }
-        return 0;
+    private static int getMax(int[] arr) {
+        int max = arr[0];
+        for (int num : arr) if (num > max) max = num;
+        return max;
     }
 
-    /*
-     * Arrange the items in array based on the value of
-     * a specific bit. This doesn't fully sort the array (it
-     * just sorts by a specific bit), but we'll use it for radix
-     * sort.
-     *
-     * counts[0] stores the number of items with a 0 in this bit
-     * counts[1] stores the number of items with a 1 in this bit
-     *
-     * indices[0] stores the index where we should put the next item with a 0 in this bit.
-     * indices[1] stores the index where we should put the next item with a 1 in this bit.
-     *
-     * the items with a 0 in this bit come at the beginning (index 0).
-     * the items with a 1 in this bit come after all the items with a 0.
-     */
-    private static int[] countingSort(int[] array, int bit) {
-        int[] counts = new int[]{0, 0};
-        for (int item : array) counts[bitValue(item, bit)] += 1;
-        int[] indices = new int[]{0, counts[0]};
-        // output array to be filled in
-        int[] sortedArray = new int[array.length];
-        for (int item : array) {
-            int itemBitValue = bitValue(item, bit);
-            // place the item at the next open index for its bit value
-            sortedArray[indices[itemBitValue]] = item;
-            // the next item with the same bit value goes after this item
-            indices[itemBitValue] += 1;
+    private static void countingSort(int[] arr, int exp) {
+        int n = arr.length;
+        int[] output = new int[n]; // Ergebnisarray
+        int[] count = new int[10]; // 0-9 für Dezimalziffern
+
+        // Zähle die Häufigkeit jeder Ziffer
+        for (int i = 0; i < n; i++) {
+            int digit = (arr[i] / exp) % 10;
+            count[digit]++;
         }
-        return sortedArray;
+
+        // Verändere count[i], damit es die Position im Output-Array enthält
+        for (int i = 1; i < 10; i++) count[i] += count[i - 1];
+
+        // Baue das sortierte Array von hinten nach vorne (stabil)
+        for (int i = n - 1; i >= 0; i--) {
+            int digit = (arr[i] / exp) % 10;
+            output[count[digit] - 1] = arr[i];
+            count[digit]--;
+        }
+
+        // Kopiere das sortierte Array zurück ins Original-Array
+        System.arraycopy(output, 0, arr, 0, n);
     }
 
-    /*
-     * Use counting sort to arrange the numbers, from least significant
-     * bit to most significant bit.
-     */
-    public int[] sort(int[] array) {
-        for (int bitIndex = 0; bitIndex < 64; bitIndex++) {
-            array = countingSort(array, bitIndex);
-        }
-        return array;
+    public int[] sort(int[] arr) {
+        int max = getMax(arr);
+
+        // Wende Counting Sort auf jede Stelle an (1er, 10er, 100er, ...)
+        for (int exp = 1; max / exp > 0; exp *= 10) countingSort(arr, exp);
+        return arr;
     }
 }

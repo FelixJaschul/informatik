@@ -16,15 +16,15 @@ public class Start {
         // Setzt Beispiele für ein Sortiertes Array anhand einer gegebenen Sortier-Methode
         // Zusätzlicher Performance-Test
         Test.sort(new BubbleSort());
-        Test.performance(new BubbleSort());
+        // Test.performance(new BubbleSort());
 
         Test.sort(new InsertionSort());
-        Test.performance(new InsertionSort());
+        // Test.performance(new InsertionSort());
 
         Test.sort(new QuickSort());
-        Test.performance(new QuickSort());
+        // Test.performance(new QuickSort());
 
         Test.sort(new RadixSort());
-        Test.performance(new RadixSort());
+        // Test.performance(new RadixSort());
     }
 }
