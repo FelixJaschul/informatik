@@ -4,17 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 /*
  * Sortierung, Einordnung und Darstellung der Ergebnisse
- *
- * System.out.println("\nAlgorithm: " + state.getAlgorithm());
- * System.out.println("Duration: " + state.getDurationTime());
- * System.out.println("Swap Count: " + state.getSwapCount());
- * System.out.println("Comparison Count: " + state.getComparisonCount());
  */
 class SaveStates {
+    // Fields and Variables
     private double durationTime;
     private int swapCount;
     private int comparisonCount;
     private String algorithm;
+
     // Konstruktor
     public SaveStates(String algorithm, double durationTime, int swapCount, int comparisonCount) {
         this.algorithm = algorithm;
@@ -22,6 +19,10 @@ class SaveStates {
         this.swapCount = swapCount;
         this.comparisonCount = comparisonCount;
     }
+
+    /*
+     * Getter
+     */
     public double getDurationTime() {
         return durationTime;
     }
@@ -34,15 +35,25 @@ class SaveStates {
     public String getAlgorithm() {
         return algorithm;
     }
+
+}
+
+class SaveStatesList {
+    // Liste für die States
+    private List<SaveStates> states = new ArrayList<>();
+    // Override Methode für die Liste-Add-Funktion
+    public void add(SaveStates save) {
+        states.add(save);
+    }
     // Print Statistik
-    public static void print() {
+    public void print() {
         // Listen
         List<String> sortieralgorithmen = new ArrayList<>();
         List<Double> durationtime = new ArrayList<>();
         List<Integer> swapCount = new ArrayList<>();
         List<Integer> comparisonCount = new ArrayList<>();
         // For-Schleife
-        for (SaveStates state : Start.getStates()) {
+        for (SaveStates state : states) {
             sortieralgorithmen.add(state.getAlgorithm());
             durationtime.add(state.getDurationTime());
             swapCount.add(state.getSwapCount());

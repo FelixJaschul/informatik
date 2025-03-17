@@ -1,32 +1,24 @@
 package src.Q2.Sortieralgorithmen;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /*
  * Start des Programmes.
  * Nutzt die Hilfsklasse SortierHilfe zum Generieren des Arrays und Ausgabe in die Kommandozeile sowie zum Zählen der Operationen und zur Zeitmessung.
  */
-public class Start {
-
+class Start {
     // Initialisiert die Liste States
-    private static List<SaveStates> states = new ArrayList<>();
+    private static SaveStatesList saveStates = new SaveStatesList();
 
-    /*
-     * Getter
-     */
-    public static List<SaveStates> getStates() {
-        return states;
+    public static SaveStatesList getSaveStates() {
+        return saveStates;
     }
     /*
      * Main-Methode
-     * Implementiert die Methode um den SortierAlgo. zu testen und seine Performance zu analysieren.
+     * implementiert die Methode um den SortierAlgo. zu testen und seine Performance zu analysieren.
      */
     public static void main(String[] args) {
         System.out.println("\n=== Test-Sorting Demonstration ===");
-
         // Setzt Beispiele für ein Sortiertes Array anhand einer gegebenen Sortier-Methode
-        // Zusätzlicher Performance-Test
+        // zusätzlicher Performance-Test
         Test.sort(new BubbleSort());
         // Test.performance(new BubbleSort());
         Test.sort(new InsertionSort());
@@ -35,6 +27,6 @@ public class Start {
         // Test.performance(new QuickSort());
         Test.sort(new RadixSort());
         // Test.performance(new RadixSort());
-        SaveStates.print();
+        saveStates.print();
     }
 }
