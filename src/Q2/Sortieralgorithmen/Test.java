@@ -1,24 +1,28 @@
 package src.Q2.Sortieralgorithmen;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /*
  * Testet alle SortierAlgorithmen.
  */
-public class Test {
+class Test {
 
     /*
      * Beispielhafte Nutzung der Sortierungs-Algorithmen mit verschiedenen Arrays.
      * Nutzt die Hilfsklasse SortierHilfe zum Generieren des Arrays und Ausgabe in die Kommandozeile
      */
     public static void sort(Sort algorithm) {
-        System.out.println("\n=== Test mit " + algorithm.getClass().getSimpleName() + " ===");
+        // System.out.println("\n=== Test mit " + algorithm.getClass().getSimpleName() + " ===");
         // Beispiel 1: Zufälliges Array
         int[] array = SortierHilfe.generateRandomArray(100);
         // Beispiel 2: reversed Zufälliges Array
         int[] reversedArray = SortierHilfe.generateReverseSortedArray(100);
         // Beispiele Ausgeben
         printAlgorithmus(algorithm, array);
+        // SaveStates.printList();
         printAlgorithmus(algorithm, reversedArray);
-
+        // SaveStates.printList();
     }
 
     /*
@@ -48,8 +52,8 @@ public class Test {
      * Hilf Funktionen
      */
     private static void printAlgorithmus(Sort algorithm, int[] array) {
-        System.out.println("\nArray vor der Sortierung: ");
-        SortierHilfe.printArray(array, 10);
+        // System.out.println("\nArray vor der Sortierung: ");
+        // SortierHilfe.printArray(array, 10);
         // Zähler und Timer zurücksetzen
         SortierHilfe.resetCounters();
         SortierHilfe.resetTimer();
@@ -60,8 +64,10 @@ public class Test {
         // Timer beenden
         SortierHilfe.endTimer();
         // Ergebnisse ausgeben
-        System.out.println("\nArray nach Sortierung:");
-        SortierHilfe.printArray(array, 10);
-        SortierHilfe.printStatistics(array);
+        // System.out.println("\nArray nach Sortierung:");
+        // SortierHilfe.printArray(array, 10);
+        // SortierHilfe.printStatistics(array);
+        SaveStates save = new SaveStates(algorithm.getClass().getSimpleName(), SortierHilfe.durationTimer(), SortierHilfe.getSwapCount(), SortierHilfe.getComparisonCount());
+        Start.getStates().add(save);
     }
 }
