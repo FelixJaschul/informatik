@@ -39,41 +39,36 @@ package src.Q2.Sortieralgorithmen;
  * RedixSort Implementation
  */
 class RadixSort implements Sort {
-
+    // Gibt den höchsten Wert des zu sortierenden Arrays zurück
     private static int getMax(int[] arr) {
         int max = arr[0];
         for (int num : arr) if (num > max) max = num;
         return max;
     }
-
+    // Der Counting-Sort ist ein wichtiger Bestandteil des RadixSort
     private static void countingSort(int[] arr, int exp) {
         int n = arr.length;
         int[] output = new int[n]; // Ergebnisarray
         int[] count = new int[10]; // 0-9 für Dezimalziffern
-
         // Zähle die Häufigkeit jeder Ziffer
         for (int i = 0; i < n; i++) {
             int digit = (arr[i] / exp) % 10;
             count[digit]++;
         }
-
         // Verändere count[i], damit es die Position im Output-Array enthält
         for (int i = 1; i < 10; i++) count[i] += count[i - 1];
-
         // Baue das sortierte Array von hinten nach vorne (stabil)
         for (int i = n - 1; i >= 0; i--) {
             int digit = (arr[i] / exp) % 10;
             output[count[digit] - 1] = arr[i];
             count[digit]--;
         }
-
         // Kopiere das sortierte Array zurück ins Original-Array
         System.arraycopy(output, 0, arr, 0, n);
     }
 
     public int[] sort(int[] arr) {
         int max = getMax(arr);
-
         // Wende Counting Sort auf jede Stelle an (1er, 10er, 100er, ...)
         for (int exp = 1; max / exp > 0; exp *= 10) countingSort(arr, exp);
         return arr;

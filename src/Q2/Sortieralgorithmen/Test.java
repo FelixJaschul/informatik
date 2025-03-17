@@ -2,17 +2,6 @@ package src.Q2.Sortieralgorithmen;
 
 /*
  * Testet alle SortierAlgorithmen.
- *
- * // Zähler und Timer zurücksetzen
- * SortierHilfe.resetCounters();
- * SortierHilfe.resetTimer();
- *
- * // Timer starten
- * SortierHilfe.startTimer();
- *
- * //Timer beenden
- * SortierHilfe.endTimer();
- *
  */
 public class Test {
 
@@ -26,7 +15,7 @@ public class Test {
         int[] array = SortierHilfe.generateRandomArray(100);
         // Beispiel 2: reversed Zufälliges Array
         int[] reversedArray = SortierHilfe.generateReverseSortedArray(100);
-
+        // Beispiele Ausgeben
         printAlgorithmus(algorithm, array);
         printAlgorithmus(algorithm, reversedArray);
 
@@ -38,7 +27,7 @@ public class Test {
     public static void performance(Sort algorithm) {
         System.out.println("\n=== Performance-Test mit " + algorithm.getClass().getSimpleName() + " ===");
         int[] testSizes = {10, 50, 100};
-
+        // Durchgeht den TestSizes-Array und schreibt jeweils die Ergebnisse ins Terminal
         for (int size : testSizes) {
             System.out.println("\nTest mit Array der Größe " + size + ":");
             // Zufälliges Array generieren
@@ -61,8 +50,15 @@ public class Test {
     private static void printAlgorithmus(Sort algorithm, int[] array) {
         System.out.println("\nArray vor der Sortierung: ");
         SortierHilfe.printArray(array, 10);
+        // Zähler und Timer zurücksetzen
+        SortierHilfe.resetCounters();
+        SortierHilfe.resetTimer();
+        // Timer starten
+        SortierHilfe.startTimer();
         // Array sortieren
         algorithm.sort(array);
+        // Timer beenden
+        SortierHilfe.endTimer();
         // Ergebnisse ausgeben
         System.out.println("\nArray nach Sortierung:");
         SortierHilfe.printArray(array, 10);
