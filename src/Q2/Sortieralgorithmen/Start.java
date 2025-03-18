@@ -9,20 +9,23 @@ public class Start {
     private static int testSize = 100;
     // Main-Methode
     public static void main(String[] args) {
-        printTabellenkopf();
-
+        //
+        initialize(testSize);
+        // Führe Tests für jeden Algorithmus aus
         Test.runTest(new BubbleSort(), testSize);
         Test.runTest(new InsertionSort(), testSize);
         Test.runTest(new QuickSort(), testSize);
         Test.runTest(new RadixSort(), testSize);
+        // Zeige die Ausgabe im Terminal
+        Test.displayResults();
     }
-    // Erstellt das erstmalige Interface im Terminal
-    private static void printTabellenkopf() {
-        System.out.println("\n=== Sortieralgorithmen Benchmark ===");
+    // Erstellt das erstmalige Interface und den Test-Array (aus Test.java)
+    private static void initialize(int testSize) {
+        System.out.println("\n--------- Sortieralgorithmen Benchmark --------- ");
         System.out.print("\nWas soll die größe sein auf die die Sortieralgorithmen getestet werden (Standardgroesse von 100)? ");
         testSize = scanner.nextInt();
-        System.out.printf("\n%-15s %-10s %-10s %-10s\n", "Algorithmus", "Dauer(ms)", "Swaps", "Vergleiche");
-        System.out.println("---------------------------------------------------");
+        // Initialisiere die Test Umgebung
+        Test.initialize(testSize);
     }
 }
 

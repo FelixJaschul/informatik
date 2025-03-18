@@ -1,40 +1,5 @@
 package src.Q2.Sortieralgorithmen;
 
-/*
- * Pseudocode für RadixSort
- *
- * Funktion radixSort(arr[], n)
- *     Bestimme das maximale Element max im Array
- *
- *     Setze exp = 1
- *     Solange max / exp > 0
- *         Führe countSort(arr, n, exp) aus
- *         exp = exp * 10
- *
- * Funktion countSort(arr[], n, exp)
- *     Erstelle ein output-Array der Größe n
- *     Erstelle ein count-Array mit 10 Elementen, initialisiert auf 0
- *
- *     // Zähle die Häufigkeit der Ziffern in der exp-ten Stelle
- *     Für i von 0 bis n-1
- *         index = (arr[i] / exp) % 10
- *         count[index] erhöhen
- *
- *     // Verändere count[i], damit es die Position des Elements im Output-Array enthält
- *     Für i von 1 bis 9
- *         count[i] = count[i] + count[i-1]
- *
- *     // Fülle das output-Array
- *     Für i von n-1 bis 0 (rückwärts)
- *         index = (arr[i] / exp) % 10
- *         output[count[index] - 1] = arr[i]
- *         count[index] verringern
- *
- *     // Kopiere das output-Array zurück ins ursprüngliche Array
- *     Für i von 0 bis n-1
- *         arr[i] = output[i]
- */
-
 // RadixSort Implementation
 class RadixSort implements Sort {
     // Gibt den höchsten Wert des zu sortierenden Arrays zurück
