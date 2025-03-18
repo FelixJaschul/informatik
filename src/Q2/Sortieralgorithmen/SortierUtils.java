@@ -148,6 +148,12 @@ public class SortierUtils {
         array[j] = temp;
         swapCount++;
     }
+    // Gibt den höchsten Wert des zu sortierenden Arrays zurück
+    public static int getMaximunDesArrays(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) if (SortierUtils.compare(arr[i], max)) max = arr[i];
+        return max;
+    }
 
     // --- Methode für Statistiken ---
 

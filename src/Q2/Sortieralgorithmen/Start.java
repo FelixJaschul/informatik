@@ -3,29 +3,39 @@ package src.Q2.Sortieralgorithmen;
 import java.util.Scanner;
 
 // Startklasse für den Testlauf
-public class Start {
-    // Fields und Variables
+class Start {
+    // Scanner für Benutzereingabe
     private static final Scanner scanner = new Scanner(System.in);
-    private static int testSize = 100;
+
     // Main-Methode
     public static void main(String[] args) {
-        //
-        initialize(testSize);
+        // getPerformanceOfSortingalgorithms();
+
         // Führe Tests für jeden Algorithmus aus
-        Test.runTest(new BubbleSort(), testSize);
-        Test.runTest(new InsertionSort(), testSize);
-        Test.runTest(new QuickSort(), testSize);
-        Test.runTest(new RadixSort(), testSize);
-        // Zeige die Ausgabe im Terminal
-        Test.displayResults();
+        // Test.runTest(new BubbleSort());
+        // Test.runTest(new InsertionSort());
+        // Test.runTest(new QuickSort());
+        // Test.runTest(new RadixSort());
+
+        // Zeige die Ergebnisse
+        // Test.displayResults();
+
+        // Zeige das Original-Array und die Summen der Abschnitte
+        getDiagramOfSortingalgorithm();
     }
-    // Erstellt das erstmalige Interface und den Test-Array (aus Test.java)
-    private static void initialize(int testSize) {
+    // Initialisiert das Performance-Programm
+    private static void getPerformanceOfSortingalgorithms() {
         System.out.println("\n--------- Sortieralgorithmen Benchmark --------- ");
-        System.out.print("\nWas soll die größe sein auf die die Sortieralgorithmen getestet werden (Standardgroesse von 100)? ");
-        testSize = scanner.nextInt();
+        System.out.print("\nGib die Größe des Test-Arrays ein (Standard = 100): ");
+        int testSize = scanner.nextInt();
         // Initialisiere die Testumgebung
-        Test.initialize(testSize);
+        Test.initializeSortingAlgorithm(testSize);
+    }
+    // Initialisiert das Diagramm
+    private static void getDiagramOfSortingalgorithm() {
+        Sort algorithm = new RadixSort(); // Change the Algorithm to whatever Algorithm you like
+        DisplayAlgorithm diagram = new DisplayAlgorithm(SortierUtils.generateRandomArray(150), algorithm);
+        int[] summeDerAbschnitte = diagram.getSummeDerAbschnitte();
+        for (int i = 0; i < summeDerAbschnitte.length; i++) System.out.print(summeDerAbschnitte[i] + " ");
     }
 }
-

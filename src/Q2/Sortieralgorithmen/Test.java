@@ -1,43 +1,37 @@
 package src.Q2.Sortieralgorithmen;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 // Klasse für das Testen von Algorithmen
 class Test {
     // Fields und Variables
-    private static final List<Sort> algorithms = new ArrayList<>();
-    private static final Map<String, List<SortierErgebnis>> results = new HashMap<>();
-    private static Array array;
+    private static final Map<String, List<SortierErgebnis>> statisticalResults = new HashMap<>();
+    private static SortableArrays arraysToBeSorted;
     // Initialisiere Testumgebung
-    public static void initialize(int testSize) {
-        array = new Array(testSize);
+    public static void initializeSortingAlgorithm(int testSize) {
+        arraysToBeSorted = new SortableArrays(testSize);
         // Initialisiere results map
-        for (String arrayType : array.getArrays().keySet()) results.put(arrayType, new ArrayList<>());
+        for (String arrayType : arraysToBeSorted.getHashMap().keySet()) statisticalResults.put(arrayType, new ArrayList<>());
     }
     // Fügt einen Algorithmus hinzu und wenn es der letzte ist, zeigt er alle Ergebnisse an
-    public static void runTest(Sort algorithm, int testSize) {
-        // Gebe den Algorithmus and die Liste weiter
-        algorithms.add(algorithm);
+    public static void runTest(Sort algorithm) {
         // Test each sorting method on each array type
-        for (Map.Entry<String, int[]> entry : array.getArrays().entrySet()) {
+        for (Map.Entry<String, int[]> entry : arraysToBeSorted.getHashMap().entrySet()) {
             String arrayType = entry.getKey();
             int[] originalArray = entry.getValue();
             int[] arrayCopy = java.util.Arrays.copyOf(originalArray, originalArray.length);
             // Führe die Sortier-Operation aus und speichere das Ergebnis in einem Array
             SortierErgebnis result = execute(algorithm, arrayCopy);
-            results.get(arrayType).add(result);
+            statisticalResults.get(arrayType).add(result);
         }
     }
     // Zeige alle Werte im gespeicherten Array "results"
     public static void displayResults() {
         System.out.println("\n--------- Sortieralgorithmen Performance ---------");
-        for (String arrayType : array.getArrays().keySet()) {
+        for (String arrayType : arraysToBeSorted.getHashMap().keySet()) {
             System.out.println("\n--------- " + arrayType + " ---------");
             printTableHeader();
-            for (SortierErgebnis result : results.get(arrayType)) {
+            for (SortierErgebnis result : statisticalResults.get(arrayType)) {
                 result.print();
             }
         }
