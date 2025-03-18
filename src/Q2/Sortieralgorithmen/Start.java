@@ -1,32 +1,22 @@
 package src.Q2.Sortieralgorithmen;
-
 /*
- * Start des Programmes.
- * Nutzt die Hilfsklasse SortierHilfe zum Generieren des Arrays und Ausgabe in die Kommandozeile sowie zum Zählen der Operationen und zur Zeitmessung.
+ * Startklasse für den Testlauf
  */
-class Start {
-    // Initialisiert die Liste States
-    private static SaveStatesList saveStates = new SaveStatesList();
-
-    public static SaveStatesList getSaveStates() {
-        return saveStates;
-    }
-    /*
-     * Main-Methode
-     * implementiert die Methode um den SortierAlgo. zu testen und seine Performance zu analysieren.
-     */
+public class Start {
+    // Main-Methode
     public static void main(String[] args) {
-        System.out.println("\n=== Test-Sorting Demonstration ===");
-        // Setzt Beispiele für ein Sortiertes Array anhand einer gegebenen Sortier-Methode
-        // zusätzlicher Performance-Test
-        Test.sort(new BubbleSort());
-        // Test.performance(new BubbleSort());
-        Test.sort(new InsertionSort());
-        // Test.performance(new InsertionSort());
-        Test.sort(new QuickSort());
-        // Test.performance(new QuickSort());
-        Test.sort(new RadixSort());
-        // Test.performance(new RadixSort());
-        saveStates.print();
+        printTabellenkopf();
+
+        Test.runTest(new BubbleSort());
+        Test.runTest(new InsertionSort());
+        Test.runTest(new QuickSort());
+        Test.runTest(new RadixSort());
+    }
+    // Erstellt den Tabellenkopf im Terminal
+    private static void printTabellenkopf() {
+        System.out.println("\n=== Sortieralgorithmen Benchmark ===");
+        System.out.printf("\n%-15s %-10s %-10s %-10s\n", "Algorithmus", "Dauer(ms)", "Swaps", "Vergleiche");
+        System.out.println("---------------------------------------------------");
     }
 }
+

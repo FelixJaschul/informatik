@@ -15,8 +15,8 @@ public class InsertionSort implements Sort {
         for (int i = 0; i < array.length; i++) {
             int key = array[i];
             int j = i - 1;
-            while (j >= 0 && SortierHilfe.compare(array[j], key)) {
-                SortierHilfe.incSwapCount();
+            while (j >= 0 && SortierUtils.compare(array[j], key)) {
+                SortierUtils.incSwapCount();
                 array[j + 1] = array[j];
                 j -= 1;
             }

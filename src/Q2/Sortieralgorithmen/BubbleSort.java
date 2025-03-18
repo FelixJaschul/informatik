@@ -15,8 +15,8 @@ class BubbleSort implements Sort {
         for (int i = 0; i < array.length; i++) {
             boolean swapped = false;
             for (int j = 0; j < array.length - i - 1; j++) {
-                if (SortierHilfe.compare(array[j], array[j + 1])) {
-                    SortierHilfe.swap(array, j, j + 1);
+                if (SortierUtils.compare(array[j], array[j + 1])) {
+                    SortierUtils.swap(array, j, j + 1);
                     swapped = true;
                 }
             }
