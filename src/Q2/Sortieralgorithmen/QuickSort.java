@@ -1,10 +1,8 @@
 package src.Q2.Sortieralgorithmen;
 
 // Implementierung des QuickSort-Algorithmus in Java.
-// Nutzt die Hilfsklasse SortierHilfe zum Zählen der Operationen und zur Zeitmessung.
 class QuickSort implements Sort {
     // Sortiert ein Array aufsteigend mit dem QuickSort-Algorithmus.
-    //  Nutzt die SortierHilfe-Klasse zum Zählen von Vergleichen und Tauschoperationen.
     public int[] sort(int[] array) {
         // QuickSort-Aufruf
         return quickSort(array, 0, array.length - 1);
