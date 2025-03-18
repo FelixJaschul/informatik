@@ -1,12 +1,10 @@
 package src.Q2.Sortieralgorithmen;
 
-/*
- * Klasse für das Testen von Algorithmen
- */
+// Klasse für das Testen von Algorithmen
 class Test {
     // Startet Alles
-    public static void runTest(Sort algorithm) {
-        int[] array = SortierUtils.generateRandomArray(100);
+    public static void runTest(Sort algorithm, int testSize) {
+        int[] array = SortierUtils.generateRandomArray(testSize);
         execute(algorithm, array);
     }
     // Startet die Sortierung der Algorithmen und sortiert sie in der Tabelle ein

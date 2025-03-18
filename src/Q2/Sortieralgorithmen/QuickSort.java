@@ -1,23 +1,15 @@
 package src.Q2.Sortieralgorithmen;
 
-/*
- * Implementierung des QuickSort-Algorithmus in Java.
- * Nutzt die Hilfsklasse SortierHilfe zum Zählen der Operationen und zur Zeitmessung.
- */
-public class QuickSort implements Sort {
-
-    /*
-     * Sortiert ein Array aufsteigend mit dem QuickSort-Algorithmus.
-     * Nutzt die SortierHilfe-Klasse zum Zählen von Vergleichen und Tauschoperationen.
-     */
+// Implementierung des QuickSort-Algorithmus in Java.
+// Nutzt die Hilfsklasse SortierHilfe zum Zählen der Operationen und zur Zeitmessung.
+class QuickSort implements Sort {
+    // Sortiert ein Array aufsteigend mit dem QuickSort-Algorithmus.
+    //  Nutzt die SortierHilfe-Klasse zum Zählen von Vergleichen und Tauschoperationen.
     public int[] sort(int[] array) {
         // QuickSort-Aufruf
         return quickSort(array, 0, array.length - 1);
     }
-
-    /*
-     * Rekursive QuickSort-Funktion, die das Array in kleinere Teile zerlegt.
-     */
+    // Rekursive QuickSort-Funktion, die das Array in kleinere Teile zerlegt.
     private int[] quickSort(int[] array, int low, int high) {
         if (low < high) {
             // Partitioniere das Array und erhalte den Pivot-Index
@@ -29,11 +21,8 @@ public class QuickSort implements Sort {
         }
         return array;
     }
-
-    /*
-     * Partitioniert das Array anhand eines Pivot-Elements.
-     * Alle kleineren Werte kommen links vom Pivot, größere Werte rechts.
-     */
+    // Partitioniert das Array anhand eines Pivot-Elements.
+    // Alle kleineren Werte kommen links vom Pivot, größere Werte rechts.
     private int partition(int[] array, int low, int high) {
         // Das letzte Element als Pivot wählen
         int pivot = array[high];

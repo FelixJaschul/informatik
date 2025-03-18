@@ -35,9 +35,7 @@ package src.Q2.Sortieralgorithmen;
  *         arr[i] = output[i]
  */
 
-/*
- * RedixSort Implementation
- */
+// RadixSort Implementation
 class RadixSort implements Sort {
     // Gibt den höchsten Wert des zu sortierenden Arrays zurück
     private static int getMax(int[] arr) {
@@ -66,7 +64,7 @@ class RadixSort implements Sort {
         // Kopiere das sortierte Array zurück ins Original-Array
         System.arraycopy(output, 0, arr, 0, n);
     }
-
+    // Sortiert schlussendlich das Array
     public int[] sort(int[] arr) {
         int max = getMax(arr);
         // Wende Counting Sort auf jede Stelle an (1er, 10er, 100er, ...)
