@@ -4,12 +4,14 @@ class DisplayAlgorithm {
     // Fields und Variables
     private static int[] arrayToBeDisplayed = SortierUtils.generateRandomArray(3500);
     private static Sort algorithmToSortTheArray;
+    private static int standardWertDerAbschnitte;
     private static final int anzahlDerAbschnitte = berechneAnzahlDerAbschnitte();
     private static final int maximalerWertDesArrays = SortierUtils.getMaximunDesArrays(arrayToBeDisplayed);
     // Konstruktor
-    public DisplayAlgorithm(int[] arrayToBeDisplayed, Sort algorithmToSortTheArray) {
+    public DisplayAlgorithm(int[] arrayToBeDisplayed, Sort algorithmToSortTheArray, int standardWertDerAbschnitte) {
         DisplayAlgorithm.arrayToBeDisplayed = arrayToBeDisplayed;
         DisplayAlgorithm.algorithmToSortTheArray = algorithmToSortTheArray;
+		DisplayAlgorithm.standardWertDerAbschnitte = standardWertDerAbschnitte;
     }
     // Ausgabe
     public int[] getSummeDerAbschnitte() {
@@ -19,7 +21,7 @@ class DisplayAlgorithm {
     // Math
     private static int berechneAnzahlDerAbschnitte() {
         int length = arrayToBeDisplayed.length;
-        if (length > 50) return 50;
+        if (length > standardWertDerAbschnitte) return standardWertDerAbschnitte;
         else return length % 2 == 0 ? length : length - 1; // Wenn ungerade, eine Ziffer (in der Mitte) abziehen
     }
     private static int[] berechneSummeDesArraysNachDerAnzahlDerAbschnitten() {
