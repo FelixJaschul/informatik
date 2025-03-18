@@ -24,7 +24,7 @@ public class Start {
         System.out.println("\n--------- Sortieralgorithmen Benchmark --------- ");
         System.out.print("\nWas soll die größe sein auf die die Sortieralgorithmen getestet werden (Standardgroesse von 100)? ");
         testSize = scanner.nextInt();
-        // Initialisiere die Test Umgebung
+        // Initialisiere die Testumgebung
         Test.initialize(testSize);
     }
 }

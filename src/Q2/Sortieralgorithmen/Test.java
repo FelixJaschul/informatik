@@ -11,7 +11,7 @@ class Test {
     private static final List<Sort> algorithms = new ArrayList<>();
     private static final Map<String, List<SortierErgebnis>> results = new HashMap<>();
     private static Array array;
-    // Initialisiere Test Umgebung
+    // Initialisiere Testumgebung
     public static void initialize(int testSize) {
         array = new Array(testSize);
         // Initialisiere results map
