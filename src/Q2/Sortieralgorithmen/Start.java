@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // Startklasse für den Testlauf
 public class Start {
-    // Felids und Variables
+    // Fields und Variables
     private static final Scanner scanner = new Scanner(System.in);
     private static int testSize = 100;
     // Main-Methode
