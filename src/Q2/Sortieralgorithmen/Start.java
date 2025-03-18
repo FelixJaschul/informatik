@@ -6,35 +6,31 @@ import java.util.Scanner;
 class Start {
     // Scanner für Benutzereingabe
     private static final Scanner scanner = new Scanner(System.in);
+    private static int testSize;
 
     // Main-Methode
     public static void main(String[] args) {
-        // getPerformanceOfSortingalgorithms();
-
-        // Führe Tests für jeden Algorithmus aus
-        // Test.runTest(new BubbleSort());
-        // Test.runTest(new InsertionSort());
-        // Test.runTest(new QuickSort());
-        // Test.runTest(new RadixSort());
-
-        // Zeige die Ergebnisse
-        // Test.displayResults();
-
-        // Zeige das Original-Array und die Summen der Abschnitte
-        getDiagramOfSortingalgorithm();
+        System.out.println("\n--------- Sortieralgorithmen Benchmark --------- ");
+        System.out.print("\nGib die Größe des Test-Arrays ein (Standard = 100): ");
+        testSize = scanner.nextInt();
+        getPerformanceOfSortingalgorithms();
+        getDiagramOfSortingalgorithm(testSize);
     }
     // Initialisiert das Performance-Programm
     private static void getPerformanceOfSortingalgorithms() {
-        System.out.println("\n--------- Sortieralgorithmen Benchmark --------- ");
-        System.out.print("\nGib die Größe des Test-Arrays ein (Standard = 100): ");
-        int testSize = scanner.nextInt();
         // Initialisiere die Testumgebung
         Test.initializeSortingAlgorithm(testSize);
+        // Test.runTest(new BubbleSort());
+        // Test.runTest(new InsertionSort());
+        // Test.runTest(new QuickSort());
+        // Test.runTest(new CountingSort());
+        Test.runTest(new RadixSort());
+        Test.displayResults();
     }
     // Initialisiert das Diagramm
-    private static void getDiagramOfSortingalgorithm() {
+    private static void getDiagramOfSortingalgorithm(int testSize) {
         Sort algorithm = new RadixSort(); // Change the Algorithm to whatever Algorithm you like
-        DisplayAlgorithm diagram = new DisplayAlgorithm(SortierUtils.generateRandomArray(150), algorithm);
+        DisplayAlgorithm diagram = new DisplayAlgorithm(SortierUtils.generateRandomArray(testSize), algorithm);
         int[] summeDerAbschnitte = diagram.getSummeDerAbschnitte();
         for (int i = 0; i < summeDerAbschnitte.length; i++) System.out.print(summeDerAbschnitte[i] + " ");
     }
