@@ -63,6 +63,7 @@ class RadixSort implements Sort {
             SortierUtils.incSwapCount();
         }
         // Kopiere das sortierte Array zurück ins Original-Array
+        // Ich benutze nicht copyArray aus SortierUtils, da ich sonst den SwapCount nicht zählen könnte
         for (int i = 0; i < n; i++) {
             if (arr[i] != output[i]) {
                 arr[i] = output[i];
