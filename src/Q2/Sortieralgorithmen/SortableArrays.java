@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 class SortableArrays {
+    // Fields und Variables
     private final Map<String, int[]> arraysToBeSorted = new HashMap<>();
+
     // Konstruktor
     public SortableArrays(int testSize) {
         // Generate arrays with different characteristics

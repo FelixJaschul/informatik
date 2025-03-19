@@ -2,27 +2,41 @@ package src.Q2.Sortieralgorithmen;
 
 // DrawDiagram Implementation
 class DisplayAlgorithm {
+
     // Fields und Variables
-    private static int[] arrayToBeDisplayed = SortierUtils.generateRandomArray(3500);
-    private static Sort algorithmToSortTheArray;
+    private static int[] arrayToBeDisplayed;
     private static int anzahlDerAbschnitte;
     private static int[] summeDerAbschnitte;
+
     // Konstruktor
-    public DisplayAlgorithm(int[] arrayToBeDisplayed, Sort algorithmToSortTheArray, int anzahlDerAbschnitte) {
-        DisplayAlgorithm.arrayToBeDisplayed = arrayToBeDisplayed;
-        DisplayAlgorithm.algorithmToSortTheArray = algorithmToSortTheArray;
+    public DisplayAlgorithm(int[] unsortierterArrayToBeDisplayed, int anzahlDerAbschnitte) {
+        DisplayAlgorithm.arrayToBeDisplayed = unsortierterArrayToBeDisplayed;
         DisplayAlgorithm.anzahlDerAbschnitte = anzahlDerAbschnitte;
         DisplayAlgorithm.summeDerAbschnitte = getSummeDerAbschnitte();
     }
+
+    // Setter
+    public void setArrayToBeDisplayed(int[] arrayToBeDisplayed) {
+        DisplayAlgorithm.arrayToBeDisplayed = arrayToBeDisplayed;
+    }
+
     // Ausgabe
     public void drawDiagramToBeDisplayed() {
         int[] summeDerAbschnitteInProzenten = berechneSummeDerAbschnitteInProzentUm();
+        System.out.println();
+        for (int i = 0; i < summeDerAbschnitteInProzenten.length; i++) {
+            System.out.print("|");
+            for (int j = 0; j < summeDerAbschnitteInProzenten[i]; j++) {
+                System.out.print("#");
+            }
+            System.out.println("|");
+        }
     }
     public static int[] getSummeDerAbschnitte() {
-        algorithmToSortTheArray.sort(arrayToBeDisplayed);
         berechneAnzahlDerAbschnitte();
         return berechneSummeDesArraysNachDerAnzahlDerAbschnitten();
     }
+
     // Math
     private static int[] berechneSummeDerAbschnitteInProzentUm() {
         int largestValueOfSummeDerAbschnitte = Integer.MIN_VALUE;
@@ -62,6 +76,7 @@ class DisplayAlgorithm {
         // debugOutput(anzahlProAbschnitt, summeDerAbschnitte, elementeProAbschnitt);
         return summeDerAbschnitte;
     }
+
     // Debug
     private static void debugBerechneSummeDesArraysNachDerAnzahlDerAbschnitten(int[] anzahlProAbschnitt, int[] summeDerAbschnitte, int elementeProAbschnitt) {
         // Debug-Ausgabe in die Konsole, um die Verteilung zu sehen

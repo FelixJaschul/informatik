@@ -2,19 +2,20 @@ package src.Q2.Sortieralgorithmen;
 
 // Implementierung des Instertion-Sort-Algorithmus in Java.
 class InsertionSort implements Sort {
+
     // Sortiert ein Array aufsteigend mit dem Insertion-Sort-Algorithmus.
-    public int[] sort(int[] arrayToBeSorted) {
+    public int[] sort(int[] array) {
         // Insertion-Sort Implementierung
-        for (int i = 0; i < arrayToBeSorted.length; i++) {
-            int aktuellesElement = arrayToBeSorted[i];
+        for (int i = 0; i < array.length; i++) {
+            int key = array[i];
             int j = i - 1;
-            while (j >= 0 && SortierUtils.compare(arrayToBeSorted[j], aktuellesElement)) {
+            while (j >= 0 && SortierUtils.compare(array[j], key)) {
                 SortierUtils.incSwapCount();
-                arrayToBeSorted[j + 1] = arrayToBeSorted[j];
+                array[j + 1] = array[j];
                 j -= 1;
             }
-            arrayToBeSorted[j + 1] = aktuellesElement;
+            array[j + 1] = key;
         }
-        return arrayToBeSorted;
+        return array;
     }
 }

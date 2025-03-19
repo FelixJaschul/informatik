@@ -2,13 +2,7 @@ package src.Q2.Sortieralgorithmen;
 
 // CountingSort Implementation
 class CountingSort implements Sort {
-    // Standalone counting sort implementation
-    public int[] sort(int[] arrayToBeSorted) {
-        if (arrayToBeSorted.length == 0) return arrayToBeSorted;
-        // Find the maximum value to determine the count array size
-        int groessterWertDesZuSortierendenArrays = SortierUtils.getMaximunDesArrays(arrayToBeSorted);
-        return countingSort(arrayToBeSorted, groessterWertDesZuSortierendenArrays + 1);
-    }
+
     // Helper method that can be used by RadixSort
     public static int[] countingSort(int[] arrayToBeSorted, int range) {
         int lengthOfArrayToBeSorted = arrayToBeSorted.length;
@@ -34,6 +28,7 @@ class CountingSort implements Sort {
         }
         return arrayToBeSorted;
     }
+
     // Method specifically for RadixSort (digit-based counting sort)
     public static int[] sortByDigit(int[] arrayToBeSorted, int exp) {
         int lengthOfArrayToBeSorted = arrayToBeSorted.length;
@@ -61,6 +56,14 @@ class CountingSort implements Sort {
             }
         }
         return arrayToBeSorted;
+    }
+
+    // Standalone counting sort implementation
+    public int[] sort(int[] arrayToBeSorted) {
+        if (arrayToBeSorted.length == 0) return arrayToBeSorted;
+        // Find the maximum value to determine the count array size
+        int groessterWertDesZuSortierendenArrays = SortierUtils.getMaximunDesArrays(arrayToBeSorted);
+        return countingSort(arrayToBeSorted, groessterWertDesZuSortierendenArrays + 1);
     }
 }
 
