@@ -12,11 +12,10 @@ class Start {
     // Main-Methode
     public static void main(String[] args) {
         System.out.println("\n--------- Sortieralgorithmen Benchmark --------- ");
-        System.out.print("\nGib die Größe des Test-Arrays ein (Standard = 100): ");
-        testSize = scanner.nextInt();
-		System.out.print("\nGib die Anzahl der Abschnitte an (Standard = 50): ");
-		anzahlDerAbschnitte = scanner.nextInt();
-		scanner.close()
+        System.out.print("\nGib die Größe des Test-Arrays ein (Standard = 100): "); testSize = scanner.nextInt();
+		System.out.print("\nGib die Anzahl der Abschnitte an (Standard = 50): "); anzahlDerAbschnitte = scanner.nextInt();
+		scanner.close();
+        // Initialisiere Sortieralgorithmen
         getPerformanceOfSortingalgorithms();
         getDiagramOfSortingalgorithm(testSize);
     }
@@ -28,7 +27,7 @@ class Start {
         // Test.runTest(new InsertionSort());
         // Test.runTest(new QuickSort());
         // Test.runTest(new CountingSort());
-        Test.runTest(new RadixSort());
+        // Test.runTest(new RadixSort());
         Test.displayResults();
     }
     // Initialisiert das Diagramm

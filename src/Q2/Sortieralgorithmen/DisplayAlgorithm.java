@@ -4,25 +4,29 @@ class DisplayAlgorithm {
     // Fields und Variables
     private static int[] arrayToBeDisplayed = SortierUtils.generateRandomArray(3500);
     private static Sort algorithmToSortTheArray;
-    private static int standardWertDerAbschnitte;
-    private static final int anzahlDerAbschnitte = berechneAnzahlDerAbschnitte();
+    private static int anzahlDerAbschnitte;
     private static final int maximalerWertDesArrays = SortierUtils.getMaximunDesArrays(arrayToBeDisplayed);
     // Konstruktor
-    public DisplayAlgorithm(int[] arrayToBeDisplayed, Sort algorithmToSortTheArray, int standardWertDerAbschnitte) {
+    public DisplayAlgorithm(int[] arrayToBeDisplayed, Sort algorithmToSortTheArray, int anzahlDerAbschnitte) {
         DisplayAlgorithm.arrayToBeDisplayed = arrayToBeDisplayed;
         DisplayAlgorithm.algorithmToSortTheArray = algorithmToSortTheArray;
-		DisplayAlgorithm.standardWertDerAbschnitte = standardWertDerAbschnitte;
+        DisplayAlgorithm.anzahlDerAbschnitte = anzahlDerAbschnitte;
     }
     // Ausgabe
     public int[] getSummeDerAbschnitte() {
         algorithmToSortTheArray.sort(arrayToBeDisplayed);
+        berechneAnzahlDerAbschnitte();
         return berechneSummeDesArraysNachDerAnzahlDerAbschnitten();
     }
     // Math
-    private static int berechneAnzahlDerAbschnitte() {
-        int length = arrayToBeDisplayed.length;
-        if (length > standardWertDerAbschnitte) return standardWertDerAbschnitte;
-        else return length % 2 == 0 ? length : length - 1; // Wenn ungerade, eine Ziffer (in der Mitte) abziehen
+    private static void berechneAnzahlDerAbschnitte() {
+        int lengthDesArrayToBeDisplayed = arrayToBeDisplayed.length;
+        // Wenn Array Gerade ist und Array länger als maximalAnzahlDerAbschnitte, behalten wir die Größe bei maximalAnzahlDerAbschnitte
+        if (lengthDesArrayToBeDisplayed % 2 == 0 && lengthDesArrayToBeDisplayed > anzahlDerAbschnitte) return;
+        if (lengthDesArrayToBeDisplayed % 2 == 1 && lengthDesArrayToBeDisplayed > anzahlDerAbschnitte) anzahlDerAbschnitte--;
+        // Wenn Array Ungerade ist und Array kleiner als maximalAnzahlDerAbschnitte, ändern wir die größe zu der Größe des Arrays
+        if (lengthDesArrayToBeDisplayed % 2 == 0 && lengthDesArrayToBeDisplayed < anzahlDerAbschnitte) anzahlDerAbschnitte = lengthDesArrayToBeDisplayed;
+        if (lengthDesArrayToBeDisplayed % 2 == 1 && lengthDesArrayToBeDisplayed < anzahlDerAbschnitte) anzahlDerAbschnitte = lengthDesArrayToBeDisplayed - 1;
     }
     private static int[] berechneSummeDesArraysNachDerAnzahlDerAbschnitten() {
         int[] summeDerAbschnitte = new int[anzahlDerAbschnitte];

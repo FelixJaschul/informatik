@@ -23,7 +23,7 @@ public class SortierUtils {
     public static int[] generateRandomArray(int size) {
         int[] array = new int[size];
         Random random = new Random();
-        for (int i = 0; i < size; i++) array[i] = random.nextInt(1000); // Zufallszahlen von 0 bis 999
+        for (int i = 0; i < size; i++) array[i] = random.nextInt(1,1000); // Zufallszahlen von 0 bis 999
         return array;
     }
     // Generiert ein bereits sortiertes Array von klein nach groß mit entsprechend gewünschter Größe.
@@ -46,7 +46,7 @@ public class SortierUtils {
     public static int[] generateArrayWithDuplicates(int size) {
         int[] array = new int[size];
         Random random = new Random();
-        for (int i = 0; i < size; i++) array[i] = random.nextInt(10); // Nur 10 verschiedene Wert
+        for (int i = 0; i < size; i++) array[i] = random.nextInt(1,10); // Nur 10 verschiedene Wert
         return array;
     }
     // Generiert ein teilweise sortiertes Array mit entsprechend gewünschter Größe.
@@ -60,8 +60,8 @@ public class SortierUtils {
         // Zufällige Elemente vertauschen
         Random random = new Random();
         for (int i = 0; i < elementsToSwap; i++) {
-            int index1 = random.nextInt(size);
-            int index2 = random.nextInt(size);
+            int index1 = random.nextInt(1, size);
+            int index2 = random.nextInt(1, size);
             // Nur tauschen, wenn die Indizes unterschiedlich sind
             if (index1 != index2) swap(array, index1, index2);
         }
