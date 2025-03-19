@@ -2,14 +2,14 @@ package src.Q2.Sortieralgorithmen;
 
 // RadixSort Implementation
 class RadixSort implements Sort {
-    @Override
-    public int[] sort(int[] arr) {
-        int max = SortierUtils.getMaximunDesArrays(arr);
+    // Sortiert ein Array mit dem Radix-Algorithmus.
+    public int[] sort(int[] arrayToBeSorted) {
+        int groessterWertDesZuSortierendenArrays = SortierUtils.getMaximunDesArrays(arrayToBeSorted);
         // Apply counting sort to each digit position
-        for (int exp = 1; max / exp > 0; exp *= 10) {
+        for (int exp = 1; groessterWertDesZuSortierendenArrays / exp > 0; exp *= 10) {
             SortierUtils.incComparisonCount();
-            CountingSort.sortByDigit(arr, exp);
+            CountingSort.sortByDigit(arrayToBeSorted, exp);
         }
-        return arr;
+        return arrayToBeSorted;
     }
 }

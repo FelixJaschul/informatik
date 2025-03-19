@@ -1,23 +1,21 @@
 package src.Q2.Sortieralgorithmen;
 
 // Implementierung des Bubble-Sort-Algorithmus in Java.
-// Nutzt die Hilfsklasse SortierHilfe zum Zählen der Operationen und zur Zeitmessung.
 class BubbleSort implements Sort {
     // Sortiert ein Array aufsteigend mit dem Bubble-Sort-Algorithmus.
-    // Nutzt die SortierHilfe-Klasse zum Zählen von Vergleichen und Tauschoperationen.
-    public int[] sort(int[] array) {
+    public int[] sort(int[] arrayToBeSorted) {
         // Bubble-Sort Implementierung
-        for (int i = 0; i < array.length; i++) {
-            boolean swapped = false;
-            for (int j = 0; j < array.length - i - 1; j++) {
-                if (SortierUtils.compare(array[j], array[j + 1])) {
-                    SortierUtils.swap(array, j, j + 1);
-                    swapped = true;
+        for (int i = 0; i < arrayToBeSorted.length; i++) {
+            boolean wasPositionSwapped = false;
+            for (int j = 0; j < arrayToBeSorted.length - i - 1; j++) {
+                if (SortierUtils.compare(arrayToBeSorted[j], arrayToBeSorted[j + 1])) {
+                    SortierUtils.swap(arrayToBeSorted, j, j + 1);
+                    wasPositionSwapped = true;
                 }
             }
             // Wenn keine Tauschoperationen vorgenommen wurden, ist das Array bereits sortiert
-            if (!swapped) break;
+            if (!wasPositionSwapped) break;
         }
-        return array;
+        return arrayToBeSorted;
     }
 }

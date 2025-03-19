@@ -1,22 +1,20 @@
 package src.Q2.Sortieralgorithmen;
 
 // Implementierung des Instertion-Sort-Algorithmus in Java.
-// Nutzt die Hilfsklasse SortierHilfe zum Zählen der Operationen und zur Zeitmessung.
 class InsertionSort implements Sort {
     // Sortiert ein Array aufsteigend mit dem Insertion-Sort-Algorithmus.
-    // Nutzt die SortierHilfe-Klasse zum Zählen von Vergleichen und Tauschoperationen.
-    public int[] sort(int[] array) {
+    public int[] sort(int[] arrayToBeSorted) {
         // Insertion-Sort Implementierung
-        for (int i = 0; i < array.length; i++) {
-            int key = array[i];
+        for (int i = 0; i < arrayToBeSorted.length; i++) {
+            int aktuellesElement = arrayToBeSorted[i];
             int j = i - 1;
-            while (j >= 0 && SortierUtils.compare(array[j], key)) {
+            while (j >= 0 && SortierUtils.compare(arrayToBeSorted[j], aktuellesElement)) {
                 SortierUtils.incSwapCount();
-                array[j + 1] = array[j];
+                arrayToBeSorted[j + 1] = arrayToBeSorted[j];
                 j -= 1;
             }
-            array[j + 1] = key;
+            arrayToBeSorted[j + 1] = aktuellesElement;
         }
-        return array;
+        return arrayToBeSorted;
     }
 }

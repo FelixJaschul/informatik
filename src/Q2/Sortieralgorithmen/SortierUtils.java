@@ -118,17 +118,27 @@ public class SortierUtils {
     // --- Methoden für die Anzahl an Vergleichs- und Tauschoperationen ---
 
     // Gibt die aktuelle Anzahl an Tauschoperationen zurück.
-    public static int getSwapCount() { return swapCount; }
+    public static int getSwapCount() {
+        return swapCount;
+    }
     // Erhöht die Anzahl der Tauschvorgänge um 1.
     // Diese Methode kann in Algorithmen verwendet werden, die nicht die swap-Methode nutzen.
-    public static void incSwapCount() { swapCount++; }
+    public static void incSwapCount() {
+        swapCount++;
+    }
     // Gibt die Dauer des Timers in Millisekunden zurück.
-    public static double getDurationTime() { return (endTime - startTime) / 1_000_000.0; }
+    public static double getDurationTime() {
+        return (endTime - startTime) / 1_000_000.0;
+    }
     // Erhöht die Anzahl der Vergleichsoperationen um 1.
     // Diese Methode kann in Algorithmen verwendet werden, die nicht die compare-Methode nutzen.
-    public static void incComparisonCount() { comparisonCount++; }
+    public static void incComparisonCount() {
+        comparisonCount++;
+    }
     //  Gibt die aktuelle Anzahl an Vergleichsoperationen zurück.
-    public static int getComparisonCount() { return comparisonCount; }
+    public static int getComparisonCount() {
+        return comparisonCount;
+    }
     // Setzt die Zähler für Tausch- und Vergleichsoperationen zurück.
     public static void resetCounters() {
         swapCount = 0;
@@ -149,9 +159,9 @@ public class SortierUtils {
         swapCount++;
     }
     // Gibt den höchsten Wert des zu sortierenden Arrays zurück
-    public static int getMaximunDesArrays(int[] arr) {
-        int max = arr[0];
-        for (int i = 1; i < arr.length; i++) if (SortierUtils.compare(arr[i], max)) max = arr[i];
+    public static int getMaximunDesArrays(int[] array) {
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) if (SortierUtils.compare(array[i], max)) max = array[i];
         return max;
     }
 

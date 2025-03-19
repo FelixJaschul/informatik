@@ -21,7 +21,7 @@ class Test {
             int[] originalArray = entry.getValue();
             int[] arrayCopy = java.util.Arrays.copyOf(originalArray, originalArray.length);
             // Führe die Sortier-Operation aus und speichere das Ergebnis in einem Array
-            SortierErgebnis result = execute(algorithm, arrayCopy);
+            SortierErgebnis result = executeSortingalgorithmAndMetrics(algorithm, arrayCopy);
             statisticalResults.get(arrayType).add(result);
         }
     }
@@ -42,7 +42,7 @@ class Test {
         System.out.println("-------------------------------------------------");
     }
     // Execute sorting algorithm and return results
-    private static SortierErgebnis execute(Sort algorithm, int[] array) {
+    private static SortierErgebnis executeSortingalgorithmAndMetrics(Sort algorithm, int[] array) {
         SortierUtils.resetMetrics();
         SortierUtils.startTimer();
         algorithm.sort(array);
