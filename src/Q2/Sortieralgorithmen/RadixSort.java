@@ -1,4 +1,4 @@
-package src.Q2.Sortieralgorithmen;
+package Q2.Sortieralgorithmen;
 
 // RadixSort Implementation
 class RadixSort implements Sort {

@@ -1,4 +1,4 @@
-package src.Q2.Sortieralgorithmen;
+package Q2.Sortieralgorithmen;
 
 // Implementierung des QuickSort-Algorithmus in Java.
 class QuickSort implements Sort {
