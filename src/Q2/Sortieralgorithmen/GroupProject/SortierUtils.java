@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen;
+package Q2.Sortieralgorithmen.GroupProject;
 
 import java.util.Arrays;
 import java.util.Random;
