@@ -4,20 +4,28 @@ interface Sort {
     int[] tempArray = null;
     boolean anim = false;
     // change 'return status' in Sort-Method for: return anim = status;
-    default boolean anim(boolean status) {return status;}
+    default boolean setAnim(boolean status) {
+        return status;
+    }
     // Default implementation
-    default int getFac() { return 2;}
+    default int getFac() {
+        return 2;
+    }
     // Complete sorting algorithm
     default void sort(int[] sortableArr) {
-        for (int step = 0; step < 4; step++)
+        for (int step = 0; step < 4; step++) {
             sortStep(sortableArr, step);
+        }
     }
     // Single step of radix sort (for animation) // Look at Radix class for help
     void sortStep(int[] sortableArr, int step);
     // shows if an array is sorted or not
     default boolean sorted(int[] arr) {
-        for (int i = 1; i < arr.length; i++)
-            if (arr[i] < arr[i - 1]) return false;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[i - 1]) {
+                return false;
+            }
+        }
         return true;
     }
 }
@@ -44,7 +52,7 @@ class Chart {
         System.arraycopy(sumSections(), 0, this.sumsArray, 0, this.sections);
     }
 
-    // Display chart - Improved horizontal display with ASCII blocks
+    // Display chart
     public void drawChart() {
         int[] percentages = calculatePercentages();
         char blockChar = '█'; // ASCII block character
@@ -72,8 +80,12 @@ class Chart {
         // Convert to percentage scale (10-100)
         int[] percentages = new int[sumsArray.length];
         for (int i = 0; i < sumsArray.length; i++) {
-            if (max == min) percentages[i] = 100;
-            else percentages[i] = 10 + (sumsArray[i] - min) * 90 / (max - min);
+            if (max == min) {
+                percentages[i] = 100;
+            }
+            else {
+                percentages[i] = 10 + (sumsArray[i] - min) * 90 / (max - min);
+            }
         }
         return percentages;
     }
@@ -82,7 +94,9 @@ class Chart {
     private int adjustSections() {
         int maxLen = 17;
         int len = array.length;
-        if (len < maxLen) return (len % 2 == 0) ? len : len - 1;
+        if (len < maxLen) {
+            return (len % 2 == 0) ? len : len - 1;
+        }
         return maxLen;
     }
 
@@ -101,67 +115,49 @@ class Chart {
     }
 }
 
-class Main implements Sort {
+class Main {
 
     // Main method
     public static void main(String[] args) {
         Sort sorter = new Radix();
         // Create unsorted array
-        int[] array = new int[1_000];
-        // Fill with random values
-        for (int i = 0; i < array.length; i++) array[i] = (int) ((Math.random() * 1_000) + 1);
+        int[] array = new int[1_000_000];
+        for (int i = 0; i < array.length; i++) array[i] = (int) ((Math.random() * 1_000) + 1); // Fill with random values
 
-        // Display and measure time (no sorting)
-        int[] time = new int[array.length];
-        System.arraycopy(array, 0, time, 0, array.length);
-        getTime(time);
-
-        // Sort with animations // Create chart and display
-        if (sorter.anim(true)) {
-            sort_(array, new Chart(array), 0);
-        } // Repeat if sorting animation is active
+        // Sort and visualize process
+        if (sorter.setAnim(true)) {
+            visualizeSort(array, new Chart(array), sorter, 0);
+        }
     }
 
     // Sort recursively with chart updates
-    private static void sort_(int[] array, Chart chart, int step) {
-        Sort radix = new Radix();
-        // Check if sorting is completed
-        if (radix.sorted(array)) { System.out.println("Sorting complete!"); return; }
+    private static void visualizeSort(int[] array, Chart chart, Sort sorter, int step) {
+        if (sorter.sorted(array)) {
+            System.out.println("Sorting complete!");
+            return;
+        }
         // Perform one step of radix sort (8 bits)
-        radix.sortStep(array, step);
+        sorter.sortStep(array, step);
         // Update chart with current state
         int[] current = array.clone();
         chart.setArray(current);
         System.out.println("After step " + (step + 1) + " of sorting:");
         chart.drawChart();
         // Pause for visualization (can be adjusted)
-        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Recursive call for next step
-        sort_(array, chart, step + 1);
+        visualizeSort(array, chart, sorter, step + 1);
     }
-
-    // Sort and measure time
-    private static void getTime(int[] array) {
-        Sort radix = new Radix();
-        // Sort and measure time
-        long start = System.nanoTime();
-        radix.sort(array);
-        long end = System.nanoTime();
-        // Display sorting time and Array
-        // for (int i = 0; i < array.length; i++) System.out.print(array[i] + " ");
-        System.out.println("\nSorted in " + (end - start) / 1e6 + " ms\n");
-    }
-
-    @Override // Ignore this just has to be implemented
-    public void sortStep(int[] sortableArr, int step) {}
 }
 
 class Radix implements Sort {
     // Fields
     private static int[] tempArray;
     private static boolean anim = false;
-    @Override
-    public boolean anim(boolean status) {return anim = status;}
 
     // Single step of radix sort (for animation)
     public void sortStep(int[] sortableArr, int step) {
@@ -178,4 +174,14 @@ class Radix implements Sort {
         System.arraycopy(sortedArr, 0, sortableArr, 0, sortableArr.length);
         if (anim) tempArray = sortedArr.clone();
     }
+
+    @Override
+    public boolean setAnim(boolean status) {
+        return anim = status;
+    }
 }
+
+
+
+
+// 187
