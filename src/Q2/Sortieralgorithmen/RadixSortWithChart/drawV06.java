@@ -1,15 +1,25 @@
 package Q2.Sortieralgorithmen.RadixSortWithChart;
 
 interface Sort {
-    static void sort(int[] sortableArr) {
-        for (int step = 0; step < 4; step++) sortStep(sortableArr, step);
-    } // Complete sorting algorithm
-    static void sortStep(int[] sortableArr, int step) {} // Single step of radix sort (for animation)
-    static boolean sorted(int[] arr) {
+    int[] tempArray = null;
+    boolean anim = false;
+    // change 'return status' in Sort-Method for: return anim = status;
+    default boolean anim(boolean status) {return status;}
+    // Default implementation
+    default int getFac() { return 2;}
+    // Complete sorting algorithm
+    default void sort(int[] sortableArr) {
+        for (int step = 0; step < 4; step++)
+            sortStep(sortableArr, step);
+    }
+    // Single step of radix sort (for animation) // Look at Radix class for help
+    void sortStep(int[] sortableArr, int step);
+    // shows if an array is sorted or not
+    default boolean sorted(int[] arr) {
         for (int i = 1; i < arr.length; i++)
             if (arr[i] < arr[i - 1]) return false;
         return true;
-    } // shows if an array is sorted or not
+    }
 }
 
 // Chart visualization for sorted arrays
@@ -93,11 +103,9 @@ class Chart {
 
 class Main implements Sort {
 
-    // How many steps are needed for sorting
-    public static int getFac() {return 8;}
-
     // Main method
     public static void main(String[] args) {
+        Sort sorter = new Radix();
         // Create unsorted array
         int[] array = new int[1_000];
         // Fill with random values
@@ -109,17 +117,18 @@ class Main implements Sort {
         getTime(time);
 
         // Sort with animations // Create chart and display
-        if (Radix.anim(true)) {
+        if (sorter.anim(true)) {
             sort_(array, new Chart(array), 0);
         } // Repeat if sorting animation is active
     }
 
+    // Sort recursively with chart updates
     private static void sort_(int[] array, Chart chart, int step) {
-        // Base case: if sorting is complete  // Radix sort with 32 bits (4 steps of 8 bits each)
-        // if (step >= getFac() + getFac() + 1) { System.out.println("Sorting complete!"); return; }
-        if (Sort.sorted(array)) { System.out.println("Sorting complete!"); return; }
+        Sort radix = new Radix();
+        // Check if sorting is completed
+        if (radix.sorted(array)) { System.out.println("Sorting complete!"); return; }
         // Perform one step of radix sort (8 bits)
-        Radix.sortStep(array, step);
+        radix.sortStep(array, step);
         // Update chart with current state
         int[] current = array.clone();
         chart.setArray(current);
@@ -133,28 +142,35 @@ class Main implements Sort {
 
     // Sort and measure time
     private static void getTime(int[] array) {
+        Sort radix = new Radix();
         // Sort and measure time
         long start = System.nanoTime();
-        Sort.sort(array);
+        radix.sort(array);
         long end = System.nanoTime();
         // Display sorting time and Array
         // for (int i = 0; i < array.length; i++) System.out.print(array[i] + " ");
         System.out.println("\nSorted in " + (end - start) / 1e6 + " ms\n");
     }
+
+    @Override // Ignore this just has to be implemented
+    public void sortStep(int[] sortableArr, int step) {}
 }
 
 class Radix implements Sort {
     // Fields
     private static int[] tempArray;
     private static boolean anim = false;
-    public static boolean anim(boolean status) {return anim = status;}
-    public static int getFac() {return Main.getFac();} // Get Factor for steps
+    @Override
+    public boolean anim(boolean status) {return anim = status;}
 
     // Single step of radix sort (for animation)
-    public static void sortStep(int[] sortableArr, int step) {
-        int shift = step / getFac(); // Each step processes 8 bits
+    public void sortStep(int[] sortableArr, int step) {
+        // Each step processes 8 bits
+        int shift = step / getFac();
         int[] sortedArr = new int[sortableArr.length];
-        if (tempArray == null) tempArray = sortableArr.clone(); // Initialize tempArray for animation
+
+        // Initialize tempArray for animation
+        if (tempArray == null) tempArray = sortableArr.clone();
         int[] count = new int[256]; // Count sort for current digit
         for (int num : sortableArr) count[(num >>> shift) & 0xFF]++;
         for (int i = 1; i < 256; i++) count[i] += count[i - 1]; // Calculate positions
