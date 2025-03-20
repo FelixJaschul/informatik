@@ -121,7 +121,7 @@ class Main {
     public static void main(String[] args) {
         Sort sorter = new Radix();
         // Create unsorted array
-        int[] array = new int[1_000_000];
+        int[] array = new int[1_000];
         for (int i = 0; i < array.length; i++) array[i] = (int) ((Math.random() * 1_000) + 1); // Fill with random values
 
         // Sort and visualize process
@@ -168,11 +168,20 @@ class Radix implements Sort {
         // Initialize tempArray for animation
         if (tempArray == null) tempArray = sortableArr.clone();
         int[] count = new int[256]; // Count sort for current digit
-        for (int num : sortableArr) count[(num >>> shift) & 0xFF]++;
-        for (int i = 1; i < 256; i++) count[i] += count[i - 1]; // Calculate positions
-        for (int i = sortableArr.length - 1; i >= 0; i--) sortedArr[--count[(sortableArr[i] >>> shift) & 0xFF]] = sortableArr[i]; // Place elements in sorted order
+        for (int num : sortableArr) {
+            count[(num >>> shift) & 0xFF]++;
+        }
+        for (int i = 1; i < 256; i++) {
+            count[i] += count[i - 1]; // Calculate positions
+        }
+        for (int i = sortableArr.length - 1; i >= 0; i--) {
+            int digit = (sortableArr[i] >>> shift) & 0xFF;
+            sortedArr[--count[digit]] = sortableArr[i]; // Place elements in sorted order
+        }
         System.arraycopy(sortedArr, 0, sortableArr, 0, sortableArr.length);
-        if (anim) tempArray = sortedArr.clone();
+        if (anim) {
+            tempArray = sortedArr.clone();
+        }
     }
 
     @Override
@@ -181,7 +190,7 @@ class Radix implements Sort {
     }
 }
 
-
+// Use other Sorting implementations at own risk!
 
 
 // 187
