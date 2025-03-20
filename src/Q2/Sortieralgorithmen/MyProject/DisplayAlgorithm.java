@@ -12,7 +12,7 @@ class DisplayAlgorithm {
     public DisplayAlgorithm(int[] unsortierterArrayToBeDisplayed, int anzahlDerAbschnitte) {
         DisplayAlgorithm.arrayToBeDisplayed = unsortierterArrayToBeDisplayed;
         DisplayAlgorithm.anzahlDerAbschnitte = anzahlDerAbschnitte;
-        DisplayAlgorithm.summeDerAbschnitte = getSummeDerAbschnitte();
+        DisplayAlgorithm.summeDerAbschnitte = berechneSummeDerAbschnitte();
     }
 
     // Setter
@@ -24,17 +24,13 @@ class DisplayAlgorithm {
     public void drawDiagramToBeDisplayed() {
         int[] summeDerAbschnitteInProzenten = berechneSummeDerAbschnitteInProzentUm();
         System.out.println();
-        for (int i = 0; i < summeDerAbschnitteInProzenten.length; i++) {
+        for (int stelle : summeDerAbschnitteInProzenten) {
             System.out.print("|");
-            for (int j = 0; j < summeDerAbschnitteInProzenten[i]; j++) {
+            for (int j = 0; j < stelle; j++) {
                 System.out.print("#");
             }
             System.out.println("|");
         }
-    }
-    public static int[] getSummeDerAbschnitte() {
-        berechneAnzahlDerAbschnitte();
-        return berechneSummeDesArraysNachDerAnzahlDerAbschnitten();
     }
 
     // Math
@@ -53,6 +49,10 @@ class DisplayAlgorithm {
         // debugTurnSummeDerAbschnitteInProzent(summeDerAbschnitteInProzenten);
         return summeDerAbschnitteInProzenten;
     }
+    private static int[] berechneSummeDerAbschnitte() {
+        berechneAnzahlDerAbschnitte();
+        return berechneAbschnittsSummen();
+    }
     private static void berechneAnzahlDerAbschnitte() {
         int lengthDesArrayToBeDisplayed = arrayToBeDisplayed.length;
         // Wenn Array Gerade ist und Array länger als maximalAnzahlDerAbschnitte, behalten wir die Größe bei maximalAnzahlDerAbschnitte
@@ -62,23 +62,23 @@ class DisplayAlgorithm {
         if (lengthDesArrayToBeDisplayed % 2 == 0 && lengthDesArrayToBeDisplayed < anzahlDerAbschnitte) anzahlDerAbschnitte = lengthDesArrayToBeDisplayed;
         if (lengthDesArrayToBeDisplayed % 2 == 1 && lengthDesArrayToBeDisplayed < anzahlDerAbschnitte) anzahlDerAbschnitte = lengthDesArrayToBeDisplayed - 1;
     }
-    private static int[] berechneSummeDesArraysNachDerAnzahlDerAbschnitten() {
+    private static int[] berechneAbschnittsSummen() {
         int[] summeDerAbschnitte = new int[anzahlDerAbschnitte];
-        int[] anzahlProAbschnitt = new int[anzahlDerAbschnitte];
+        // int[] anzahlProAbschnitt = new int[anzahlDerAbschnitte]; // Nur wichtig für Debug
         // Berechne die Länge eines Abschnitts basierend auf der Array-Länge
         int elementeProAbschnitt = (int) Math.ceil((double) arrayToBeDisplayed.length / anzahlDerAbschnitte);
         // Verteile die Elemente auf die Abschnitte basierend auf ihrer Position im Array
         for (int i = 0; i < arrayToBeDisplayed.length; i++) {
             int abschnittIndex = Math.min(i / elementeProAbschnitt, anzahlDerAbschnitte - 1);
             summeDerAbschnitte[abschnittIndex] += arrayToBeDisplayed[i];
-            anzahlProAbschnitt[abschnittIndex]++;
+            // anzahlProAbschnitt[abschnittIndex]++; // Nur wichtig für Debug
         }
-        // debugOutput(anzahlProAbschnitt, summeDerAbschnitte, elementeProAbschnitt);
+        // debugBerechneAbschnittsSummen(anzahlProAbschnitt, summeDerAbschnitte, elementeProAbschnitt);
         return summeDerAbschnitte;
     }
 
     // Debug
-    private static void debugBerechneSummeDesArraysNachDerAnzahlDerAbschnitten(int[] anzahlProAbschnitt, int[] summeDerAbschnitte, int elementeProAbschnitt) {
+    private static void debugBerechneAbschnittsSummen(int[] anzahlProAbschnitt, int[] summeDerAbschnitte, int elementeProAbschnitt) {
         // Debug-Ausgabe in die Konsole, um die Verteilung zu sehen
         System.out.println();
         System.out.println("Anzahl der Abschnitte: " + anzahlDerAbschnitte);

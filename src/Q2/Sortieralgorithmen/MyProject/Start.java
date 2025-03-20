@@ -11,25 +11,25 @@ class Start {
 	private static int anzahlDerAbschnitte;
     // Main-Methode
     public static void main(String[] args) throws InterruptedException {
-        waitAndClearScreen(1000);
+        // waitAndClearScreen(1000);
         System.out.println("\n--------- Sortieralgorithmen Benchmark --------- ");
         System.out.print("\nGib die Größe des Test-Arrays ein (Standard = 100): "); testSize = scanner.nextInt();
-		System.out.print("\nGib die Anzahl der Abschnitte an (Standard = 50): "); anzahlDerAbschnitte = scanner.nextInt();
+		// System.out.print("\nGib die Anzahl der Abschnitte an (Standard = 50): "); anzahlDerAbschnitte = scanner.nextInt();
 		scanner.close();
         // Initialisiere Sortieralgorithmen
-        // getPerformanceOfSortingalgorithms();
-        getDiagramOfSortingalgorithm(testSize);
+        getPerformanceOfSortingalgorithms();
+        // getDiagramOfSortingalgorithm(testSize);
     }
 
     // Gibt einen PerformanceTest aller Sortieralgorithmen zurück
     private static void getPerformanceOfSortingalgorithms() {
         // Initialisiere die Testumgebung
         Test.initializeSortingAlgorithm(testSize);
-        // Test.runTest(new BubbleSort());
-        // Test.runTest(new InsertionSort());
-        // Test.runTest(new QuickSort());
-        // Test.runTest(new CountingSort());
-        // Test.runTest(new RadixSort());
+        Test.runTest(new BubbleSort());
+        Test.runTest(new InsertionSort());
+        Test.runTest(new QuickSort());
+        Test.runTest(new CountingSort());
+        Test.runTest(new RadixSort());
         Test.displayResults();
     }
 
