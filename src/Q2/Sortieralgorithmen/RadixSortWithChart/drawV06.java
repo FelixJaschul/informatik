@@ -189,8 +189,3 @@ class Radix implements Sort {
         return anim = status;
     }
 }
-
-// Use other Sorting implementations at own risk!
-
-
-// 187
