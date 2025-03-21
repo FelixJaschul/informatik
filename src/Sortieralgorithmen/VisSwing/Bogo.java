@@ -15,7 +15,7 @@ class Bogo implements SortAlgorithm {
 
     @Override
     public String getName() {
-        return "Bogo Sort (" + shuffleCount + " shuffles)";
+        return "Bogo Sort";
     }
 
     @Override
