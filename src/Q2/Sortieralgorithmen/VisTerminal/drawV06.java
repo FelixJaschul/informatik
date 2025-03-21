@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen.VisSwing;
+package Q2.Sortieralgorithmen.VisTerminal;
 
 interface Sort {
     int[] tempArray = null;
