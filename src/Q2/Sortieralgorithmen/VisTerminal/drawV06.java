@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen.RadixSortWithChart;
+package Q2.Sortieralgorithmen.VisSwing;
 
 interface Sort {
     int[] tempArray = null;
@@ -27,74 +27,54 @@ interface Sort {
 // Chart visualization for sorted arrays
 class Chart {
 
-    // Fields
-    private int[] array;
-    private final int sections;
-    private final int[] sumsArray;
-
-    // Constructor
-    public Chart(int[] inputArray) {
-        this.array = inputArray;
-        this.sections = adjustSections();
-        this.sumsArray = sumSections();
+    // Func to call outside of Chart
+    public static int[] getPercentages(int[] inputArr) {
+        return calculatePercentages(inputArr);
+    }
+    public static int[] getSums(int[] inputArr) {
+        // Determine number of sections
+        int sections = adjustSections(inputArr);
+        return sumSections(inputArr, sections);
     }
 
-    // Setter
-    public void setArray(int[] newArray) {
-        this.array = newArray;
-        // Recalculate the sums when the array changes
-        System.arraycopy(sumSections(), 0, this.sumsArray, 0, this.sections);
+    // Helper method to adjust number of sections based on array length
+    private static int adjustSections(int[] arr) {
+        int maxLen = 17;
+        int len = arr.length;
+        if (len < maxLen) return (len % 2 == 0) ? len : len - 1;
+        return maxLen;
     }
 
-    // Display chart
-    public void drawChart() {
-        int[] percentages = calculatePercentages();
-        char blockChar = '█'; // ASCII block character
+    // Helper method to calculate sum for each section
+    private static int[] sumSections(int[] arr, int sections) {
+        int[] sectionSums = new int[sections];
+        // Calculate elements per section
+        int elementsPerSection = (int) Math.ceil((double) arr.length / sections);
 
-        // Draw each bar horizontally
-        for (int i = 0; i < percentages.length; i++) {
-            for (int j = 0; j < percentages[i]; j++) System.out.print(blockChar);
-            // Print the sum value under the bar
-            System.out.println(" (" + sumsArray[i] + ")");
+        // Sum elements in each section
+        for (int i = 0; i < arr.length; i++) {
+            sectionSums[Math.min(i / elementsPerSection, sections - 1)] += arr[i];
         }
+        return sectionSums;
     }
 
     // Calculate percentage values for display
-    private int[] calculatePercentages() {
+    private static int[] calculatePercentages(int[] sumsArr) {
         // Find min and max values
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
-        for (int value : sumsArray) {
+        for (int value : sumsArr) {
             max = Math.max(max, value);
             min = Math.min(min, value);
         }
 
         // Convert to percentage scale (10-100)
-        int[] percentages = new int[sumsArray.length];
-        for (int i = 0; i < sumsArray.length; i++) {
+        int[] percentages = new int[sumsArr.length];
+        for (int i = 0; i < sumsArr.length; i++) {
             if (max == min) percentages[i] = 100;
-            else percentages[i] = 10 + (sumsArray[i] - min) * 90 / (max - min);
+            else percentages[i] = 10 + (sumsArr[i] - min) * 90 / (max - min);
         }
         return percentages;
-    }
-
-    // Adjust number of sections based on array length
-    private int adjustSections() {
-        int maxLen = 17;
-        int len = array.length;
-        if (len < maxLen) return (len % 2 == 0) ? len : len - 1;
-        return maxLen;
-    }
-
-    // Calculate sum for each section
-    private int[] sumSections() {
-        int[] sectionSums = new int[sections];
-        // Calculate elements per section
-        int elementsPerSection = (int) Math.ceil((double) array.length / sections);
-
-        // Sum elements in each section
-        for (int i = 0; i < array.length; i++) sectionSums[Math.min(i / elementsPerSection, sections - 1)] += array[i];
-        return sectionSums;
     }
 }
 
@@ -108,11 +88,12 @@ class Main {
         for (int i = 0; i < array.length; i++) array[i] = (int) ((Math.random() * 1_000) + 1); // Fill with random values
 
         // Sort and visualize process
-        if (sorter.setAnim(true)) visualizeSort(array, new Chart(array), sorter, 0);
+        if (sorter.setAnim(true)) visualizeSort(array, sorter, 0);
     }
 
     // Sort recursively with chart updates
-    private static void visualizeSort(int[] array, Chart chart, Sort sorter, int step) {
+    private static void visualizeSort(int[] array, Sort sorter, int step) {
+        char blockChar = '█';
         if (sorter.sorted(array)) {
             System.out.println("Sorting complete!");
             return;
@@ -121,9 +102,15 @@ class Main {
         sorter.sortStep(array, step);
         // Update chart with current state
         int[] current = array.clone();
-        chart.setArray(current);
+        int[] sums = Chart.getSums(current);
+        int[] percentages = Chart.getPercentages(sums);
         System.out.println("After step " + (step + 1) + " of sorting:");
-        chart.drawChart();
+        // Draw Chart // Draw each bar horizontally
+        for (int i = 0; i < percentages.length; i++) {
+            for (int j = 0; j < percentages[i]; j++) System.out.print(blockChar);
+            // Print the sum value under the bar
+            System.out.println(" (" + sums[i] + ")");
+        }
         // Pause for visualization (can be adjusted)
         try {
             Thread.sleep(1000);
@@ -131,11 +118,12 @@ class Main {
             e.printStackTrace();
         }
         // Recursive call for next step
-        visualizeSort(array, chart, sorter, step + 1);
+        visualizeSort(array, sorter, step + 1);
     }
 }
 
 class Radix implements Sort {
+
     // Fields
     private static int[] tempArray;
     private static boolean anim = false;
