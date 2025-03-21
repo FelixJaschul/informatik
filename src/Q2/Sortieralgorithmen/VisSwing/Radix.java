@@ -2,7 +2,7 @@ package Q2.Sortieralgorithmen.VisSwing;
 
 import java.util.Arrays;
 
-// Radix sort implementation - Modified
+// Radix sort implementation
 class Radix implements SortAlgorithm {
 
     // Fields

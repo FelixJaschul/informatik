@@ -33,6 +33,9 @@ class SortVisualizer extends JFrame {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 drawChart(g);
+
+                // Draw the green circle if isRunning is true
+                if (isRunning) drawCircle(g);
             }
         };
         chartPanel.setBackground(Color.WHITE);
@@ -52,7 +55,7 @@ class SortVisualizer extends JFrame {
 
         // Set up timer for animation
         // milliseconds between micro-steps
-        int DELAY = 50;
+        int DELAY = 5;
         timer = new Timer(DELAY, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -87,6 +90,16 @@ class SortVisualizer extends JFrame {
             timer.stop();
             isRunning = false;
         }
+        chartPanel.repaint();
+    }
+
+    private void drawCircle(Graphics g) {
+        int radius = 5;
+        int x = 10; // chartPanel.getWidth() - radius - 10 => put this if top right
+        int y = 10; // chartPanel.getHeight() - radius - 10 ==> put both if bottom right
+
+        g.setColor(Color.GREEN);
+        g.fillOval(x, y, radius * 2, radius * 2);
     }
 
     private void performMicroStep() {

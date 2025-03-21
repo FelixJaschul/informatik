@@ -1,6 +1,6 @@
 package Q2.Sortieralgorithmen.VisSwing;
 
-// Example of another sorting algorithm implementation - Modified
+// Example of another sorting algorithm implementation
 class Bubble implements SortAlgorithm {
 
     private int outerIndex = 0;
