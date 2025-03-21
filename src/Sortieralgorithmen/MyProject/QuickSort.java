@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen.MyProject;
+package Sortieralgorithmen.MyProject;
 
 // Implementierung des QuickSort-Algorithmus in Java.
 class QuickSort implements Sort {

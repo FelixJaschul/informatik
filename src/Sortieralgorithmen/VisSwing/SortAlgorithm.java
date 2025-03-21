@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen.VisSwing;
+package Sortieralgorithmen.VisSwing;
 
 // Interface for all sorting algorithms that can be visualized
 interface SortAlgorithm {

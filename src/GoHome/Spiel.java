@@ -2,7 +2,7 @@
 // Spiel "Go Home" programmieren
 // Klasse "Spiel" programmieren
 
-package src.Q1.Game.GoHomeSpiel;
+package GoHome;
 
 import java.util.Arrays;
 import java.util.Random;

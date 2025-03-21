@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen.MyProject;
+package Sortieralgorithmen.MyProject;
 
 // DrawDiagram Implementation
 class DisplayAlgorithm {

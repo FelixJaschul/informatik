@@ -2,7 +2,7 @@
 // Spiel "Go Home" programmieren
 // Klasse "Main" programmieren
 
-package src.Q1.Game.GoHomeSpiel;
+package GoHome;
 
 // ausführen des Spiels
 public class Main {

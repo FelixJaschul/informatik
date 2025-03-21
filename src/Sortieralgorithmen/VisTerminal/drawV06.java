@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen.VisTerminal;
+package Sortieralgorithmen.VisTerminal;
 
 interface Sort {
     int[] tempArray = null;

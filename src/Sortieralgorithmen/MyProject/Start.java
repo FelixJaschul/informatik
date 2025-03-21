@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen.MyProject;
+package Sortieralgorithmen.MyProject;
 
 import java.util.Scanner;
 

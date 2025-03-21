@@ -2,7 +2,7 @@
 // Spiel "Go Home" programmieren
 // Klasse Figur programmieren
 
-package src.Q1.Game.GoHomeSpiel;
+package GoHome;
 
 public class Figur {
     // Attribute für Figur festlegen

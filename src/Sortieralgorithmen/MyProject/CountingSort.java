@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen.MyProject;
+package Sortieralgorithmen.MyProject;
 
 // CountingSort Implementation
 class CountingSort implements Sort {

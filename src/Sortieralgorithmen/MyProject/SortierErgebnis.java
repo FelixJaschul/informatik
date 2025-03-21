@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen.MyProject;
+package Sortieralgorithmen.MyProject;
 
 // Klasse zur Speicherung der Ergebnisse
 class SortierErgebnis {

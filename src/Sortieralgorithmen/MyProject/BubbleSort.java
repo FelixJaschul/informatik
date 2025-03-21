@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen.MyProject;
+package Sortieralgorithmen.MyProject;
 
 // Implementation of the Bubble Sort algorithm
 class BubbleSort implements Sort {

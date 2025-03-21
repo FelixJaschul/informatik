@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen.MyProject;
+package Sortieralgorithmen.MyProject;
 
 // Implementierung des Instertion-Sort-Algorithmus in Java.
 class InsertionSort implements Sort {

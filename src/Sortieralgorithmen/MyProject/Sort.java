@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen.MyProject;
+package Sortieralgorithmen.MyProject;
 
 // Interface für Sortieralgorithmen, um den Test flexibler zu gestalten.
 interface Sort {

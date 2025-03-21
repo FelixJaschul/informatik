@@ -1,4 +1,4 @@
-package Q2.Sortieralgorithmen.VisSwing;
+package Sortieralgorithmen.VisSwing;
 
 import java.util.Arrays;
 
