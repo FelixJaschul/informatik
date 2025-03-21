@@ -1,6 +1,6 @@
 package Sortieralgorithmen.VisSwing;
 
-// Merge sort implementation - via Claude 3.7
+// Heap sort implementation - via Claude 3.7
 class Heap implements SortAlgorithm {
 
     private int heapSize;

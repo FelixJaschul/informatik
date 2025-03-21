@@ -2,6 +2,7 @@ package Sortieralgorithmen.VisSwing;
 
 import java.util.Random;
 
+// Heap sort implementation - via Claude 3.7
 class Bogo implements SortAlgorithm {
 
     private boolean stepComplete;
