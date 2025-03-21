@@ -55,7 +55,7 @@ class SortVisualizer extends JFrame {
 
         // Set up timer for animation
         // milliseconds between micro-steps
-        int DELAY = 5;
+        int DELAY = 20;
         timer = new Timer(DELAY, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

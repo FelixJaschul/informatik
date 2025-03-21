@@ -2,7 +2,7 @@ package Sortieralgorithmen.VisSwing;
 
 import java.util.Arrays;
 
-// Radix sort implementation
+// Radix sort implementation - via Claude 3.7
 class Radix implements SortAlgorithm {
 
     // Fields
