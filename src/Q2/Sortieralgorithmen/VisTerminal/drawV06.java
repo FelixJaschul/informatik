@@ -84,8 +84,8 @@ class Main {
     public static void main(String[] args) {
         Sort sorter = new Radix();
         // Create unsorted array
-        int[] array = createShuffledArray(1_000);
-        // int[] array = createRandomArray(1_000);
+        int[] array = new int[1_000];
+        for (int i = 0; i < array.length; i++) array[i] = (int) ((Math.random() * 1_000) + 1); // Fill with random values
 
         // Sort and visualize process
         if (sorter.setAnim(true)) visualizeSort(array, sorter, 0);
@@ -119,30 +119,6 @@ class Main {
         }
         // Recursive call for next step
         visualizeSort(array, sorter, step + 1);
-    }
-
-    private static int[] createRandomArray(int size) {
-        int[] array = new int[size];
-        // Fill with random values
-        for (int i = 0; i < size; i++) array[i] = (int) ((Math.random() * 1_000) + 1);
-        return array;
-    }
-
-    // Create a perfect array (1 to size) and shuffle it
-    private static int[] createShuffledArray(int size) {
-        // Create a perfectly sorted array
-        int[] array = new int[size];
-        for (int i = 0; i < size; i++) array[i] = i + 1; // Values from 1 to size
-        // Shuffle the array (Fisher-Yates algorithm)
-        java.util.Random rnd = new java.util.Random();
-        for (int i = size - 1; i > 0; i--) {
-            int index = rnd.nextInt(i + 1);
-            // Swap
-            int temp = array[index];
-            array[index] = array[i];
-            array[i] = temp;
-        }
-        return array;
     }
 }
 
