@@ -177,10 +177,7 @@ class Bubble implements Sort {
                 swapped = true;
             }
         }
-        if (!swapped && step > 0) {
-            // Mark as sorted by filling remaining steps
-            for (int i = step + 1; i < n; i++) sortStep(sortableArr, i);
-        }
+        if (!swapped && step > 0) for (int i = step + 1; i < n; i++) sortStep(sortableArr, i);
         if (anim) tempArray = sortableArr.clone();
     }
 
