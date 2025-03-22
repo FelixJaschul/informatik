@@ -1,9 +1,11 @@
-package Sortieralgorithmen.VisSwing;
+package Sortieralgorithmen.VisSwing.Sort;
+
+import Sortieralgorithmen.VisSwing.SortAlgorithm;
 
 import java.util.Random;
 
 // Heap sort implementation - via Claude 3.7
-class Bogo implements SortAlgorithm {
+public class Bogo implements SortAlgorithm {
 
     private boolean stepComplete;
     private final Random random;

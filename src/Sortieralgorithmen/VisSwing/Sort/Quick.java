@@ -1,7 +1,9 @@
-package Sortieralgorithmen.VisSwing;
+package Sortieralgorithmen.VisSwing.Sort;
+
+import Sortieralgorithmen.VisSwing.SortAlgorithm;
 
 // Quick sort implementation - via Claude 3.7
-class Quick implements SortAlgorithm {
+public class Quick implements SortAlgorithm {
 
     private int[] subArrayStack;
     private int stackSize;

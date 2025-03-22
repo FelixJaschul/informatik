@@ -1,7 +1,9 @@
-package Sortieralgorithmen.VisSwing;
+package Sortieralgorithmen.VisSwing.Sort;
+
+import Sortieralgorithmen.VisSwing.SortAlgorithm;
 
 // Heap sort implementation - via Claude 3.7
-class Selection implements SortAlgorithm {
+public class Selection implements SortAlgorithm {
 
     private int currentStep;
     private int minIndex;

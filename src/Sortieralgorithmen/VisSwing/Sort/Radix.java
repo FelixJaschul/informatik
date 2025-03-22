@@ -1,9 +1,11 @@
-package Sortieralgorithmen.VisSwing;
+package Sortieralgorithmen.VisSwing.Sort;
+
+import Sortieralgorithmen.VisSwing.SortAlgorithm;
 
 import java.util.Arrays;
 
 // Radix sort implementation - via Claude 3.7
-class Radix implements SortAlgorithm {
+public class Radix implements SortAlgorithm {
 
     // Fields
     private int currentDigit = 0;

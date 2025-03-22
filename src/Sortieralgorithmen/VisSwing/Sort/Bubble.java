@@ -1,7 +1,9 @@
-package Sortieralgorithmen.VisSwing;
+package Sortieralgorithmen.VisSwing.Sort;
+
+import Sortieralgorithmen.VisSwing.SortAlgorithm;
 
 // Bubble sort implementation - via Claude 3.7
-class Bubble implements SortAlgorithm {
+public class Bubble implements SortAlgorithm {
 
     private int outerIndex = 0;
     private int innerIndex = 0;

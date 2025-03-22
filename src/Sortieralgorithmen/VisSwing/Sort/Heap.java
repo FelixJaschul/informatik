@@ -1,7 +1,9 @@
-package Sortieralgorithmen.VisSwing;
+package Sortieralgorithmen.VisSwing.Sort;
+
+import Sortieralgorithmen.VisSwing.SortAlgorithm;
 
 // Heap sort implementation - via Claude 3.7
-class Heap implements SortAlgorithm {
+public class Heap implements SortAlgorithm {
 
     private int heapSize;
     private int currentNode;

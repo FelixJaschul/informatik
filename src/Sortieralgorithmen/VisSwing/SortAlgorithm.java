@@ -1,7 +1,7 @@
 package Sortieralgorithmen.VisSwing;
 
 // Interface for all sorting algorithms that can be visualized
-interface SortAlgorithm {
+public interface SortAlgorithm {
 
     // Get the algorithm name
     String getName();

@@ -1,7 +1,9 @@
-package Sortieralgorithmen.VisSwing;
+package Sortieralgorithmen.VisSwing.Sort;
+
+import Sortieralgorithmen.VisSwing.SortAlgorithm;
 
 // Merge sort implementation - via Claude 3.7
-class Merge implements SortAlgorithm {
+public class Merge implements SortAlgorithm {
 
     // State variables for visualization
     private int[] tempArray;

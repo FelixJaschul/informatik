@@ -1,6 +1,6 @@
 package Sortieralgorithmen.VisSwing;
 
-class Chart {
+public class Chart {
 
     // Func to call outside of Chart
     public static int[] getPercentages(int[] inputArr) {

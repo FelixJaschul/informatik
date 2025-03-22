@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-class SortVisualizer extends JFrame {
+public class SortVisualizer extends JFrame {
 
     private final int[] array;
     private final SortAlgorithm algorithm;

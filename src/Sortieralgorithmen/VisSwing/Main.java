@@ -1,5 +1,6 @@
 package Sortieralgorithmen.VisSwing;
 
+import Sortieralgorithmen.VisSwing.Sort.*;
 import javax.swing.*;
 
 // Main class to start the application
