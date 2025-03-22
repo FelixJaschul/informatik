@@ -20,6 +20,7 @@ public class SortVisualizer extends JFrame {
     private JPopupMenu popupMenu;
     private Color barColor = new Color(163, 191, 213);
     private Color highlightColor = barColor;
+    private int DELAY = 20;
 
     public SortVisualizer(int size, SortAlgorithm algorithm) {
         // Create and shuffle array
@@ -71,7 +72,6 @@ public class SortVisualizer extends JFrame {
 
         // Set up timer for animation
         // milliseconds between micro-steps
-        int DELAY = 20;
         timer = new Timer(DELAY, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -157,12 +157,134 @@ public class SortVisualizer extends JFrame {
             chartPanel.repaint();
         });
 
+        JMenuItem delayItem = createStyledMenuItem("Delay"); // Delay setting menu item
+        delayItem.addActionListener(e -> {
+            // Create a custom input dialog for delay setting
+            JDialog delayDialog = new JDialog(this, "Set Animation Delay", true);
+            delayDialog.setLayout(new BorderLayout());
+            delayDialog.setSize(350, 180);
+            delayDialog.setMinimumSize(new Dimension(300, 150));
+            delayDialog.setLocationRelativeTo(this);
+            delayDialog.setResizable(true);
+
+            // Create main content panel with a more flexible layout
+            JPanel contentPanel = new JPanel(new BorderLayout(10, 10));
+            contentPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 10, 15));
+
+            // Create a styled panel for the input field
+            JPanel inputPanel = new JPanel(new BorderLayout(5, 5));
+            inputPanel.setBackground(new Color(245, 245, 245));
+            inputPanel.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(new Color(220, 220, 220), 1, true),
+                BorderFactory.createEmptyBorder(10, 10, 10, 10)
+            ));
+
+            // Create a label explaining what the delay is
+            JLabel label = new JLabel("Enter delay in milliseconds (1-1000):");
+            label.setFont(label.getFont().deriveFont(Font.BOLD));
+
+            // Create a text field with the current delay as default
+            JTextField delayField = new JTextField(String.valueOf(DELAY), 10);
+            delayField.setFont(new Font("SansSerif", Font.PLAIN, 14));
+            delayField.setHorizontalAlignment(JTextField.CENTER);
+
+            // Add a hint about what the delay affects
+            JLabel hintLabel = new JLabel("Lower values = faster animation");
+            hintLabel.setFont(hintLabel.getFont().deriveFont(Font.ITALIC, 11f));
+            hintLabel.setForeground(new Color(100, 100, 100));
+
+            // Create a panel for the buttons with some spacing
+            JPanel buttonPanel = new JPanel();
+            buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+            buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
+            buttonPanel.setOpaque(false);
+
+            // Create Apply and Cancel buttons with consistent sizing
+            JButton applyButton = new JButton("Apply");
+            JButton cancelButton = new JButton("Cancel");
+
+            // Make buttons the same size
+            Dimension buttonSize = new Dimension(100, 30);
+            applyButton.setPreferredSize(buttonSize);
+            cancelButton.setPreferredSize(buttonSize);
+
+            // Add action listener to Apply button
+            applyButton.addActionListener(event -> {
+                try {
+                    // Parse the input value
+                    int newDelay = Integer.parseInt(delayField.getText().trim());
+
+                    // Validate the input (ensure it's within reasonable bounds)
+                    if (newDelay >= 1 && newDelay <= 1000) {
+                        // Update the delay
+                        DELAY = newDelay;
+
+                        // Update the timer delay
+                        timer.setDelay(DELAY);
+
+                        // Close the dialog
+                        delayDialog.dispose();
+                    } else {
+                        // Show error message for invalid range
+                        JOptionPane.showMessageDialog(delayDialog,
+                            "Please enter a value between 1 and 1000.",
+                            "Invalid Input",
+                            JOptionPane.ERROR_MESSAGE);
+                    }
+                } catch (NumberFormatException ex) {
+                    // Show error message for invalid input
+                    JOptionPane.showMessageDialog(delayDialog,
+                        "Please enter a valid number.",
+                        "Invalid Input",
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            });
+
+            // Add action listener to Cancel button
+            cancelButton.addActionListener(event -> delayDialog.dispose());
+
+            // Add glue to push buttons to the right
+            buttonPanel.add(Box.createHorizontalGlue());
+            buttonPanel.add(applyButton);
+            buttonPanel.add(Box.createRigidArea(new Dimension(10, 0))); // Space between buttons
+            buttonPanel.add(cancelButton);
+
+            // Add components to the input panel
+            JPanel labelPanel = new JPanel(new BorderLayout());
+            labelPanel.setOpaque(false);
+            labelPanel.add(label, BorderLayout.NORTH);
+            labelPanel.add(Box.createRigidArea(new Dimension(0, 5)), BorderLayout.CENTER);
+            labelPanel.add(hintLabel, BorderLayout.SOUTH);
+
+            inputPanel.add(labelPanel, BorderLayout.NORTH);
+            inputPanel.add(delayField, BorderLayout.CENTER);
+
+            // Add panels to the content panel
+            contentPanel.add(inputPanel, BorderLayout.CENTER);
+            contentPanel.add(buttonPanel, BorderLayout.SOUTH);
+
+            // Add content panel to dialog
+            delayDialog.add(contentPanel, BorderLayout.CENTER);
+
+            // Set default button and focus
+            delayDialog.getRootPane().setDefaultButton(applyButton);
+            delayField.requestFocusInWindow();
+
+            // Select all text in the field for easy editing
+            delayField.selectAll();
+
+            // Show the dialog
+            delayDialog.setVisible(true);
+        });
+
         // Add color options to color menu
         colorMenu.add(blueBarItem);
         colorMenu.add(greenBarItem);
         colorMenu.add(redBarItem);
         // Add color menu to settings menu
         settingsMenu.add(colorMenu);
+        // Add Delay setter to settings menu
+        settingsMenu.add(delayItem);
 
         // Sorting Algorithms submenu
         JMenu algorithmsMenu = createStyledMenu("Sorting Algorithms");
