@@ -9,7 +9,7 @@ interface Sort {
     }
     // Default implementation
     default int getFac() {
-        return 2;
+        return 5;
     }
     // Complete sorting algorithm
     default void sort(int[] sortableArr) {
@@ -82,9 +82,9 @@ class Main {
 
     // Main method
     public static void main(String[] args) {
-        Sort sorter = new Radix();
+        Sort sorter = new Bubble();
         // Create unsorted array
-        int[] array = new int[1_000];
+        int[] array = new int[10]; // 10 is good for Bubble, 1000 max for Radix
         for (int i = 0; i < array.length; i++) array[i] = (int) ((Math.random() * 1_000) + 1); // Fill with random values
 
         // Sort and visualize process
@@ -133,7 +133,6 @@ class Radix implements Sort {
         // Each step processes 8 bits
         int shift = step / getFac();
         int[] sortedArr = new int[sortableArr.length];
-
         // Initialize tempArray for animation
         if (tempArray == null) tempArray = sortableArr.clone();
         int[] count = new int[256]; // Count sort for current digit
@@ -148,4 +147,52 @@ class Radix implements Sort {
     public boolean setAnim(boolean status) {
         return anim = status;
     }
+
+    @Override
+    public int getFac() {
+        return 5;
+    }
 }
+
+class Bubble implements Sort {
+
+    // Fields
+    private static int[] tempArray;
+    private static boolean anim = false;
+
+    // Single step of bubble sort (for animation)
+    public void sortStep(int[] sortableArr, int step) {
+        if (tempArray == null) tempArray = sortableArr.clone();
+        // Each step processes a portion of the array
+        int n = sortableArr.length;
+        boolean swapped = false;
+        int endIndex = n - step;
+        if (endIndex <= 1) return; // Array is sorted
+        for (int i = 0; i < endIndex - 1; i++) {
+            if (sortableArr[i] > sortableArr[i + 1]) {
+                // Swap elements
+                int temp = sortableArr[i];
+                sortableArr[i] = sortableArr[i + 1];
+                sortableArr[i + 1] = temp;
+                swapped = true;
+            }
+        }
+        if (!swapped && step > 0) {
+            // Mark as sorted by filling remaining steps
+            for (int i = step + 1; i < n; i++) sortStep(sortableArr, i);
+        }
+        if (anim) tempArray = sortableArr.clone();
+    }
+
+    @Override
+    public boolean setAnim(boolean status) {
+        return anim = status;
+    }
+
+    @Override
+    public int getFac() {
+        // For bubble sort, we need at most n-1 steps for an array of size n
+        return 1; // Each step is a single pass
+    }
+}
+
