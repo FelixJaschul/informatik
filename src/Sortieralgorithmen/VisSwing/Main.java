@@ -7,6 +7,6 @@ import javax.swing.*;
 class Main {
 
     public static void main(String[] args) { // size 40 is optimal
-        SwingUtilities.invokeLater(() -> new SortVisualizer(40, new Heap()));
+        SwingUtilities.invokeLater(() -> new SortVisualizer(40, new Radix()));
     }
 }
