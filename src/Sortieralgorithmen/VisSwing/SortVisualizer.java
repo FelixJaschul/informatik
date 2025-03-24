@@ -33,6 +33,7 @@ public class SortVisualizer extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
         setLayout(new BorderLayout());
+        setResizable(false);
 
         // Create chart panel with original white background
         chartPanel = new JPanel() {
@@ -165,7 +166,6 @@ public class SortVisualizer extends JFrame {
             delayDialog.setSize(350, 180);
             delayDialog.setMinimumSize(new Dimension(300, 150));
             delayDialog.setLocationRelativeTo(this);
-            delayDialog.setResizable(true);
 
             // Create main content panel with a more flexible layout
             JPanel contentPanel = new JPanel(new BorderLayout(10, 10));
