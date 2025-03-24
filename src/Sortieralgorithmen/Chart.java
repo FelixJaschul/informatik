@@ -63,7 +63,7 @@ class Main {
     public static void main(String[] args) {
         int[] arr = SortierHilfe.generateRandomArray(1000);
         int[] sums = Chart.getSums(arr);
-        int[] percentages = Chart.getPercentages(arr);
+        int[] percentages = Chart.getPercentages(sums); // oder 'arr' für die percentages des normalen Arrays
 
         for (int i : sums) System.out.print(i + " ");
         System.out.println();
