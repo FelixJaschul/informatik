@@ -1,7 +1,9 @@
-package Sortieralgorithmen.MyProject;
+package Sortieralgorithmen.MyProject.Sort;
+
+import Sortieralgorithmen.MyProject.SortierHilfe;
 
 // CountingSort Implementation
-class CountingSort implements Sort {
+public class CountingSort implements Sort {
 
     // Helper method that can be used by RadixSort
     public static int[] countingSort(int[] arrayToBeSorted, int range) {
@@ -17,13 +19,13 @@ class CountingSort implements Sort {
         for (int i = lengthOfArrayToBeSorted - 1; i >= 0; i--) {
             outputArray[countingArray[arrayToBeSorted[i]] - 1] = arrayToBeSorted[i];
             countingArray[arrayToBeSorted[i]]--;
-            SortierUtils.incSwapCount();
+            SortierHilfe.incSwapCount();
         }
         // Copy back to original array
         for (int i = 0; i < lengthOfArrayToBeSorted; i++) {
             if (arrayToBeSorted[i] != outputArray[i]) {
                 arrayToBeSorted[i] = outputArray[i];
-                SortierUtils.incSwapCount();
+                SortierHilfe.incSwapCount();
             }
         }
         return arrayToBeSorted;
@@ -46,13 +48,13 @@ class CountingSort implements Sort {
             int resultForOutputArray = (arrayToBeSorted[i] / exp) % 10;
             outputArray[countingArray[resultForOutputArray] - 1] = arrayToBeSorted[i];
             countingArray[resultForOutputArray]--;
-            SortierUtils.incSwapCount();
+            SortierHilfe.incSwapCount();
         }
         // Copy back to original array
         for (int i = 0; i < lengthOfArrayToBeSorted; i++) {
             if (arrayToBeSorted[i] != outputArray[i]) {
                 arrayToBeSorted[i] = outputArray[i];
-                SortierUtils.incSwapCount();
+                SortierHilfe.incSwapCount();
             }
         }
         return arrayToBeSorted;
@@ -62,7 +64,7 @@ class CountingSort implements Sort {
     public int[] sort(int[] arrayToBeSorted) {
         if (arrayToBeSorted.length == 0) return arrayToBeSorted;
         // Find the maximum value to determine the count array size
-        int groessterWertDesZuSortierendenArrays = SortierUtils.getMaximunDesArrays(arrayToBeSorted);
+        int groessterWertDesZuSortierendenArrays = SortierHilfe.getMaximunDesArrays(arrayToBeSorted);
         return countingSort(arrayToBeSorted, groessterWertDesZuSortierendenArrays + 1);
     }
 }

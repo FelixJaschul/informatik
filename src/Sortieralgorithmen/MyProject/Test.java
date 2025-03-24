@@ -1,38 +1,51 @@
 package Sortieralgorithmen.MyProject;
 
+import Sortieralgorithmen.MyProject.Sort.Sort;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-// Klasse für das Testen von Algorithmen
+/**
+ * Klasse für das Testen von Sortieralgorithmen.
+ * Verwaltet die Testumgebung und führt Tests mit verschiedenen Algorithmen durch.
+ */
 class Test {
-    // Fields und Variables
     private static final Map<String, List<SortierErgebnis>> statisticalResults = new HashMap<>();
     private static SortableArrays arraysToBeSorted;
 
-    // Initialisiere Testumgebung
+    /**
+     * Initialisiert die Testumgebung mit Arrays der angegebenen Größe.
+     *
+     * @param testSize Größe der zu testenden Arrays
+     */
     public static void initializeSortingAlgorithm(int testSize) {
         arraysToBeSorted = new SortableArrays(testSize);
-        // Initialisiere results map
-        for (String arrayType : arraysToBeSorted.getHashMap().keySet())
+        for (String arrayType : arraysToBeSorted.getHashMap().keySet()) {
             statisticalResults.put(arrayType, new ArrayList<>());
+        }
     }
 
-    // Fügt einen Algorithmus hinzu und wenn es der letzte ist, zeigt er alle Ergebnisse an
+    /**
+     * Führt einen Test mit dem angegebenen Sortieralgorithmus durch.
+     *
+     * @param algorithm Der zu testende Sortieralgorithmus
+     */
     public static void runTest(Sort algorithm) {
-        // Test each sorting method on each array type
         for (Map.Entry<String, int[]> entry : arraysToBeSorted.getHashMap().entrySet()) {
             String arrayType = entry.getKey();
             int[] originalArray = entry.getValue();
             int[] arrayCopy = java.util.Arrays.copyOf(originalArray, originalArray.length);
-            // Führe die Sortier-Operation aus und speichere das Ergebnis in einem Array
+
             SortierErgebnis result = executeSortingalgorithmAndMetrics(algorithm, arrayCopy);
             statisticalResults.get(arrayType).add(result);
         }
     }
 
-    // Zeige alle Werte im gespeicherten Array "results"
+    /**
+     * Zeigt die Ergebnisse aller durchgeführten Tests an.
+     */
     public static void displayResults() {
         System.out.println("\n--------- Sortieralgorithmen Performance ---------");
         for (String arrayType : arraysToBeSorted.getHashMap().keySet()) {
@@ -44,24 +57,32 @@ class Test {
         }
     }
 
-    // Display the table header
+    /**
+     * Gibt die Kopfzeile der Ergebnistabelle aus.
+     */
     private static void printTableHeader() {
         System.out.println("Algorithm      Time (ms)   Swaps      Comparisons");
         System.out.println("-------------------------------------------------");
     }
 
-    // Execute sorting algorithm and return results
+    /**
+     * Führt einen Sortieralgorithmus aus und misst die Performance-Metriken.
+     *
+     * @param algorithm Der auszuführende Sortieralgorithmus
+     * @param array Das zu sortierende Array
+     * @return Ein SortierErgebnis-Objekt mit den Messergebnissen
+     */
     private static SortierErgebnis executeSortingalgorithmAndMetrics(Sort algorithm, int[] array) {
-        SortierUtils.resetMetrics();
-        SortierUtils.startTimer();
+        SortierHilfe.resetMetrics();
+        SortierHilfe.startTimer();
         algorithm.sort(array);
-        SortierUtils.endTimer();
-        // Return sorting result
+        SortierHilfe.endTimer();
+
         return new SortierErgebnis(
                 algorithm.getClass().getSimpleName(),
-                SortierUtils.getDurationTime(),
-                SortierUtils.getSwapCount(),
-                SortierUtils.getComparisonCount()
+                SortierHilfe.getDurationTime(),
+                SortierHilfe.getSwapCount(),
+                SortierHilfe.getComparisonCount()
         );
     }
 }

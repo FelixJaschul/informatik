@@ -1,7 +1,9 @@
-package Sortieralgorithmen.MyProject;
+package Sortieralgorithmen.MyProject.Sort;
+
+import Sortieralgorithmen.MyProject.SortierHilfe;
 
 // Implementierung des QuickSort-Algorithmus in Java.
-class QuickSort implements Sort {
+public class QuickSort implements Sort {
 
     // Sortiert ein Array aufsteigend mit dem QuickSort-Algorithmus.
     public int[] sort(int[] arrayToBeSorted) {
@@ -32,13 +34,13 @@ class QuickSort implements Sort {
         // Durchlaufe das Array von 'low' bis 'high - 1'
         for (int j = lowestValueOfArray; j < highestValueOfArray; j++) {
             // Falls das aktuelle Element kleiner oder gleich dem Pivot ist, tausche es nach links
-            if (!SortierUtils.compare(arrayToBeSorted[j], pivot)) { // Vergleich: array[j] <= pivot
+            if (!SortierHilfe.compare(arrayToBeSorted[j], pivot)) { // Vergleich: array[j] <= pivot
                 i += 1;
-                SortierUtils.swap(arrayToBeSorted, i, j);
+                SortierHilfe.swap(arrayToBeSorted, i, j);
             }
         }
         // Tausche das Pivot-Element an die richtige Position
-        SortierUtils.swap(arrayToBeSorted, i + 1, highestValueOfArray);
+        SortierHilfe.swap(arrayToBeSorted, i + 1, highestValueOfArray);
         // Gib den Index des Pivot-Elements zurück
         return i + 1;
     }
