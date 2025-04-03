@@ -1,6 +1,6 @@
-# Radix Sort Handout
+## Radix Sort Handout
 
-## **Einführung**
+### **Einführung**
 Radix Sort ist ein nicht-vergleichender, stabiler Sortieralgorithmus. Er sortiert Zahlen anhand ihrer Ziffernstellen von der niederwertigsten bis zur höchstwertigen Stelle. Dabei werden die Zahlen in Buckets einsortiert und danach in neuer Reihenfolge ausgegeben.
 
 **Komplexität:**
@@ -11,7 +11,7 @@ Radix Sort ist besonders effizient für große Datensätze mit Zahlen ähnlicher
 
 ---
 
-## **Funktionsweise (Beispiel)**
+### **Funktionsweise (Beispiel)**
 Gegebenes Array:
 ```
 124, 523, 483, 128, 923, 584, 009, 054
@@ -55,7 +55,7 @@ Gegebenes Array:
 
 ---
 
-## **Vergleich der Laufzeit in Abhängigkeit von der Eingabe**
+### **Vergleich der Laufzeit in Abhängigkeit von der Eingabe**
 | Eingabegröße | Array-Typ          | Zeit (ms) | Vergleiche | Swaps  |
 |--------------|--------------------|-----------|-----------|--------|
 | 10           | Zufällig           | 1,21      | 57        | 30     |
@@ -76,14 +76,14 @@ Gegebenes Array:
 
 ---
 
-## **Big-O-Notation**
+### **Big-O-Notation**
 - **Best Case:** O(n) – wenn alle Zahlen nur eine Ziffer haben.
 - **Average Case:** O(n * k) – normale Zahlenverteilung.
 - **Worst Case:** O(n * k) – wenn die größte Zahl genauso viele Ziffern hat, wie sie groß ist.
 
 ---
 
-## **Fazit**
+### **Fazit**
  **Vorteile:**
 - Keine Vergleichsoperationen nötig.
 - Stabiler Algorithmus (relative Reihenfolge bleibt erhalten).
