@@ -83,12 +83,10 @@ class Main {
     // Main method
     public static void main(String[] args) {
         Sort sorter = new Radix();
-        // Create unsorted array
-        int[] array = new int[10]; // 10 is good for Bubble, 1000 max for Radix
-        for (int i = 0; i < array.length; i++) array[i] = (int) ((Math.random() * 1_000) + 1); // Fill with random values
+        int[] array = new int[100];
+        for (int i = 0; i < array.length; i++) array[i] = (int) ((Math.random() * 1_000) + 1);
 
-        // Sort and visualize process
-        if (sorter.setAnim(false)) visualizeSort(array, sorter, 0);
+        if (sorter.setAnim(true)) visualizeSort(array, sorter, 0);
     }
 
     // Sort recursively with chart updates
@@ -114,9 +112,7 @@ class Main {
         // Pause for visualization (can be adjusted)
         try {
             Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        } catch (InterruptedException ignored) {}
         // Recursive call for next step
         visualizeSort(array, sorter, step + 1);
     }
