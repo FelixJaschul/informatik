@@ -132,7 +132,6 @@ public class BinaryTree<T> {
         preorderTraversal(root, result);
         return result;
     }
-
     private void preorderTraversal(Knoten<T> node, List<T> result) {
         if (node != null) {
             result.add(node.data);
@@ -146,7 +145,6 @@ public class BinaryTree<T> {
         inorderTraversal(root, result);
         return result;
     }
-
     private void inorderTraversal(Knoten<T> node, List<T> result) {
         if (node != null) {
             inorderTraversal(node.left, result);
@@ -160,7 +158,6 @@ public class BinaryTree<T> {
         postorderTraversal(root, result);
         return result;
     }
-
     private void postorderTraversal(Knoten<T> node, List<T> result) {
         if (node != null) {
             postorderTraversal(node.left, result);
@@ -175,7 +172,6 @@ public class BinaryTree<T> {
     public boolean contains(T value) {
         return contains(root, value);
     }
-
     private boolean contains(Knoten<T> node, T value) {
         if (node == null) return false;
         if (node.data.equals(value)) return true;
@@ -188,7 +184,6 @@ public class BinaryTree<T> {
     public int getDepth() {
         return getDepth(root);
     }
-
     private int getDepth(Knoten<T> node) {
         if (node == null) return 0;
         return 1 + Math.max(getDepth(node.left), getDepth(node.right));
