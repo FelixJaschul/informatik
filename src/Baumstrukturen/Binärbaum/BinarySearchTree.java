@@ -3,7 +3,7 @@ package Baumstrukturen.Binärbaum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTree<T> {
+public class BinarySearchTree<T extends Comparable<T>> {
     private Knoten<T> root;
 
     /*
@@ -24,18 +24,8 @@ public class BinaryTree<T> {
     /*
      * Konstruktoren
      */
-    public BinaryTree() {
+    public BinarySearchTree() {
         this.root = null;
-    }
-
-    public BinaryTree(T rootData) {
-        this.root = new Knoten<>(rootData);
-    }
-
-    public BinaryTree(T rootData, BinaryTree<T> leftTree, BinaryTree<T> rightTree) {
-        this.root = new Knoten<>(rootData);
-        if (leftTree != null && !leftTree.isEmpty()) this.root.left = leftTree.root;
-        if (rightTree != null && !rightTree.isEmpty()) this.root.right = rightTree.root;
     }
 
     /*
@@ -73,26 +63,26 @@ public class BinaryTree<T> {
     /*
      * Getter und Setter für linken Teilbaum
      */
-    public BinaryTree<T> getLeftSubtree() {
-        BinaryTree<T> leftTree = new BinaryTree<>();
+    public BinarySearchTree<T> getLeftSubtree() {
+        BinarySearchTree<T> leftTree = new BinarySearchTree<>();
         if (root != null && root.left != null) leftTree.root = root.left;
         return leftTree;
     }
 
-    public void setLeftSubtree(BinaryTree<T> leftTree) {
+    public void setLeftSubtree(BinarySearchTree<T> leftTree) {
         if (root != null) root.left = leftTree.root;
     }
 
     /*
      * Getter und Setter für rechten Teilbaum
      */
-    public BinaryTree<T> getRightSubtree() {
-        BinaryTree<T> rightTree = new BinaryTree<>();
+    public BinarySearchTree<T> getRightSubtree() {
+        BinarySearchTree<T> rightTree = new BinarySearchTree<>();
         if (root != null && root.right != null) rightTree.root = root.right;
         return rightTree;
     }
 
-    public void setRightSubtree(BinaryTree<T> rightTree) {
+    public void setRightSubtree(BinarySearchTree<T> rightTree) {
         if (root != null) root.right = rightTree.root;
     }
 
@@ -115,13 +105,6 @@ public class BinaryTree<T> {
      */
     public void clear() {
         root = null;
-    }
-
-    /*
-     * Fügt Wurzelknoten in leeren Baum ein
-     */
-    public void insertRoot(T data) {
-        root = new Knoten<>(data);
     }
 
     /*
@@ -174,8 +157,40 @@ public class BinaryTree<T> {
     }
     private boolean contains(Knoten<T> node, T value) {
         if (node == null) return false;
-        if (node.data.equals(value)) return true;
-        return contains(node.left, value) || contains(node.right, value);
+
+        int compareResult = value.compareTo(node.data);
+
+        if (compareResult == 0) return true;
+        else if (compareResult < 0) return contains(node.left, value);
+        else return contains(node.right, value);
+    }
+
+    /*
+     * Element einfügen
+     */
+    public void insert(T value) {
+        root = insert(root, value);
+    }
+    private Knoten<T> insert(Knoten<T> node, T value) {
+        if (node == null) return new Knoten<>(value);
+
+        int compareResult = value.compareTo(node.data);
+
+        return node;
+    }
+
+    /*
+     * Element löschen
+     */
+    public void delete(T value) {
+        root = delete(root, value);
+    }
+    private Knoten<T> delete(Knoten<T> node, T value) {
+        if (node == null) return null;
+
+        int compareResult = value.compareTo(node.data);
+
+        return node;
     }
 
     /*
@@ -198,69 +213,44 @@ public class BinaryTree<T> {
     private void draw(Knoten<T> node, String prefix, boolean isRight) {
         if (node == null) return;
 
-        // Wenn aktueller Knoten = links:  "│   " else:  "    "
-        // Gibt den aktuellen Knoten aus "└── " oder "┌── " für Kindkonten
-        // Wenn aktueller Knoten = links:  "    " else:  "│   "
         draw(node.right, prefix + (isRight ? "│   " : "    "), false);
         System.out.println(prefix + (isRight ? "└── " : "┌── ") + node.data);
         draw(node.left, prefix + (isRight ? "    " : "│   "), true);
     }
 }
 
-class BTMain {
+class BSTMain {
     public static void main() {
-        // Erstelle Hauptbaum mit Wurzel "A"
-        BinaryTree<String> tree = new BinaryTree<>("A");
+        // Erstelle einen leeren Suchbaum
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
 
-        // Erstelle linken und rechten Teilbaum
-        BinaryTree<String> rightTree = new BinaryTree<>("B");
-        BinaryTree<String> leftTree = new BinaryTree<>("C");
-
-        // Füge Teilbäume zum A hinzu
-        tree.setLeftSubtree(rightTree);
-        tree.setRightSubtree(leftTree);
-
-        // Füge weitere Konten zum C Teilbaum hinzu
-        BinaryTree<String> leftLeft = new BinaryTree<>("F");
-        BinaryTree<String> leftRight = new BinaryTree<>("G");
-        leftTree.setLeftSubtree(leftLeft);
-        leftTree.setRightSubtree(leftRight);
-        /*
-        // Füge weitere Knoten zum B Teilbaum hinzu
-        BinaryTree<String> rightLeft = new BinaryTree<>("D");
-        BinaryTree<String> rightRight = new BinaryTree<>("E");
-        rightTree.setLeftSubtree(rightLeft);
-        rightTree.setRightSubtree(rightRight);
-
-        // Füge weitere Knoten für F hinzu
-        BinaryTree<String> leftLeftLeft = new BinaryTree<>("H");
-        BinaryTree<String> leftLeftRight = new BinaryTree<>("I");
-        leftLeft.setLeftSubtree(leftLeftLeft);
-        leftLeft.setRightSubtree(leftLeftRight);
-
-        // Füge weitere Knoten für G hinzu
-        BinaryTree<String> leftRightLeft = new BinaryTree<>("J");
-        BinaryTree<String> leftRightRight = new BinaryTree<>("K");
-        leftRight.setLeftSubtree(leftRightLeft);
-        leftRight.setRightSubtree(leftRightRight);
-
-        // Füge weitere Knoten für D hinzu
-        BinaryTree<String> rightLeftLeft = new BinaryTree<>("L");
-        BinaryTree<String> rightLeftRight = new BinaryTree<>("M");
-        rightLeft.setLeftSubtree(rightLeftLeft);
-        rightLeft.setRightSubtree(rightLeftRight);
-
-        // Füge weitere Knoten für E hinzu
-        BinaryTree<String> rightRightLeft = new BinaryTree<>("N");
-        BinaryTree<String> rightRightRight = new BinaryTree<>("O");
-        rightRight.setLeftSubtree(rightRightLeft);
-        rightRight.setRightSubtree(rightRightRight);
-        */
+        // Füge Elemente ein
+        bst.insert(50);
+        bst.insert(30);
+        bst.insert(70);
+        bst.insert(20);
+        bst.insert(40);
+        bst.insert(60);
+        bst.insert(80);
 
         // Zeichne den Baum
         System.out.println("\nBaumstruktur:");
-        tree.draw();
+        bst.draw();
+
+        // Traversiere den Baum
+        System.out.println("\nInorder Traversal:");
+        List<Integer> inorder = bst.inorderTraversal();
+        for (Integer value : inorder) {
+            System.out.print(value + " ");
+        }
+
+        // Suche nach Elementen
+        System.out.println("\n\nSuche nach 40: " + bst.contains(40));
+        System.out.println("Suche nach 90: " + bst.contains(90));
+
+        // Lösche ein Element
+        System.out.println("\nLösche 30:");
+        bst.delete(30);
+        bst.draw();
     }
 }
-
-
