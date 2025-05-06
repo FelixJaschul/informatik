@@ -3,7 +3,7 @@ package Baumstrukturen.Binärbaum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTree<T> {
+public class BinaryTree<T> implements Tree<T> {
     private Knoten<T> root;
 
     /*
@@ -52,6 +52,7 @@ public class BinaryTree<T> {
     /*
      * Prüfmethode für leeren Baum
      */
+    @Override
     public boolean isEmpty() {
         return root == null;
     }
@@ -59,6 +60,7 @@ public class BinaryTree<T> {
     /*
      * Prüfmethode für linken Teilbaum
      */
+    @Override
     public boolean isLeftSubtree() {
         return root != null && root.left != null;
     }
@@ -66,6 +68,7 @@ public class BinaryTree<T> {
     /*
      * Prüfmethode für rechten Teilbaum
      */
+    @Override
     public boolean isRightSubtree() {
         return root != null && root.right != null;
     }
@@ -73,32 +76,41 @@ public class BinaryTree<T> {
     /*
      * Getter und Setter für linken Teilbaum
      */
-    public BinaryTree<T> getLeftSubtree() {
+    @Override
+    public Tree<T> getLeftSubtree() {
         BinaryTree<T> leftTree = new BinaryTree<>();
         if (root != null && root.left != null) leftTree.root = root.left;
         return leftTree;
     }
 
-    public void setLeftSubtree(BinaryTree<T> leftTree) {
-        if (root != null) root.left = leftTree.root;
+    @Override
+    public void setLeftSubtree(Tree<T> leftTree) {
+        if (root != null && leftTree instanceof BinaryTree) {
+            root.left = ((BinaryTree<T>) leftTree).getRoot();
+        }
     }
 
     /*
      * Getter und Setter für rechten Teilbaum
      */
-    public BinaryTree<T> getRightSubtree() {
+    @Override
+    public Tree<T> getRightSubtree() {
         BinaryTree<T> rightTree = new BinaryTree<>();
         if (root != null && root.right != null) rightTree.root = root.right;
         return rightTree;
     }
 
-    public void setRightSubtree(BinaryTree<T> rightTree) {
-        if (root != null) root.right = rightTree.root;
+    @Override
+    public void setRightSubtree(Tree<T> rightTree) {
+        if (root != null && rightTree instanceof BinaryTree) {
+            root.right = ((BinaryTree<T>) rightTree).getRoot();
+        }
     }
 
     /*
      * Prüfmethode für linken Teilbaum
      */
+    @Override
     public boolean hasLeftSubtree() {
         return isLeftSubtree();
     }
@@ -106,6 +118,7 @@ public class BinaryTree<T> {
     /*
      * Prüfmethode für rechten Teilbaum
      */
+    @Override
     public boolean hasRightSubtree() {
         return isRightSubtree();
     }
@@ -113,6 +126,7 @@ public class BinaryTree<T> {
     /*
      * Löscht den Baum
      */
+    @Override
     public void clear() {
         root = null;
     }
@@ -127,6 +141,7 @@ public class BinaryTree<T> {
     /*
      * Sortiermethoden mit Helfern um den Baum anzuzeigen
      */
+    @Override
     public List<T> preorderTraversal() {
         List<T> result = new ArrayList<>();
         preorderTraversal(root, result);
@@ -140,6 +155,7 @@ public class BinaryTree<T> {
         }
     }
 
+    @Override
     public List<T> inorderTraversal() {
         List<T> result = new ArrayList<>();
         inorderTraversal(root, result);
@@ -153,6 +169,7 @@ public class BinaryTree<T> {
         }
     }
 
+    @Override
     public List<T> postorderTraversal() {
         List<T> result = new ArrayList<>();
         postorderTraversal(root, result);
@@ -169,6 +186,7 @@ public class BinaryTree<T> {
     /*
      * Baum durchsuchen
      */
+    @Override
     public boolean contains(T value) {
         return contains(root, value);
     }
@@ -181,6 +199,7 @@ public class BinaryTree<T> {
     /*
      * Tiefe berechnen
      */
+    @Override
     public int getDepth() {
         return getDepth(root);
     }
@@ -192,6 +211,7 @@ public class BinaryTree<T> {
     /*
      * Zeichne den Baum
      */
+    @Override
     public void draw() {
         draw(root, "", true);
     }
@@ -206,61 +226,3 @@ public class BinaryTree<T> {
         draw(node.left, prefix + (isRight ? "    " : "│   "), true);
     }
 }
-
-class BTMain {
-    public static void main() {
-        // Erstelle Hauptbaum mit Wurzel "A"
-        BinaryTree<String> tree = new BinaryTree<>("A");
-
-        // Erstelle linken und rechten Teilbaum
-        BinaryTree<String> rightTree = new BinaryTree<>("B");
-        BinaryTree<String> leftTree = new BinaryTree<>("C");
-
-        // Füge Teilbäume zum A hinzu
-        tree.setLeftSubtree(rightTree);
-        tree.setRightSubtree(leftTree);
-
-        // Füge weitere Konten zum C Teilbaum hinzu
-        BinaryTree<String> leftLeft = new BinaryTree<>("F");
-        BinaryTree<String> leftRight = new BinaryTree<>("G");
-        leftTree.setLeftSubtree(leftLeft);
-        leftTree.setRightSubtree(leftRight);
-        /*
-        // Füge weitere Knoten zum B Teilbaum hinzu
-        BinaryTree<String> rightLeft = new BinaryTree<>("D");
-        BinaryTree<String> rightRight = new BinaryTree<>("E");
-        rightTree.setLeftSubtree(rightLeft);
-        rightTree.setRightSubtree(rightRight);
-
-        // Füge weitere Knoten für F hinzu
-        BinaryTree<String> leftLeftLeft = new BinaryTree<>("H");
-        BinaryTree<String> leftLeftRight = new BinaryTree<>("I");
-        leftLeft.setLeftSubtree(leftLeftLeft);
-        leftLeft.setRightSubtree(leftLeftRight);
-
-        // Füge weitere Knoten für G hinzu
-        BinaryTree<String> leftRightLeft = new BinaryTree<>("J");
-        BinaryTree<String> leftRightRight = new BinaryTree<>("K");
-        leftRight.setLeftSubtree(leftRightLeft);
-        leftRight.setRightSubtree(leftRightRight);
-
-        // Füge weitere Knoten für D hinzu
-        BinaryTree<String> rightLeftLeft = new BinaryTree<>("L");
-        BinaryTree<String> rightLeftRight = new BinaryTree<>("M");
-        rightLeft.setLeftSubtree(rightLeftLeft);
-        rightLeft.setRightSubtree(rightLeftRight);
-
-        // Füge weitere Knoten für E hinzu
-        BinaryTree<String> rightRightLeft = new BinaryTree<>("N");
-        BinaryTree<String> rightRightRight = new BinaryTree<>("O");
-        rightRight.setLeftSubtree(rightRightLeft);
-        rightRight.setRightSubtree(rightRightRight);
-        */
-
-        // Zeichne den Baum
-        System.out.println("\nBaumstruktur:");
-        tree.draw();
-    }
-}
-
-

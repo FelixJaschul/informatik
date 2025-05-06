@@ -3,7 +3,7 @@ package Baumstrukturen.Binärbaum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinarySearchTree<T extends Comparable<T>> {
+public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
     private Knoten<T> root;
 
     /*
@@ -42,6 +42,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     /*
      * Prüfmethode für leeren Baum
      */
+    @Override
     public boolean isEmpty() {
         return root == null;
     }
@@ -49,6 +50,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     /*
      * Prüfmethode für linken Teilbaum
      */
+    @Override
     public boolean isLeftSubtree() {
         return root != null && root.left != null;
     }
@@ -56,6 +58,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     /*
      * Prüfmethode für rechten Teilbaum
      */
+    @Override
     public boolean isRightSubtree() {
         return root != null && root.right != null;
     }
@@ -63,32 +66,41 @@ public class BinarySearchTree<T extends Comparable<T>> {
     /*
      * Getter und Setter für linken Teilbaum
      */
-    public BinarySearchTree<T> getLeftSubtree() {
+    @Override
+    public Tree<T> getLeftSubtree() {
         BinarySearchTree<T> leftTree = new BinarySearchTree<>();
         if (root != null && root.left != null) leftTree.root = root.left;
         return leftTree;
     }
 
-    public void setLeftSubtree(BinarySearchTree<T> leftTree) {
-        if (root != null) root.left = leftTree.root;
+    @Override
+    public void setLeftSubtree(Tree<T> leftTree) {
+        if (root != null && leftTree instanceof BinarySearchTree) {
+            root.left = ((BinarySearchTree<T>) leftTree).getRoot();
+        }
     }
 
     /*
      * Getter und Setter für rechten Teilbaum
      */
-    public BinarySearchTree<T> getRightSubtree() {
+    @Override
+    public Tree<T> getRightSubtree() {
         BinarySearchTree<T> rightTree = new BinarySearchTree<>();
         if (root != null && root.right != null) rightTree.root = root.right;
         return rightTree;
     }
 
-    public void setRightSubtree(BinarySearchTree<T> rightTree) {
-        if (root != null) root.right = rightTree.root;
+    @Override
+    public void setRightSubtree(Tree<T> rightTree) {
+        if (root != null && rightTree instanceof BinarySearchTree) {
+            root.right = ((BinarySearchTree<T>) rightTree).getRoot();
+        }
     }
 
     /*
      * Prüfmethode für linken Teilbaum
      */
+    @Override
     public boolean hasLeftSubtree() {
         return isLeftSubtree();
     }
@@ -96,6 +108,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     /*
      * Prüfmethode für rechten Teilbaum
      */
+    @Override
     public boolean hasRightSubtree() {
         return isRightSubtree();
     }
@@ -103,6 +116,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     /*
      * Löscht den Baum
      */
+    @Override
     public void clear() {
         root = null;
     }
@@ -110,6 +124,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     /*
      * Sortiermethoden mit Helfern um den Baum anzuzeigen
      */
+    @Override
     public List<T> preorderTraversal() {
         List<T> result = new ArrayList<>();
         preorderTraversal(root, result);
@@ -123,6 +138,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
     }
 
+    @Override
     public List<T> inorderTraversal() {
         List<T> result = new ArrayList<>();
         inorderTraversal(root, result);
@@ -136,6 +152,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
     }
 
+    @Override
     public List<T> postorderTraversal() {
         List<T> result = new ArrayList<>();
         postorderTraversal(root, result);
@@ -150,45 +167,130 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     /*
-     * Baum durchsuchen
+     * In den Baum einfügen
      */
-    public boolean contains(T value) {
-        return contains(root, value);
+    public void insert(T value) {
+        if (root == null) { root = new Knoten<>(value); return; }
+        insert(root, value);
     }
-    private boolean contains(Knoten<T> node, T value) {
-        if (node == null) return false;
 
-        int compareResult = value.compareTo(node.data);
+    private void insert(Knoten<T> node, T value) {
+        if (value.equals(node.data)) return; // Wert bereits vorhanden
 
-        if (compareResult == 0) return true;
-        else if (compareResult < 0) return contains(node.left, value);
-        else return contains(node.right, value);
+        if (value.compareTo(node.data) < 0) {
+            // Wert ist kleiner, gehe nach links
+            if (node.left == null) node.left = new Knoten<>(value);
+            else insert(node.left, value);
+        } else {
+            // Wert ist größer, gehe nach rechts
+            if (node.right == null) node.right = new Knoten<>(value);
+            else insert(node.right, value);
+        }
     }
 
     /*
-     * Element einfügen
+     * Baum durchsuchen
      */
-    public void insert(T value) {
-        root = insert(root, value);
+    @Override
+    public boolean contains(T value) {
+        return search(value) != null;
     }
-    private Knoten<T> insert(Knoten<T> node, T value) {
-        if (node == null) return new Knoten<>(value);
 
-        int compareResult = value.compareTo(node.data);
+    /*
+     * Sucht nach einem Knoten mit dem angegebenen Wert
+     */
+    private Knoten<T> search(T value) {
+        return search(root, value);
+    }
 
+    private Knoten<T> search(Knoten<T> node, T value) {
+        if (node == null || value.equals(node.data)) return node;
+
+        if (value.compareTo(node.data) < 0) return search(node.left, value);
+        else return search(node.right, value);
+    }
+
+    /*
+     * Findet den Knoten mit dem kleinsten Wert im Baum
+     */
+    private Knoten<T> getMinNode() {
+        return getMinNode(root);
+    }
+
+    private Knoten<T> getMinNode(Knoten<T> node) {
+        if (node == null) return null;
+
+        while (node.left != null) node = node.left;
         return node;
     }
 
     /*
-     * Element löschen
+     * Findet den kleinsten Wert im Baum
      */
-    public void delete(T value) {
-        root = delete(root, value);
+    public T getMinValue() {
+        Knoten<T> minNode = getMinNode();
+        return minNode != null ? minNode.data : null;
     }
+
+    /*
+     * Findet den Knoten mit dem größten Wert im Baum
+     */
+    private Knoten<T> getMaxNode() {
+        return getMaxNode(root);
+    }
+    private Knoten<T> getMaxNode(Knoten<T> node) {
+        if (node == null) return null;
+
+        while (node.right != null) node = node.right;
+        return node;
+    }
+
+    /*
+     * Findet den größten Wert im Baum
+     */
+    public T getMaxValue() {
+        Knoten<T> maxNode = getMaxNode();
+        return maxNode != null ? maxNode.data : null;
+    }
+
+    /*
+     * Löscht einen Knoten mit dem angegebenen Wert aus dem Baum
+     */
+    public boolean delete(T value) {
+        // Speichern des ursprünglichen Wurzelknotens
+        Knoten<T> originalRoot = root;
+
+        // Löschen des Knotens
+        root = delete(root, value);
+
+        // Überprüfen, ob sich der Baum geändert hat
+        return originalRoot != root || contains(value) == false;
+    }
+
     private Knoten<T> delete(Knoten<T> node, T value) {
         if (node == null) return null;
 
-        int compareResult = value.compareTo(node.data);
+        // Suche den zu löschenden Knoten
+        if (value.compareTo(node.data) < 0) node.left = delete(node.left, value);
+        else if (value.compareTo(node.data) > 0) node.right = delete(node.right, value);
+        else {
+            // Fall 1: keine Kinder
+            if (node.left == null && node.right == null) return null;
+
+            // Fall 2: Nur ein Kind
+            if (node.left == null) return node.right;
+            if (node.right == null) return node.left;
+
+            // Fall 3: Zwei Kinder
+            // Finde den kleinsten Knoten im rechten Teilbaum (Inorder-Nachfolger)
+            Knoten<T> successor = getMinNode(node.right);
+
+            // Kopiere den Nachfolger-Wert in diesen Knoten
+            node.data = successor.data;
+
+            // Lösche den Nachfolger
+            node.right = delete(node.right, successor.data);
+        }
 
         return node;
     }
@@ -196,6 +298,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     /*
      * Tiefe berechnen
      */
+    @Override
     public int getDepth() {
         return getDepth(root);
     }
@@ -207,6 +310,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     /*
      * Zeichne den Baum
      */
+    @Override
     public void draw() {
         draw(root, "", true);
     }
@@ -216,41 +320,5 @@ public class BinarySearchTree<T extends Comparable<T>> {
         draw(node.right, prefix + (isRight ? "│   " : "    "), false);
         System.out.println(prefix + (isRight ? "└── " : "┌── ") + node.data);
         draw(node.left, prefix + (isRight ? "    " : "│   "), true);
-    }
-}
-
-class BSTMain {
-    public static void main() {
-        // Erstelle einen leeren Suchbaum
-        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
-
-        // Füge Elemente ein
-        bst.insert(50);
-        bst.insert(30);
-        bst.insert(70);
-        bst.insert(20);
-        bst.insert(40);
-        bst.insert(60);
-        bst.insert(80);
-
-        // Zeichne den Baum
-        System.out.println("\nBaumstruktur:");
-        bst.draw();
-
-        // Traversiere den Baum
-        System.out.println("\nInorder Traversal:");
-        List<Integer> inorder = bst.inorderTraversal();
-        for (Integer value : inorder) {
-            System.out.print(value + " ");
-        }
-
-        // Suche nach Elementen
-        System.out.println("\n\nSuche nach 40: " + bst.contains(40));
-        System.out.println("Suche nach 90: " + bst.contains(90));
-
-        // Lösche ein Element
-        System.out.println("\nLösche 30:");
-        bst.delete(30);
-        bst.draw();
     }
 }
