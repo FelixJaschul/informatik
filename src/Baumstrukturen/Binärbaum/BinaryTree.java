@@ -3,13 +3,13 @@ package Baumstrukturen.Binärbaum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTree<T> implements Tree<T> {
+public class BinaryTree<T> {
     private Knoten<T> root;
 
     /*
      * Interne Klasse Knoten
      */
-    private static class Knoten<T> {
+    private class Knoten<T> {
         T data;
         Knoten<T> left;
         Knoten<T> right;
@@ -32,116 +32,63 @@ public class BinaryTree<T> implements Tree<T> {
         this.root = new Knoten<>(rootData);
     }
 
-    public BinaryTree(T rootData, BinaryTree<T> leftTree, BinaryTree<T> rightTree) {
-        this.root = new Knoten<>(rootData);
-        if (leftTree != null && !leftTree.isEmpty()) this.root.left = leftTree.root;
-        if (rightTree != null && !rightTree.isEmpty()) this.root.right = rightTree.root;
-    }
-
-    /*
-     * Getter und Setter für die Wurzel
-     */
-    public Knoten<T> getRoot() {
-        return root;
-    }
-
-    public void setRoot(Knoten<T> root) {
-        this.root = root;
-    }
-
     /*
      * Prüfmethode für leeren Baum
      */
-    @Override
     public boolean isEmpty() {
         return root == null;
     }
 
     /*
-     * Prüfmethode für linken Teilbaum
+     * Getter und Setter für Wurzel und Teilbäume
      */
-    @Override
-    public boolean isLeftSubtree() {
-        return root != null && root.left != null;
+    public T getRootData() {
+        return root != null ? root.data : null;
     }
-
-    /*
-     * Prüfmethode für rechten Teilbaum
-     */
-    @Override
-    public boolean isRightSubtree() {
-        return root != null && root.right != null;
+    public void setRootData(T data) {
+        if (root != null) root.data = data;
+        else root = new Knoten<>(data);
     }
-
-    /*
-     * Getter und Setter für linken Teilbaum
-     */
-    @Override
-    public Tree<T> getLeftSubtree() {
+    public BinaryTree<T> getLeftSubtree() {
         BinaryTree<T> leftTree = new BinaryTree<>();
         if (root != null && root.left != null) leftTree.root = root.left;
         return leftTree;
     }
-
-    @Override
-    public void setLeftSubtree(Tree<T> leftTree) {
-        if (root != null && leftTree instanceof BinaryTree) {
-            root.left = ((BinaryTree<T>) leftTree).getRoot();
-        }
-    }
-
-    /*
-     * Getter und Setter für rechten Teilbaum
-     */
-    @Override
-    public Tree<T> getRightSubtree() {
+    public BinaryTree<T> getRightSubtree() {
         BinaryTree<T> rightTree = new BinaryTree<>();
         if (root != null && root.right != null) rightTree.root = root.right;
         return rightTree;
     }
-
-    @Override
-    public void setRightSubtree(Tree<T> rightTree) {
-        if (root != null && rightTree instanceof BinaryTree) {
-            root.right = ((BinaryTree<T>) rightTree).getRoot();
-        }
+    public void setLeftSubtree(BinaryTree<T> leftTree) {
+        if (root != null) root.left = leftTree != null ? leftTree.root : null;
+    }
+    public void setRightSubtree(BinaryTree<T> rightTree) {
+        if (root != null) root.right = rightTree != null ? rightTree.root : null;
     }
 
     /*
-     * Prüfmethode für linken Teilbaum
+     * Prüfmethoden für Teilbäume
      */
-    @Override
     public boolean hasLeftSubtree() {
-        return isLeftSubtree();
+        return root != null && root.left != null;
     }
-
-    /*
-     * Prüfmethode für rechten Teilbaum
-     */
-    @Override
     public boolean hasRightSubtree() {
-        return isRightSubtree();
+        return root != null && root.right != null;
     }
 
     /*
-     * Löscht den Baum
+     * Baum-Operationen
      */
-    @Override
     public void clear() {
         root = null;
     }
-
-    /*
-     * Fügt Wurzelknoten in leeren Baum ein
-     */
-    public void insertRoot(T data) {
-        root = new Knoten<>(data);
+    public void insertRoot(T rootData) {
+        root = new Knoten<>(rootData);
     }
 
     /*
-     * Sortiermethoden mit Helfern um den Baum anzuzeigen
+     * Traversierungsmethoden
      */
-    @Override
     public List<T> preorderTraversal() {
         List<T> result = new ArrayList<>();
         preorderTraversal(root, result);
@@ -155,7 +102,6 @@ public class BinaryTree<T> implements Tree<T> {
         }
     }
 
-    @Override
     public List<T> inorderTraversal() {
         List<T> result = new ArrayList<>();
         inorderTraversal(root, result);
@@ -169,7 +115,6 @@ public class BinaryTree<T> implements Tree<T> {
         }
     }
 
-    @Override
     public List<T> postorderTraversal() {
         List<T> result = new ArrayList<>();
         postorderTraversal(root, result);
@@ -186,7 +131,6 @@ public class BinaryTree<T> implements Tree<T> {
     /*
      * Baum durchsuchen
      */
-    @Override
     public boolean contains(T value) {
         return contains(root, value);
     }
@@ -199,7 +143,6 @@ public class BinaryTree<T> implements Tree<T> {
     /*
      * Tiefe berechnen
      */
-    @Override
     public int getDepth() {
         return getDepth(root);
     }
@@ -211,16 +154,12 @@ public class BinaryTree<T> implements Tree<T> {
     /*
      * Zeichne den Baum
      */
-    @Override
     public void draw() {
         draw(root, "", true);
     }
     private void draw(Knoten<T> node, String prefix, boolean isRight) {
         if (node == null) return;
 
-        // Wenn aktueller Knoten = links:  "│   " else:  "    "
-        // Gibt den aktuellen Knoten aus "└── " oder "┌── " für Kindkonten
-        // Wenn aktueller Knoten = links:  "    " else:  "│   "
         draw(node.right, prefix + (isRight ? "│   " : "    "), false);
         System.out.println(prefix + (isRight ? "└── " : "┌── ") + node.data);
         draw(node.left, prefix + (isRight ? "    " : "│   "), true);

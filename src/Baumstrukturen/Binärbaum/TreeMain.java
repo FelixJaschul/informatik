@@ -1,12 +1,11 @@
 package Baumstrukturen.Binärbaum;
 
-/**
+/*
  * Zentrale Main-Klasse für die Demonstration der Baumstrukturen
  */
 public class TreeMain {
-    /**
+    /*
      * Hauptmethode zur Demonstration der Baumstrukturen
-     * @param args Kommandozeilenargumente (nicht verwendet)
      */
     public static void main(String[] args) {
         System.out.println("=== Demonstration der Baumstrukturen ===");
@@ -18,7 +17,7 @@ public class TreeMain {
         demonstrateBinarySearchTree();
     }
 
-    /**
+    /*
      * Demonstriert die Funktionalität des BinaryTree
      */
     private static void demonstrateBinaryTree() {
@@ -86,7 +85,7 @@ public class TreeMain {
         System.out.println("Enthält 'Z': " + tree.contains("Z"));
     }
 
-    /**
+    /*
      * Demonstriert die Funktionalität des BinarySearchTree
      */
     private static void demonstrateBinarySearchTree() {
