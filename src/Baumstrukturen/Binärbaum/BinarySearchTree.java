@@ -70,4 +70,16 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
         if (node.left == null) return node.data;
         return min(node.left);
     }
+
+    /*
+     * FindMax- Methode
+     */
+    public T max() {
+        return max(root);
+    }
+    private T max(Knoten<T> node) {
+        if (node == null) return null;
+        if (node.right == null) return node.data;
+        return max(node.right);
+    }
 }
