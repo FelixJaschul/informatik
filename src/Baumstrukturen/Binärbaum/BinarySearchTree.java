@@ -53,9 +53,8 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
             if (node.left == null) return node.right;
             if (node.right == null) return node.left;
 
-            T minValue = min(node.right);
-            node.data = minValue;
-            node.right = delete(node.right, minValue);
+            node.data = min(node.right);
+            node.right = delete(node.right, min(node.right));
         }
         return node;
     }
