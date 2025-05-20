@@ -1,7 +1,6 @@
 package AllgemeineDatenTypen.Listen;
 
 public class List {
-    private static String[] args;
     private Knoten head, tail, current;
     private int groesse;
 
