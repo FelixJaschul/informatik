@@ -1,6 +1,7 @@
 package AllgemeineDatenTypen.Listen;
 
 public class List {
+    private static String[] args;
     private Knoten head, tail, current;
     private int groesse;
 
@@ -18,7 +19,7 @@ public class List {
         this.groesse = 0;
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         List list = new List();
         list.addFirst(100);
         list.addFirst(200);
@@ -62,7 +63,7 @@ public class List {
     }
 
     public void addAt(int index, int wert) {
-        if (index < 0 || index > groesse) throw new IndexOutOfBoundsException("Index: " + index + ", Größe: " + groesse);
+        if (index < 0 || index > groesse) return;
 
         if (index == 0) {
             addFirst(wert);
@@ -103,7 +104,7 @@ public class List {
     }
 
     public int removeFirst() {
-        if (isEmpty()) throw new RuntimeException("Die Liste ist leer");
+        if (isEmpty()) return 0;
 
         int wert = head.value;
 
@@ -121,7 +122,7 @@ public class List {
     }
 
     public int removeLast() {
-        if (isEmpty()) throw new RuntimeException("Die Liste ist leer");
+        if (isEmpty()) return 0;
 
         int wert = tail.value;
 
@@ -139,7 +140,7 @@ public class List {
     }
 
     public int removeAt(int index) {
-        if (index < 0 || index >= groesse) throw new IndexOutOfBoundsException("Index: " + index + ", Größe: " + groesse);
+        if (index < 0 || index >= groesse) return 0;
 
         if (index == 0) return removeFirst();
         if (index == groesse - 1) return removeLast();
@@ -158,7 +159,7 @@ public class List {
     }
 
     public int removeAtCurrent() {
-        if (current == null) throw new IllegalStateException("Keine aktuelle Position gesetzt");
+        if (current == null) return 0;
 
         if (current == head) return removeFirst();
         if (current == tail) return removeLast();
@@ -175,7 +176,7 @@ public class List {
     }
 
     public int get(int index) {
-        if (index < 0 || index >= groesse) throw new IndexOutOfBoundsException("Index: " + index + ", Größe: " + groesse);
+        if (index < 0 || index >= groesse) return 0;
 
         Knoten aktuell = head;
         for (int i = 0; i < index; i++) aktuell = aktuell.next;
@@ -184,12 +185,12 @@ public class List {
     }
 
     public int getCurrent() {
-        if (current == null) throw new IllegalStateException("Keine aktuelle Position gesetzt");
+        if (current == null) return 0;
         return current.value;
     }
 
     public void setCurrent(int index) {
-        if (index < 0 || index >= groesse) throw new IndexOutOfBoundsException("Index: " + index + ", Größe: " + groesse);
+        if (index < 0 || index >= groesse) return;
 
         Knoten aktuell = head;
         for (int i = 0; i < index; i++) aktuell = aktuell.next;
@@ -198,15 +199,13 @@ public class List {
     }
 
     public void next() {
-        if (current == null) throw new IllegalStateException("Keine aktuelle Position gesetzt");
-        if (current.next == null) throw new RuntimeException("Kein nächstes Element vorhanden");
+        if (current == null || current.next == null) return;
 
         current = current.next;
     }
 
     public void previous() {
-        if (current == null) throw new IllegalStateException("Keine aktuelle Position gesetzt");
-        if (current.previous == null) throw new RuntimeException("Kein vorheriges Element vorhanden");
+        if (current == null || current.previous == null) return;
 
         current = current.previous;
     }
@@ -224,10 +223,7 @@ public class List {
     }
 
     public void print() {
-        if (isEmpty()) {
-            System.out.println("Die Liste ist leer.");
-            return;
-        }
+        if (isEmpty()) return;
 
         StringBuilder sb = new StringBuilder("Liste: [");
         Knoten temp = head;
@@ -243,10 +239,7 @@ public class List {
     }
 
     public void printReverse() {
-        if (isEmpty()) {
-            System.out.println("Die Liste ist leer.");
-            return;
-        }
+        if (isEmpty()) return;
 
         StringBuilder sb = new StringBuilder("Liste (umgekehrt): [");
         Knoten temp = tail;
@@ -267,7 +260,7 @@ public class List {
         if (tail != null) sb.append(" | Tail: ").append(tail.value);
         if (current != null) sb.append(" | Current: ").append(current.value);
         sb.append("]");
-        System.out.println(sb.toString());
+        System.out.println(sb);
     }
 
     public void clear() {
@@ -303,12 +296,12 @@ public class List {
     }
 
     public int getFirst() {
-        if (isEmpty()) throw new RuntimeException("Die Liste ist leer");
+        if (isEmpty()) return 0;
         return head.value;
     }
 
     public int getLast() {
-        if (isEmpty()) throw new RuntimeException("Die Liste ist leer");
+        if (isEmpty()) return 0;
         return tail.value;
     }
 
@@ -328,7 +321,7 @@ public class List {
     }
 
     public void set(int index, int wert) {
-        if (index < 0 || index >= groesse) throw new IndexOutOfBoundsException("Index: " + index + ", Größe: " + groesse);
+        if (index < 0 || index >= groesse) return;
 
         Knoten aktuell = head;
         for (int i = 0; i < index; i++) aktuell = aktuell.next;
