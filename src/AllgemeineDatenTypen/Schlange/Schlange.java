@@ -1,4 +1,4 @@
-// package src.Q2.Adts.Schlange;
+package AllgemeineDatenTypen.Schlange;
 
 public class Schlange {
 

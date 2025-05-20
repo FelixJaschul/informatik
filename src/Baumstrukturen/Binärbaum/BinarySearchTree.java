@@ -2,7 +2,6 @@ package Baumstrukturen.Binärbaum;
 
 public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
     private Knoten<T> root;
-
     /*
      * Interne Klasse Knoten
      */
@@ -81,5 +80,20 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
         if (node == null) return null;
         if (node.right == null) return node.data;
         return max(node.right);
+    }
+
+    /*
+     * Zeichne den Baum
+     */
+    @Override
+    public void draw() {
+        draw(root, "", true);
+    }
+    private void draw(Knoten<T> node, String prefix, boolean isRight) {
+        if (node == null) return;
+
+        draw(node.right, prefix + (isRight ? "│   " : "    "), false);
+        System.out.println(prefix + (isRight ? "└── " : "┌── ") + node.data);
+        draw(node.left, prefix + (isRight ? "    " : "│   "), true);
     }
 }

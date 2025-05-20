@@ -1,4 +1,4 @@
-package src.Q2.Adts.Listen;
+package AllgemeineDatenTypen.Listen;
 
 public class List {
     private Knoten head, tail, current;

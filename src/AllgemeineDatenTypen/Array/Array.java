@@ -1,4 +1,4 @@
-package src.Q2.Adts.Array;
+package AllgemeineDatenTypen.Array;
 
 public class Array {
 

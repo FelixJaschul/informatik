@@ -1,3 +1,5 @@
+package AllgemeineDatenTypen.Stack;
+
 public class Stack {
 
     int groesse;
