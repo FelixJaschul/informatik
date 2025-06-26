@@ -14,4 +14,5 @@ print(list(map(q, l)))
 
 # Lambda
 l = [1, 2, 3, 4]
+
 print(list(map(lambda x: x * x, l)))
