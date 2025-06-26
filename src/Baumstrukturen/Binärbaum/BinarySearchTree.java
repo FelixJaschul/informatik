@@ -96,4 +96,5 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
         System.out.println(prefix + (isRight ? "└── " : "┌── ") + node.data);
         draw(node.left, prefix + (isRight ? "    " : "│   "), true);
     }
+
 }

@@ -33,7 +33,7 @@ public class TreeMain {
         // Füge Teilbäume zum A hinzu
         tree.setLeftSubtree(rightTree);
         tree.setRightSubtree(leftTree);
-        /*
+
         // Füge weitere Konten zum C Teilbaum hinzu
         BinaryTree<String> leftLeft = new BinaryTree<>("F");
         BinaryTree<String> leftRight = new BinaryTree<>("G");
@@ -83,7 +83,7 @@ public class TreeMain {
         System.out.println("\nTiefe des Baums: " + tree.getDepth());
         System.out.println("Enthält 'A': " + tree.contains("A"));
         System.out.println("Enthält 'Z': " + tree.contains("Z"));
-        */
+
         System.out.print(tree.preorderTraversal());
     }
 
@@ -105,7 +105,7 @@ public class TreeMain {
         bst.insert(40);
         bst.insert(60);
         bst.insert(80);
-        /*
+
         // Zeichne den Baum
         System.out.println("\nBaumstruktur:");
         bst.draw();
@@ -151,7 +151,7 @@ public class TreeMain {
 
         // Zeige Traversierungen nach dem Löschen
         System.out.println("\nInorder Traversierung nach dem Löschen: " + bst.inorderTraversal());
-        */
+
         System.out.print(bst.preorderTraversal());
     }
 }
