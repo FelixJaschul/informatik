@@ -10,9 +10,13 @@ l = [1, 2, 3, 4]
 def q(x):
     return x * x
 
-print(list(map(q, l)))
+print(list(
+        map(q, l)
+    ))
 
 # Lambda
 l = [1, 2, 3, 4]
 
-print(list(map(lambda x: x * x, l)))
+print(list(
+        map(lambda x: x * x, l)
+    ))
