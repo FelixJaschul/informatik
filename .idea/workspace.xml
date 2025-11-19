@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d7dee6ed-feb9-40e7-962f-81065ff61001" name="Changes" comment="06.10.2025">
+      <change afterPath="$PROJECT_DIR$/python/src/Funktional/Aufgaben/Aufgabe2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/src/Funktional/Aufgaben/bla.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/src/Funktional/Aufgaben/Aufgabe1.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/Funktional/Aufgaben/Aufgabe1.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Record" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;FelixJaschul&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/FelixJaschul/informatik.git&quot;,
+    &quot;accountId&quot;: &quot;10e714e0-0416-498c-96af-20c3a6811502&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/python/src/Funktional/Guards/Aufgabe3.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/python/src/Funktional/Guards/Aufgabe4.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2vjdi55b2qU4nKKzvQ7kTik5rgw" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showScratchesAndConsoles" value="false" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.BSTMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BTMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Hash.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Hash2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HashMap.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HashMap_Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HashTable.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HashTable2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.List.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SpielDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Stack.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TreeMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Zoomania.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Aufgabe1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aufgabe11.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aufgabe12.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aufgabe14.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aufgabe15.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aufgabe2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aufgabe3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aufgabe4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aufgabe5.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aufgabe6.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Aufgabe7.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Bubblesort.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Fibonacci.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Geradezahlen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.LokaleDef.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Quadratzahlen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Stack.executor&quot;: &quot;Run&quot;,
+    &quot;Python.bla.executor&quot;: &quot;Run&quot;,
+    &quot;Python.list.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.zencoder-patch-add-chat-message-raw-content&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.zencoder-patch-chat-storage-migration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.zencoder-patch-generate-chat-message-id&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.zencoder-patch-migrate-custom-instruction&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/felixjaschul/Projects/informatik&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Python&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/java" />
+      <recent name="$PROJECT_DIR$/python/src" />
+      <recent name="$PROJECT_DIR$/src/Funktional" />
+      <recent name="$PROJECT_DIR$/src/Funkion./CrashKurs" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.HashMap">
+    <configuration name="HashMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AllgemeineDatenTypen.Hash.HashMap" />
+      <module name="informatik" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AllgemeineDatenTypen.Hash.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AllgemeineDatenTypen.Hash.HashTable" />
+      <module name="informatik" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AllgemeineDatenTypen.Hash.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashTable2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AllgemeineDatenTypen.Hash.HashTable2" />
+      <module name="informatik" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AllgemeineDatenTypen.Hash.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleHash" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AllgemeineDatenTypen.Hash.SimpleHash" />
+      <module name="informatik" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AllgemeineDatenTypen.Hash.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Zoomania" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Klassen.Zoo.Zoomania" />
+      <module name="informatik" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Klassen.Zoo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <module name="informatik" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d7dee6ed-feb9-40e7-962f-81065ff61001" name="Changes" comment="" />
+      <created>1744662540299</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744662540299</updated>
+      <workItem from="1744662541633" duration="11000" />
+      <workItem from="1745908682865" duration="1175000" />
+      <workItem from="1745927391804" duration="202000" />
+      <workItem from="1745927607360" duration="3554000" />
+      <workItem from="1746031159726" duration="5188000" />
+      <workItem from="1746311108060" duration="17650000" />
+      <workItem from="1746547183489" duration="106000" />
+      <workItem from="1746547325839" duration="14782000" />
+      <workItem from="1747137157149" duration="4324000" />
+      <workItem from="1747247829087" duration="685000" />
+      <workItem from="1747249162275" duration="1331000" />
+      <workItem from="1747285637998" duration="605000" />
+      <workItem from="1747286519827" duration="5902000" />
+      <workItem from="1747648355965" duration="5002000" />
+      <workItem from="1747755442891" duration="4761000" />
+      <workItem from="1747844963162" duration="1667000" />
+      <workItem from="1747930018902" duration="87000" />
+      <workItem from="1748802470379" duration="360000" />
+      <workItem from="1748802840344" duration="58000" />
+      <workItem from="1748861496138" duration="1570000" />
+      <workItem from="1748985267773" duration="410000" />
+      <workItem from="1749715472309" duration="530000" />
+      <workItem from="1749716031179" duration="1278000" />
+      <workItem from="1749718013143" duration="501000" />
+      <workItem from="1749718524477" duration="3214000" />
+      <workItem from="1749739730551" duration="10691000" />
+      <workItem from="1750068269636" duration="635000" />
+      <workItem from="1750068919265" duration="11042000" />
+      <workItem from="1750627293247" duration="11000" />
+      <workItem from="1750765793709" duration="29000" />
+      <workItem from="1750766981588" duration="73000" />
+      <workItem from="1750767062194" duration="2027000" />
+      <workItem from="1750874548714" duration="13000" />
+      <workItem from="1750915477353" duration="6360000" />
+      <workItem from="1750962675079" duration="919000" />
+      <workItem from="1750963621923" duration="33000" />
+      <workItem from="1751276913147" duration="2450000" />
+      <workItem from="1751365570339" duration="1674000" />
+      <workItem from="1751530203163" duration="1174000" />
+      <workItem from="1751531536865" duration="3104000" />
+      <workItem from="1751819952775" duration="22000" />
+      <workItem from="1751915700456" duration="58000" />
+      <workItem from="1751915782270" duration="57000" />
+      <workItem from="1751987604128" duration="6000" />
+      <workItem from="1752135064458" duration="5189000" />
+      <workItem from="1752157609465" duration="471000" />
+      <workItem from="1752158091219" duration="106000" />
+      <workItem from="1752158203956" duration="1381000" />
+      <workItem from="1759678245925" duration="14000" />
+      <workItem from="1759744656446" duration="3983000" />
+      <workItem from="1759748938407" duration="334000" />
+      <workItem from="1759837601938" duration="1559000" />
+      <workItem from="1760169237018" duration="3000" />
+      <workItem from="1760273882943" duration="54000" />
+      <workItem from="1760274024304" duration="1325000" />
+      <workItem from="1760546757972" duration="5000" />
+      <workItem from="1760547025857" duration="265000" />
+      <workItem from="1762369994793" duration="738000" />
+    </task>
+    <task id="LOCAL-00001" summary="02.05.2025">
+      <option name="closed" value="true" />
+      <created>1746139316936</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1746139316937</updated>
+    </task>
+    <task id="LOCAL-00002" summary="05.05.2025">
+      <option name="closed" value="true" />
+      <created>1746439021290</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746439021290</updated>
+    </task>
+    <task id="LOCAL-00003" summary="05.05.2025">
+      <option name="closed" value="true" />
+      <created>1746475815128</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1746475815128</updated>
+    </task>
+    <task id="LOCAL-00004" summary="06.05.2025">
+      <option name="closed" value="true" />
+      <created>1746553237861</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1746553237861</updated>
+    </task>
+    <task id="LOCAL-00005" summary="06.05.2025">
+      <option name="closed" value="true" />
+      <created>1746553254964</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746553254964</updated>
+    </task>
+    <task id="LOCAL-00006" summary="14.05.2025">
+      <option name="closed" value="true" />
+      <created>1747248083768</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747248083768</updated>
+    </task>
+    <task id="LOCAL-00007" summary="15.05.2025">
+      <option name="closed" value="true" />
+      <created>1747286632444</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747286632444</updated>
+    </task>
+    <task id="LOCAL-00008" summary="15.05.2025">
+      <option name="closed" value="true" />
+      <created>1747300234003</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747300234003</updated>
+    </task>
+    <task id="LOCAL-00009" summary="20.05.2025">
+      <option name="closed" value="true" />
+      <created>1747760142973</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747760142973</updated>
+    </task>
+    <task id="LOCAL-00010" summary="20.05.2025">
+      <option name="closed" value="true" />
+      <created>1747760435342</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1747760435343</updated>
+    </task>
+    <task id="LOCAL-00011" summary="20.05.2025">
+      <option name="closed" value="true" />
+      <created>1747760487634</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747760487634</updated>
+    </task>
+    <task id="LOCAL-00012" summary="26.06.2025">
+      <option name="closed" value="true" />
+      <created>1750932584884</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1750932584884</updated>
+    </task>
+    <task id="LOCAL-00013" summary="26.06.2025">
+      <option name="closed" value="true" />
+      <created>1750932601618</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1750932601618</updated>
+    </task>
+    <task id="LOCAL-00014" summary="26.06.2025">
+      <option name="closed" value="true" />
+      <created>1750962522005</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1750962522005</updated>
+    </task>
+    <task id="LOCAL-00015" summary="26.06.2025">
+      <option name="closed" value="true" />
+      <created>1751277956004</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1751277956004</updated>
+    </task>
+    <task id="LOCAL-00016" summary="30.06.2025">
+      <option name="closed" value="true" />
+      <created>1751278271524</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1751278271524</updated>
+    </task>
+    <task id="LOCAL-00017" summary="7.07.2025">
+      <option name="closed" value="true" />
+      <created>1751915797763</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1751915797763</updated>
+    </task>
+    <task id="LOCAL-00018" summary="10.07.2025">
+      <option name="closed" value="true" />
+      <created>1752158065222</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1752158065222</updated>
+    </task>
+    <task id="LOCAL-00019" summary="10.07.2025">
+      <option name="closed" value="true" />
+      <created>1752158282137</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1752158282137</updated>
+    </task>
+    <task id="LOCAL-00020" summary="06.10.2025">
+      <option name="closed" value="true" />
+      <created>1759745875991</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1759745875991</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.configurationType" implementationName="Application" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="02.05.2025" />
+    <MESSAGE value="05.05.2025" />
+    <MESSAGE value="06.05.2025" />
+    <MESSAGE value="14.05.2025" />
+    <MESSAGE value="15.05.2025" />
+    <MESSAGE value="20.05.2025" />
+    <MESSAGE value="26.06.2025" />
+    <MESSAGE value="30.06.2025" />
+    <MESSAGE value="7.07.2025" />
+    <MESSAGE value="10.07.2025" />
+    <MESSAGE value="06.10.2025" />
+    <option name="LAST_COMMIT_MESSAGE" value="06.10.2025" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="ai.zencoder.plugin.mcp">
+    <option name="internalToolsState" value="{&quot;fetch_webpage&quot;:true,&quot;web_search&quot;:true,&quot;find_usages&quot;:true,&quot;file_search&quot;:true,&quot;str_replace_editor&quot;:true,&quot;find_declarations&quot;:true,&quot;fulltext_search&quot;:true,&quot;RequirementsTool&quot;:true,&quot;ExecuteShellCommand&quot;:true}" />
+    <option name="libraryTools">
+      <map>
+        <entry key="agentql">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="agentrpc">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="aiven">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="apache iotdb">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="apify">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="apimatic mcp">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="astra db">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="aws kb retrieval">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="axiom">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="bankless onchain">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="bicscan">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="box">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="brave search">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="browserbase">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="chroma">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="circleci">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="clickhouse">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="cloudflare">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="codacy">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="codelogic">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="comet opik">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="convex">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="e2b">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="elasticsearch">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="everart">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="everything">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="exa">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="fetch">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="fibery">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="filesystem">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="financial datasets">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="firecrawl">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="fireproof">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="forevervm">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="git">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="gitee">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="github">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="gitlab">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="google drive">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="google maps">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="grafana">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="graphlit">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="greptimedb">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="heroku">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="hologres">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="hyperbrowser">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="ibm wxflows">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="inkeep">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="integration app">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="jetbrains">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="kagi search">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="langfuse prompt management">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="logfire">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="mailgun">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="make">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="meilisearch">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="memory">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="metoro">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="milvus">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="momento">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="motherduck">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="needle">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="neo4j">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="neon">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="notion">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="oceanbase">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="octagon">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="oxylabs">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="paddle">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="paypal">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="perplexity">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="playwright">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="postgresql">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="puppeteer">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="qdrant">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="ramp">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="raygun">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="redis">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="riza">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="screenshotone">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="search1api">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="semgrep">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="sentry">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="sequential thinking">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="singlestore">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="slack">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="sqlite">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="starrocks">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="stripe">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="tavily">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="thirdweb">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="tinybird">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="unifai">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="unstructured">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="vectorize">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="zapier">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+        <entry key="zenml">
+          <value>
+            <McpServerInfo />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="zencoderBackendTools">
+      <map>
+        <entry key="ExecuteShellCommand">
+          <value>
+            <McpServerInfo>
+              <option name="status">
+                <McpServerStatus />
+              </option>
+            </McpServerInfo>
+          </value>
+        </entry>
+        <entry key="RequirementsTool">
+          <value>
+            <McpServerInfo>
+              <option name="status">
+                <McpServerStatus />
+              </option>
+            </McpServerInfo>
+          </value>
+        </entry>
+        <entry key="fetch_webpage">
+          <value>
+            <McpServerInfo>
+              <option name="status">
+                <McpServerStatus />
+              </option>
+            </McpServerInfo>
+          </value>
+        </entry>
+        <entry key="str_replace_editor">
+          <value>
+            <McpServerInfo>
+              <option name="status">
+                <McpServerStatus />
+              </option>
+            </McpServerInfo>
+          </value>
+        </entry>
+        <entry key="web_search">
+          <value>
+            <McpServerInfo>
+              <option name="status">
+                <McpServerStatus />
+              </option>
+            </McpServerInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="ai.zencoder.plugin.rag.settings">
+    <option name="desiredChunkSizeBytes" value="4194304" />
+    <option name="forbiddenExtensions">
+      <set>
+        <option value=".log,.lock,.svg" />
+      </set>
+    </option>
+    <option name="pollingIntervalMs" value="60000" />
+    <option name="projectInfoUpdateThresholdPercentage" value="101" />
+    <option name="repoIndexingIntervalMs" value="300000" />
+  </component>
+  <component name="ai.zencoder.plugin.rag.state">
+    <option name="indexedFilesMap">
+      <map>
+        <entry key="$PROJECT_DIR$/.idea/.gitignore" value="1745909162287" />
+        <entry key="$PROJECT_DIR$/.idea/informatik.iml" value="1745909162287" />
+        <entry key="$PROJECT_DIR$/.idea/misc.xml" value="1745909162287" />
+        <entry key="$PROJECT_DIR$/.idea/modules.xml" value="1745909162287" />
+        <entry key="$PROJECT_DIR$/.idea/vcs.xml" value="1745909162287" />
+        <entry key="$PROJECT_DIR$/JavaGrundlagen.md" value="1747760486959" />
+        <entry key="$PROJECT_DIR$/src/AllgemeineDatenTypen/Array/Array.java" value="1747760142036" />
+        <entry key="$PROJECT_DIR$/src/AllgemeineDatenTypen/Hash/Hash.java" value="1749717830941" />
+        <entry key="$PROJECT_DIR$/src/AllgemeineDatenTypen/Listen/List.java" value="1747760486959" />
+        <entry key="$PROJECT_DIR$/src/AllgemeineDatenTypen/Schlange/Schlange.java" value="1747760142036" />
+        <entry key="$PROJECT_DIR$/src/AllgemeineDatenTypen/Stack/Stack.java" value="1747760142036" />
+        <entry key="$PROJECT_DIR$/src/Baumstrukturen/Binärbaum/BinarySearchTree.java" value="1748861796340" />
+        <entry key="$PROJECT_DIR$/src/Baumstrukturen/Binärbaum/BinaryTree.java" value="1747652723912" />
+        <entry key="$PROJECT_DIR$/src/Baumstrukturen/Binärbaum/TreeMain.java" value="1747845265196" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe1.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe10.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe11.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe12.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe13.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe14.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe15.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe2.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe3.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe4.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe5.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe6.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe7.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe8.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Allgemein/Aufgabe9.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe1.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe10.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe11.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe12.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe13.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe14.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe15.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe2.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe3.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe4.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe5.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe6.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe7.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe8.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/BeispielAufgaben/Aufgabe9.py" value="9223372036854775807" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Guards/Aufgabe1.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Guards/Aufgabe2.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Guards/Aufgabe3.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Guards/Aufgabe4.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Guards/LokaleDef.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Konzepte/Aufgabe1.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Konzepte/Aufgabe2.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Konzepte/Aufgabe3.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Konzepte/Aufgabe4.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Konzepte/Aufgabe5.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Konzepte/Aufgabe6.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Konzepte/Aufgabe7.py" value="1751915700437" />
+        <entry key="$PROJECT_DIR$/src/Funktional/Konzepte/Aufgabe8.py" value="1751915700437" />
+      </map>
+    </option>
+    <option name="lastCommitHash" value="be069a8b7ea1793dcdb7df9de73577e1a3361538" />
+    <option name="lastIndexTimestamp" value="1751915700437" />
+    <option name="repoAccumulatedChanges" value="128" />
+    <option name="repoTotalFiles" value="105" />
+    <option name="repositoryId" value="41a1e6d6-0f92-4385-adf6-f79971ffcc99" />
+    <option name="state" value="FULLY_INDEXED" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/informatik$Aufgabe11.coverage" NAME="Aufgabe11 Coverage Results" MODIFIED="1751277139679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funktional/BeispielAufgaben" />
+    <SUITE FILE_PATH="coverage/informatik$Aufgabe14.coverage" NAME="Aufgabe14 Coverage Results" MODIFIED="1751277841559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funktional/BeispielAufgaben" />
+    <SUITE FILE_PATH="coverage/informatik$Quadratzahlen.coverage" NAME="Quadratzahlen Coverage Results" MODIFIED="1750927425600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funktional/BeispielAufgaben" />
+    <SUITE FILE_PATH="coverage/informatik$Aufgabe2.coverage" NAME="Aufgabe2 Coverage Results" MODIFIED="1760547095247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python/src/Funktional/Aufgaben" />
+    <SUITE FILE_PATH="coverage/informatik$Stack.coverage" NAME="Stack Coverage Results" MODIFIED="1752158359912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python/src/Funktional/AllgemeineDatenTypen/Stack" />
+    <SUITE FILE_PATH="coverage/informatik$bla.coverage" NAME="bla Coverage Results" MODIFIED="1760274425274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python/src/Funktional/Aufgaben" />
+    <SUITE FILE_PATH="coverage/informatik$Aufgabe15.coverage" NAME="Aufgabe15 Coverage Results" MODIFIED="1751278495717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funktional/BeispielAufgaben" />
+    <SUITE FILE_PATH="coverage/informatik$Bubblesort.coverage" NAME="Bubblesort Coverage Results" MODIFIED="1750925173060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funkion./CrashKurs" />
+    <SUITE FILE_PATH="coverage/informatik$Aufgabe7.coverage" NAME="Aufgabe7 Coverage Results" MODIFIED="1750929726310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funktional/BeispielAufgaben" />
+    <SUITE FILE_PATH="coverage/informatik$Geradezahlen.coverage" NAME="Geradezahlen Coverage Results" MODIFIED="1750927122518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funkion./BeispielAufgaben" />
+    <SUITE FILE_PATH="coverage/informatik$Aufgabe3.coverage" NAME="Aufgabe3 Coverage Results" MODIFIED="1751367204733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funktional/Konzepte" />
+    <SUITE FILE_PATH="coverage/informatik$Aufgabe6.coverage" NAME="Aufgabe6 Coverage Results" MODIFIED="1750929550775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funktional/BeispielAufgaben" />
+    <SUITE FILE_PATH="coverage/informatik$Aufgabe12.coverage" NAME="Aufgabe12 Coverage Results" MODIFIED="1751277678133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funktional/BeispielAufgaben" />
+    <SUITE FILE_PATH="coverage/informatik$Aufgabe4.coverage" NAME="Aufgabe4 Coverage Results" MODIFIED="1759745750748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python/src/Funktional/Guards" />
+    <SUITE FILE_PATH="coverage/informatik$Aufgabe1.coverage" NAME="Aufgabe1 Coverage Results" MODIFIED="1759838181791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python/src/Funktional/Aufgaben" />
+    <SUITE FILE_PATH="coverage/informatik$list.coverage" NAME="list Coverage Results" MODIFIED="1752157486937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funktional/AllgemeineDatenTypen/List" />
+    <SUITE FILE_PATH="coverage/informatik$test.coverage" NAME="test Coverage Results" MODIFIED="1750767607344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funkion." />
+    <SUITE FILE_PATH="coverage/informatik$Aufgabe5.coverage" NAME="Aufgabe5 Coverage Results" MODIFIED="1750962232467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funktional/BeispielAufgaben" />
+    <SUITE FILE_PATH="coverage/informatik$LokaleDef.coverage" NAME="LokaleDef Coverage Results" MODIFIED="1751530538845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/Funktional/Guards" />
+  </component>
+</project>
