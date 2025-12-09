@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d7dee6ed-feb9-40e7-962f-81065ff61001" name="Changes" comment="09.12.2025">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/Baumstrukturen/Binärbaum/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/Baumstrukturen/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/Baumstrukturen/Binärbaum/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/Baumstrukturen/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/Baumstrukturen/Binärbaum/TreeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/Baumstrukturen/TreeMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/KünstlicheIntelligenz/Neuron.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/KünstlicheIntelligenz/Neuron.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/src/KünstlicheIntelligenz/NeuronLearning.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/KünstlicheIntelligenz/NeuronLearning.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -253,7 +257,7 @@
       <workItem from="1762369994793" duration="738000" />
       <workItem from="1764679680694" duration="3580000" />
       <workItem from="1764838709073" duration="5517000" />
-      <workItem from="1765190988414" duration="7653000" />
+      <workItem from="1765190988414" duration="8616000" />
     </task>
     <task id="LOCAL-00001" summary="02.05.2025">
       <option name="closed" value="true" />
@@ -423,7 +427,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765274277470</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="09.12.2025">
+      <option name="closed" value="true" />
+      <created>1765275009811</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1765275009811</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

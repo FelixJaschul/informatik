@@ -26,7 +26,8 @@ public class NeuronLearning
 
     public int fire(int i1, int i2)
     {
-        return (i1 * w1) + (i2 * w2) > t ? 1 : 0;
+        // return (i1 * w1) + (i2 * w2) > t ? 1 : 0;
+        return (i1 * w1) + (i2 * w2) + t > 0 ? 1 : 0;
     }
 
     public NeuronLearning getCopy()
@@ -54,18 +55,19 @@ public class NeuronLearning
         return z;
     }
 
-    public void output()
+    public void display()
     {
         System.out.println(this.name + " (" + this.w1 + ", " + this.w2 + ", " + this.t + ")");
     }
 
     // Not member of NeuronLearning class
-    public static NeuronLearning trainData(int[][] inputs, int[] outputs)
+    public static NeuronLearning trainData(String name, int[][] inputs, int[] outputs)
     {
-        NeuronLearning neuron = new NeuronLearning("Trained Neuron");
+        NeuronLearning neuron = new NeuronLearning(name);
 
         int errors = neuron.getErrorCount(inputs, outputs);
 
+        // for (int i = 0; i < 10000000; i++)
         do
         {
             NeuronLearning copy = neuron.getCopy();
@@ -78,6 +80,7 @@ public class NeuronLearning
 
         } while (errors != 0);
 
+        neuron.display();
         return neuron;
     }
 
@@ -85,13 +88,14 @@ public class NeuronLearning
     {
         int[][] i = { {0, 0}, {0, 1}, {1, 0}, {1, 1} };
 
-        NeuronLearning or   = trainData(i, new int[]{0, 1, 1, 1});
-        NeuronLearning and  = trainData(i, new int[]{0, 0, 0, 1});
-        NeuronLearning nand = trainData(i, new int[]{1, 1, 1, 0});
+        NeuronLearning or   = trainData("OR:   ", i, new int[]{0, 1, 1, 1});
+        NeuronLearning and  = trainData("AND:  ", i, new int[]{0, 0, 0, 1});
+        NeuronLearning nand = trainData("NAND: ", i, new int[]{1, 1, 1, 0});
 
         for (int[] input : i)
         {
-            System.out.println(and.fire(or.fire(input[0], input[1]), nand.fire(input[0], input[1])));
+            System.out.println("-> for: (" + input[0] + " " + input[1] + ") -> " + and.fire(or.fire(input[0], input[1]), nand.fire(input[0], input[1])));
         }
+        System.out.println("XOR: ^^");
     }
 }

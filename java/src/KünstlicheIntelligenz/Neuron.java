@@ -1,7 +1,5 @@
 package KünstlicheIntelligenz;
 
-import java.util.Objects;
-
 public class Neuron
 {
     String name;
@@ -29,7 +27,7 @@ public class Neuron
         this.w2 = w2 + (error * i2 * this.rate);
     }
 
-    private void output()
+    private void display()
     {
         System.out.println();
         System.out.println("Neuron: " + this.t + " W1: " + this.w1 + " W2: " + this.w2);
@@ -84,19 +82,19 @@ public class Neuron
     {
         Neuron or = new Neuron("OR" , 0.5, 0, 0);
         or.train(100);
-        or.output();
+        or.display();
 
         Neuron nor = new Neuron("NOR" , -0.5, 0, 0);
         nor.train(100);
-        nor.output();
+        nor.display();
 
         Neuron and = new Neuron("AND" , 1.5, 0, 0);
         and.train(100);
-        and.output();
+        and.display();
 
         Neuron nand = new Neuron("NAND" , -1.5, 0, 0);
         nand.train(100);
-        nand.output();
+        nand.display();
 
         System.out.println(and.fire(or.fire(0, 1), nand.fire(0, 1)));
         System.out.println(and.fire(or.fire(0, 0), nand.fire(0, 0)));

@@ -1,4 +1,4 @@
-package Baumstrukturen.Binärbaum;
+package Baumstrukturen;
 
 /*
  * Zentrale Main-Klasse für die Demonstration der Baumstrukturen

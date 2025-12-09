@@ -1,4 +1,4 @@
-package Baumstrukturen.Binärbaum;
+package Baumstrukturen;
 
 public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
     private Knoten<T> root;

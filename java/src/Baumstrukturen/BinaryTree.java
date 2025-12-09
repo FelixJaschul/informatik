@@ -1,4 +1,4 @@
-package Baumstrukturen.Binärbaum;
+package Baumstrukturen;
 
 import java.util.ArrayList;
 import java.util.List;
