@@ -4,15 +4,15 @@ import java.util.Random;
 
 public class NeuronLearning
 {
-    double w1, w2, t, rate = 0.1;
-    String name;
-    Random random = new Random();
+    private double w1, w2, t;
+    private final String name;
+    private final Random random = new Random();
 
     public NeuronLearning(String name)
     {
-        this.w1 = random.nextDouble() * 4 - 2;  // [-2, 2)
-        this.w2 = random.nextDouble() * 4 - 2;  // [-2, 2)
-        this.t  = random.nextDouble() * 4 - 2;  // [-2, 2)
+        this.w1 = random.nextDouble() * 4 - 2;
+        this.w2 = random.nextDouble() * 4 - 2;
+        this.t  = random.nextDouble() * 4 - 2;
         this.name = name;
     }
 
@@ -26,8 +26,7 @@ public class NeuronLearning
 
     public int fire(int i1, int i2)
     {
-        if ((i1 * this.w1) + (i2 * this.w2) > this.t) return 1;
-        else return 0;
+        return (i1 * w1) + (i2 * w2) > t ? 1 : 0;
     }
 
     public NeuronLearning getCopy()
@@ -45,7 +44,7 @@ public class NeuronLearning
         if (r == 2) this.t  += v;
     }
 
-    public int getErrorCount(int[][] inputs, int[] expectedOutputs)
+    private int getErrorCount(int[][] inputs, int[] expectedOutputs)
     {
         int z = 0;
         for (int i = 0; i < inputs.length; i++)
@@ -60,18 +59,22 @@ public class NeuronLearning
         System.out.println(this.name + " (" + this.w1 + ", " + this.w2 + ", " + this.t + ")");
     }
 
-    public NeuronLearning getTrainedData(int[][] inputs, int[] outputs)
+    // Not member of NeuronLearning class
+    public static NeuronLearning trainData(int[][] inputs, int[] outputs)
     {
-        NeuronLearning neuron = new NeuronLearning("Neuron 1");
+        NeuronLearning neuron = new NeuronLearning("Trained Neuron");
 
         int errors = neuron.getErrorCount(inputs, outputs);
 
-        do {
+        do
+        {
             NeuronLearning copy = neuron.getCopy();
             neuron.mutate();
 
-            if (neuron.getErrorCount(inputs, outputs) > errors) neuron = copy;
-            else errors = neuron.getErrorCount(inputs, outputs);
+            int newErrors = neuron.getErrorCount(inputs, outputs);
+
+            if (newErrors > errors) neuron = copy;
+            else errors = newErrors;
 
         } while (errors != 0);
 
@@ -81,13 +84,14 @@ public class NeuronLearning
     static void main()
     {
         int[][] i = { {0, 0}, {0, 1}, {1, 0}, {1, 1} };
-        NeuronLearning OR   = new NeuronLearning("OR"  ).getTrainedData(i, new int[]{0, 1, 1, 1});
-        NeuronLearning AND  = new NeuronLearning("AND" ).getTrainedData(i, new int[]{0, 0, 0, 1});
-        NeuronLearning NAND = new NeuronLearning("NAND").getTrainedData(i, new int[]{1, 1, 1, 0});
+
+        NeuronLearning or   = trainData(i, new int[]{0, 1, 1, 1});
+        NeuronLearning and  = trainData(i, new int[]{0, 0, 0, 1});
+        NeuronLearning nand = trainData(i, new int[]{1, 1, 1, 0});
 
         for (int[] input : i)
         {
-            System.out.println(AND.fire(OR.fire(input[0], input[1]), NAND.fire(input[0], input[1])));
+            System.out.println(and.fire(or.fire(input[0], input[1]), nand.fire(input[0], input[1])));
         }
     }
 }
