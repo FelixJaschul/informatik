@@ -6,53 +6,19 @@ public class NeuronLearning
 {
     private double w1, w2, t;
     private final String name;
-    private final Random random = new Random();
 
     public NeuronLearning(String name)
     {
+        Random random = new Random();
         this.w1 = random.nextDouble() * 4 - 2;
         this.w2 = random.nextDouble() * 4 - 2;
         this.t  = random.nextDouble() * 4 - 2;
         this.name = name;
     }
 
-    public NeuronLearning(String name, double w1, double w2, double t)
-    {
-        this.w1 = w1;
-        this.w2 = w2;
-        this.t  = t;
-        this.name = name;
-    }
-
     public int fire(int i1, int i2)
     {
-        // return (i1 * w1) + (i2 * w2) > t ? 1 : 0;
         return (i1 * w1) + (i2 * w2) + t > 0 ? 1 : 0;
-    }
-
-    public NeuronLearning getCopy()
-    {
-        return new NeuronLearning(this.name, this.w1, this.w2, this.t);
-    }
-
-    public void mutate()
-    {
-        int r = random.nextInt(3);
-        double v = random.nextDouble() * 0.2 - 0.1;
-
-        if (r == 0) this.w1 += v;
-        if (r == 1) this.w2 += v;
-        if (r == 2) this.t  += v;
-    }
-
-    private int getErrorCount(int[][] inputs, int[] expectedOutputs)
-    {
-        int z = 0;
-        for (int i = 0; i < inputs.length; i++)
-        {
-            if (this.fire(inputs[i][0], inputs[i][1]) != expectedOutputs[i]) z++;
-        }
-        return z;
     }
 
     public void display()
@@ -60,25 +26,37 @@ public class NeuronLearning
         System.out.println(this.name + " (" + this.w1 + ", " + this.w2 + ", " + this.t + ")");
     }
 
-    // Not member of NeuronLearning class
     public static NeuronLearning trainData(String name, int[][] inputs, int[] outputs)
     {
         NeuronLearning neuron = new NeuronLearning(name);
+        double rate = 0.1;
 
-        int errors = neuron.getErrorCount(inputs, outputs);
-
-        // for (int i = 0; i < 10000000; i++)
-        do
+        for (int epoch = 0; epoch < 1000; epoch++)
         {
-            NeuronLearning copy = neuron.getCopy();
-            neuron.mutate();
+            int errors = 0;
 
-            int newErrors = neuron.getErrorCount(inputs, outputs);
+            for (int i = 0; i < inputs.length; i++)
+            {
+                int i1 = inputs[i][0], i2 = inputs[i][1];
 
-            if (newErrors > errors) neuron = copy;
-            else errors = newErrors;
+                // Value, if
+                // delta ==  0 -> neuron.fire == output[i],
+                // delta ==  1 -> neuron.fire is 0, but 1 is right
+                // delta == -1 -> neuron.fire is 1, but 0 is right
+                int delta  = outputs[i] - neuron.fire(i1, i2);
 
-        } while (errors != 0);
+                if (delta != 0)
+                {
+                    // learn based on the value of delta
+                    neuron.w1 += rate * delta * i1; // only change if i1 is == 1 not 0
+                    neuron.w2 += rate * delta * i2; // only change if i2 is == 1 not 0
+                    neuron.t  += rate * delta;      // always change the threshold
+                    errors++;
+                }
+            }
+
+            if (errors == 0) break;
+        }
 
         neuron.display();
         return neuron;
