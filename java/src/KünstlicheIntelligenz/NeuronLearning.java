@@ -18,7 +18,7 @@ public class NeuronLearning
 
     public int fire(int i1, int i2)
     {
-        return (i1 * w1) + (i2 * w2) + t > 0 ? 1 : 0;
+        return (i1 * this.w1) + (i2 * this.w2) + this.t > 0 ? 1 : 0;
     }
 
     public void display()
@@ -26,7 +26,7 @@ public class NeuronLearning
         System.out.println(this.name + " (" + this.w1 + ", " + this.w2 + ", " + this.t + ")");
     }
 
-    public static NeuronLearning trainData(String name, int[][] inputs, int[] outputs)
+    public static NeuronLearning trainNeuron(String name, int[][] inputs, int[] outputs)
     {
         NeuronLearning neuron = new NeuronLearning(name);
         double rate = 0.1;
@@ -66,9 +66,9 @@ public class NeuronLearning
     {
         int[][] i = { {0, 0}, {0, 1}, {1, 0}, {1, 1} };
 
-        NeuronLearning or   = trainData("OR:   ", i, new int[]{0, 1, 1, 1});
-        NeuronLearning and  = trainData("AND:  ", i, new int[]{0, 0, 0, 1});
-        NeuronLearning nand = trainData("NAND: ", i, new int[]{1, 1, 1, 0});
+        NeuronLearning or   = trainNeuron("OR:   ", i, new int[]{0, 1, 1, 1});
+        NeuronLearning and  = trainNeuron("AND:  ", i, new int[]{0, 0, 0, 1});
+        NeuronLearning nand = trainNeuron("NAND: ", i, new int[]{1, 1, 1, 0});
 
         for (int[] input : i)
         {

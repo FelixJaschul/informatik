@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7dee6ed-feb9-40e7-962f-81065ff61001" name="Changes" comment="09.12.2025">
+      <change afterPath="$PROJECT_DIR$/java/src/KünstlicheIntelligenz/Sigmoid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/src/KünstlicheIntelligenz/NeuronLearning.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/KünstlicheIntelligenz/NeuronLearning.java" afterDir="false" />
     </list>
@@ -35,12 +36,12 @@
     &quot;assignee&quot;: &quot;FelixJaschul&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/FelixJaschul/informatik.git",
-    "accountId": "6c0df179-3fce-4f82-bf13-74bfa4cabd35"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/FelixJaschul/informatik.git&quot;,
+    &quot;accountId&quot;: &quot;6c0df179-3fce-4f82-bf13-74bfa4cabd35&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/java/src/KünstlicheIntelligenz/Neuron.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/python/src/Funktional/Guards/Aufgabe3.py" root0="SKIP_INSPECTION" />
@@ -80,6 +81,7 @@
     "Application.Main.executor": "Run",
     "Application.Neuron.executor": "Run",
     "Application.NeuronLearning.executor": "Run",
+    "Application.Sigmoid.executor": "Run",
     "Application.SpielDemo.executor": "Run",
     "Application.Stack.executor": "Run",
     "Application.TreeMain.executor": "Run",
@@ -111,6 +113,7 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "RunOnceActivity.zencoder-patch-add-chat-message-raw-content": "true",
     "RunOnceActivity.zencoder-patch-chat-storage-migration": "true",
     "RunOnceActivity.zencoder-patch-generate-chat-message-id": "true",
@@ -180,8 +183,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
-        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-IU-253.28294.334" />
       </set>
     </attachedChunks>
   </component>
@@ -253,7 +256,8 @@
       <workItem from="1762369994793" duration="738000" />
       <workItem from="1764679680694" duration="3580000" />
       <workItem from="1764838709073" duration="5517000" />
-      <workItem from="1765190988414" duration="10879000" />
+      <workItem from="1765190988414" duration="11697000" />
+      <workItem from="1765444676469" duration="3049000" />
     </task>
     <task id="LOCAL-00001" summary="02.05.2025">
       <option name="closed" value="true" />
@@ -439,7 +443,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765285079281</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="09.12.2025">
+      <option name="closed" value="true" />
+      <created>1765306897950</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1765306897950</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
